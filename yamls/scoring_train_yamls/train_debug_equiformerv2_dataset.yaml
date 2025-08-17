@@ -1,0 +1,141 @@
+config_data:
+    dataset_type: equiformerv2
+    train_filepath:
+      - name: torchmd
+        path: /nfs_beijing_ai/ziqiao-2/tmp/rama-scoring-v1.2.0-decoys/nb_decoys_MD_300K_200step_0.1gamma_1timestep_24_05_05_17_00_w_pdbid.csv   # torch MD without 95 metrics
+        weight: 1
+        loss_weight: 1
+      - name: esmflow200
+        path: /pfs_beijing/sunyiwu/structure_pretraining/xtrimo_eigenfold/rama-scoring/notebooks/csvs/nb_train_esmflow_2071_all_95_0510_filtered_w_pdbid.csv   # esm
+        weight: 1
+        loss_weight: 1
+      - name: modeller
+        path: /pfs_beijing/sunyiwu/model_selection/modeller/notebooks/csvs/nb_train_modeller_2071_all_95_0430_w_pdbid.csv   # modeller
+        weight: 1
+        loss_weight: 1
+#    valid_filepath: /pfs_beijing/sunyiwu/structure_pretraining/xtrimo_eigenfold/rama-scoring/notebooks/csvs/model_zoo_nb_no4_95_testset_0522.csv,/pfs_beijing/sunyiwu/structure_pretraining/xtrimo_eigenfold/rama-scoring/notebooks/csvs/model_zoo_nb_no8_95_testset_0522.csv,/pfs_beijing/ai_dataset/nbfold_dataset/csv/nb88_20240428.csv
+    valid_filepath: /pfs_beijing/sunyiwu/structure_pretraining/xtrimo_eigenfold/rama-scoring/notebooks/csvs/model_zoo_nb_no8_95_testset_0522.csv,/pfs_beijing/ai_dataset/nbfold_dataset/csv/nb88_20240428.csv,/nfs_beijing_ai/ttt/test_set/20240425new/nb/gt_pdbpath_seq/nb26_new_gt_pdb_seq.csv
+    test_filepath: /pfs_beijing/sunyiwu/structure_pretraining/xtrimo_eigenfold/rama-scoring/notebooks/csvs/af3_nb88_0524.csv,/pfs_beijing/sunyiwu/structure_pretraining/xtrimo_eigenfold/rama-scoring/notebooks/csvs/nb88_shot100_self_0524.csv,/pfs_beijing/sunyiwu/structure_pretraining/xtrimo_eigenfold/rama-scoring/notebooks/csvs/nb88_shot100_esmflow_0524.csv
+    max_ba: 1
+    max_size: 8192
+    min_num_res: 48
+    max_num_atoms: 12288
+    max_num_nn: 64
+    interface_cut: 225
+    trn_batch_size: 2
+    val_batch_size: 1
+    num_workers: 7
+    prefetch_factor: 16
+    aa_features: phi,psi,aas20,blosum62,rel_pos,meiler,usr
+    debug: False
+    pdb_fpath_col: pred_path
+    label_col: RMSD_CA
+    chain_col: chain
+    cdr3_col: CDR3_RMSD_CA
+#    rmsd_threshold: 0.01
+    cdr3_threshold: 0.05
+    rmsd_scale:
+      - target: RMSD_CA
+        scale_temp: 0.5
+        scale_order: 1
+      - target: CDR3_RMSD_CA
+        scale_temp: 0.5
+        scale_order: 1
+    ca_only: True
+    screener:
+      - class: UpperboundScreener
+        name: RMSD_CA
+        upperbound: 5
+      - class: UpperboundScreener
+        name: CDR3_RMSD_CA
+        upperbound: 10
+#    down_sampling:
+#      target: RMSD_CA
+#      bin: [0,0.5,0.8,1.1,1.4,1.7,2.0,2.4,2.8,3.2,3.6,4.0,200000]
+#      source: no4
+#      probs: [0.01239669,0.12190083,0.25309917,0.22933884,0.14049587,0.05785124,0.06198347,0.04442149,0.02582645,0.01446281,0.02272727,0.01549587]
+#      size_ratio: 0.1
+#      target: CDR3_RMSD_CA
+#      bin: [0,0.6,1.0,1.4,1.8,2.2,2.6,3.0,3.5,4.0,4.5,5.0,5.5,6.0,7.0,8.0,100000]
+#      source: no4
+#      probs: [0.03202479,0.12913223,0.08884298,0.13842975,0.10433884,0.10433884,0.05268595,0.09090909,0.05991736,0.04235537,0.02995868,0.01446281,0.02272727,0.02376033,0.03305785,0.03305785]
+#      size_ratio: 0.1
+    self_analyze:
+      - target: RMSD_CA
+        bin: [0,0.5,0.8,1.1,1.4,1.7,2.0,2.4,2.8,3.2,3.6,4.0,200000]
+      - target: CDR3_RMSD_CA
+        bin: [0,0.6,1.0,1.4,1.8,2.2,2.6,3.0,3.5,4.0,4.5,5.0,5.5,6.0,7.0,8.0,100000]
+#    fast_warm_up_set:
+#      target: CDR3_RMSD_CA
+#      size_ratio: 0.05
+
+
+config_model:
+    model_name: equiformer_v2
+#    out: 1
+#    out_weight: [1]
+#    sigmoid_index: []
+#    init_model: 'none'
+    use_pbc: False
+    regress_forces: False
+    otf_graph: True
+    max_neighbors: 20
+    max_radius: 12.0
+    max_num_elements: 90
+    max_num_atom_names: 37
+    max_num_residues: 21
+
+    num_layers: 12
+    sphere_channels: 128
+    attn_hidden_channels: 64              # [64, 96] This determines the hidden size of message passing. Do not necessarily use 96.
+    num_heads: 8
+    attn_alpha_channels: 64              # Not used when `use_s2_act_attn` is True.
+    attn_value_channels: 16
+    ffn_hidden_channels: 128
+    norm_type: 'layer_norm_sh'    # ['rms_norm_sh', 'layer_norm', 'layer_norm_sh']
+
+    lmax_list: [ 6 ]
+    mmax_list: [ 2 ]
+    grid_resolution: 18              # [18, 16, 14, None] For `None`, simply comment this line.
+
+    num_sphere_samples: 128
+
+    edge_channels: 128
+    use_atom_edge_embedding: True
+    share_atom_edge_embedding: False         # If `True`, `use_atom_edge_embedding` must be `True` and the atom edge embedding will be shared across all blocks.
+    distance_function: 'gaussian'
+    num_distance_basis: 512           # not used
+
+    attn_activation: 'silu'
+    use_s2_act_attn: False       # [False, True] Switch between attention after S2 activation or the original EquiformerV1 attention.
+    use_attn_renorm: True        # Attention re-normalization. Used for ablation study.
+    ffn_activation: 'silu'      # ['silu', 'swiglu']
+    use_gate_act: False       # [True, False] Switch between gate activation and S2 activation
+    use_grid_mlp: True        # [False, True] If `True`, use projecting to grids and performing MLPs for FFNs.
+    use_sep_s2_act: True        # Separable S2 activation. Used for ablation study.
+
+    alpha_drop: 0.1         # [0.0, 0.1]
+    drop_path_rate: 0.05        # [0.0, 0.05]
+    proj_drop: 0.0
+
+    weight_init: 'uniform'    # ['uniform', 'normal']
+
+config_runtime:
+    seed: 8
+    device: 'cuda'
+    num_epochs: 100000000    # not work, controlled by max_epochs in args
+    learning_rate: 0.0001    # not work, controlled by max_lr of scheduler
+    acc_grad: 1
+    optimizer: adam
+    wd: 0.00000001
+    clip: 0.0
+    resume_from_ckpt: False
+    ema_start_epoch: 10
+    ema_decay: 0.9999
+    use_fsdp: False
+    loss_fn:
+        - type: MSE
+          output: 0
+          target: CDR3_RMSD_CA_scale
+          weight: 1
+          start_iter: 0

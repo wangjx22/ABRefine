@@ -1,0 +1,1134 @@
++ POD_NAME=nb-refinement-0-2kwwh-worker-0
++ shift
++ /opt/kube/kubectl exec nb-refinement-0-2kwwh-worker-0 -- /bin/sh -c        PATH=/usr/local/bin:$PATH ; export PATH ; LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH ; export LD_LIBRARY_PATH ; DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH ; export DYLD_LIBRARY_PATH ;   /usr/local/bin/orted -mca ess "env" -mca ess_base_jobid "1431175168" -mca ess_base_vpid 1 -mca ess_base_num_procs "2" -mca orte_node_regex "nb-refinement-[1:0]-2kwwh-launcher,nb-refinement-[1:0]-2kwwh-worker-0@0(2)" -mca orte_hnp_uri "1431175168.0;tcp://172.22.72.81:54275" -mca pml "ob1" -mca btl "^openib" -mca plm "rsh" --tree-spawn -mca routed "radix" -mca orte_parent_uri "1431175168.0;tcp://172.22.72.81:54275" -mca orte_default_hostfile "/etc/mpi/hostfile" -mca plm_rsh_agent "/etc/mpi/kubexec.sh" -mca orte_tag_output "1" -mca hwloc_base_binding_policy "none" -mca rmaps_base_mapping_policy "slot" -mca pmix "^s1,s2,cray,isolated"
+[1,0]<stderr>:+ source activate /nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:++ _CONDA_ROOT=/opt/conda
+[1,0]<stderr>:++ . /opt/conda/etc/profile.d/conda.sh
+[1,0]<stderr>:+++ export CONDA_EXE=/opt/conda/bin/conda
+[1,0]<stderr>:+++ CONDA_EXE=/opt/conda/bin/conda
+[1,0]<stderr>:+++ export _CE_M=
+[1,0]<stderr>:+++ _CE_M=
+[1,0]<stderr>:+++ export _CE_CONDA=
+[1,0]<stderr>:+++ _CE_CONDA=
+[1,0]<stderr>:+++ export CONDA_PYTHON_EXE=/opt/conda/bin/python
+[1,0]<stderr>:+++ CONDA_PYTHON_EXE=/opt/conda/bin/python
+[1,0]<stderr>:+++ '[' -z '' ']'
+[1,0]<stderr>:+++ export CONDA_SHLVL=0
+[1,0]<stderr>:+++ CONDA_SHLVL=0
+[1,0]<stderr>:+++ '[' -n '' ']'
+[1,0]<stderr>:+++++ dirname /opt/conda/bin/conda
+[1,0]<stderr>:++++ dirname /opt/conda/bin
+[1,0]<stderr>:+++ PATH=/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+++ export PATH
+[1,0]<stderr>:+++ '[' -z '' ']'
+[1,0]<stderr>:+++ PS1=
+[1,0]<stderr>:++ conda activate /nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:++ local cmd=activate
+[1,0]<stderr>:++ case "$cmd" in
+[1,0]<stderr>:++ __conda_activate activate /nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:++ '[' -n '' ']'
+[1,0]<stderr>:++ local ask_conda
+[1,0]<stderr>:+++ PS1=
+[1,0]<stderr>:+++ __conda_exe shell.posix activate /nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:+++ __add_sys_prefix_to_path
+[1,0]<stderr>:+++ '[' -n '' ']'
+[1,0]<stderr>:++++ dirname /opt/conda/bin/conda
+[1,0]<stderr>:+++ SYSP=/opt/conda/bin
+[1,0]<stderr>:++++ dirname /opt/conda/bin
+[1,0]<stderr>:+++ SYSP=/opt/conda
+[1,0]<stderr>:+++ '[' -n '' ']'
+[1,0]<stderr>:+++ PATH=/opt/conda/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+++ export PATH
+[1,0]<stderr>:+++ /opt/conda/bin/conda shell.posix activate /nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:++ ask_conda='PS1='\''(/nfs_beijing/kubeflow-user/jinxian_2024) '\''
+[1,0]<stderr>:export PATH='\''/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+[1,0]<stderr>:export CONDA_PREFIX='\''/nfs_beijing/kubeflow-user/jinxian_2024'\''
+[1,0]<stderr>:export CONDA_SHLVL='\''1'\''
+[1,0]<stderr>:export CONDA_DEFAULT_ENV='\''/nfs_beijing/kubeflow-user/jinxian_2024'\''
+[1,0]<stderr>:export CONDA_PROMPT_MODIFIER='\''(/nfs_beijing/kubeflow-user/jinxian_2024) '\''
+[1,0]<stderr>:export CONDA_EXE='\''/opt/conda/bin/conda'\''
+[1,0]<stderr>:export _CE_M='\'''\''
+[1,0]<stderr>:export _CE_CONDA='\'''\''
+[1,0]<stderr>:export CONDA_PYTHON_EXE='\''/opt/conda/bin/python'\''
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libblas_mkl_activate.sh"
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libglib_activate.sh"
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/proj4-activate.sh"'
+[1,0]<stderr>:++ eval 'PS1='\''(/nfs_beijing/kubeflow-user/jinxian_2024) '\''
+[1,0]<stderr>:export PATH='\''/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+[1,0]<stderr>:export CONDA_PREFIX='\''/nfs_beijing/kubeflow-user/jinxian_2024'\''
+[1,0]<stderr>:export CONDA_SHLVL='\''1'\''
+[1,0]<stderr>:export CONDA_DEFAULT_ENV='\''/nfs_beijing/kubeflow-user/jinxian_2024'\''
+[1,0]<stderr>:export CONDA_PROMPT_MODIFIER='\''(/nfs_beijing/kubeflow-user/jinxian_2024) '\''
+[1,0]<stderr>:export CONDA_EXE='\''/opt/conda/bin/conda'\''
+[1,0]<stderr>:export _CE_M='\'''\''
+[1,0]<stderr>:export _CE_CONDA='\'''\''
+[1,0]<stderr>:export CONDA_PYTHON_EXE='\''/opt/conda/bin/python'\''
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libblas_mkl_activate.sh"
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libglib_activate.sh"
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/proj4-activate.sh"'
+[1,0]<stderr>:+++ PS1='(/nfs_beijing/kubeflow-user/jinxian_2024) '
+[1,0]<stderr>:+++ export PATH=/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+++ PATH=/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+++ export CONDA_PREFIX=/nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:+++ CONDA_PREFIX=/nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:+++ export CONDA_SHLVL=1
+[1,0]<stderr>:+++ CONDA_SHLVL=1
+[1,0]<stderr>:+++ export CONDA_DEFAULT_ENV=/nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:+++ CONDA_DEFAULT_ENV=/nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:+++ export 'CONDA_PROMPT_MODIFIER=(/nfs_beijing/kubeflow-user/jinxian_2024) '
+[1,0]<stderr>:+++ CONDA_PROMPT_MODIFIER='(/nfs_beijing/kubeflow-user/jinxian_2024) '
+[1,0]<stderr>:+++ export CONDA_EXE=/opt/conda/bin/conda
+[1,0]<stderr>:+++ CONDA_EXE=/opt/conda/bin/conda
+[1,0]<stderr>:+++ export _CE_M=
+[1,0]<stderr>:+++ _CE_M=
+[1,0]<stderr>:+++ export _CE_CONDA=
+[1,0]<stderr>:+++ _CE_CONDA=
+[1,0]<stderr>:+++ export CONDA_PYTHON_EXE=/opt/conda/bin/python
+[1,0]<stderr>:+++ CONDA_PYTHON_EXE=/opt/conda/bin/python
+[1,0]<stderr>:+++ . /nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libblas_mkl_activate.sh
+[1,0]<stderr>:++++ export CONDA_MKL_INTERFACE_LAYER_BACKUP=
+[1,0]<stderr>:++++ CONDA_MKL_INTERFACE_LAYER_BACKUP=
+[1,0]<stderr>:++++ export MKL_INTERFACE_LAYER=LP64,GNU
+[1,0]<stderr>:++++ MKL_INTERFACE_LAYER=LP64,GNU
+[1,0]<stderr>:+++ . /nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libglib_activate.sh
+[1,0]<stderr>:++++ export GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
+[1,0]<stderr>:++++ GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
+[1,0]<stderr>:++++ export GSETTINGS_SCHEMA_DIR=/nfs_beijing/kubeflow-user/jinxian_2024/share/glib-2.0/schemas
+[1,0]<stderr>:++++ GSETTINGS_SCHEMA_DIR=/nfs_beijing/kubeflow-user/jinxian_2024/share/glib-2.0/schemas
+[1,0]<stderr>:+++ . /nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/proj4-activate.sh
+[1,0]<stderr>:++++ '[' -n '' ']'
+[1,0]<stderr>:++++ '[' -d /nfs_beijing/kubeflow-user/jinxian_2024/share/proj ']'
+[1,0]<stderr>:++++ export PROJ_LIB=/nfs_beijing/kubeflow-user/jinxian_2024/share/proj
+[1,0]<stderr>:++++ PROJ_LIB=/nfs_beijing/kubeflow-user/jinxian_2024/share/proj
+[1,0]<stderr>:++++ '[' -f /nfs_beijing/kubeflow-user/jinxian_2024/share/proj/copyright_and_licenses.csv ']'
+[1,0]<stderr>:++++ export PROJ_NETWORK=ON
+[1,0]<stderr>:++++ PROJ_NETWORK=ON
+[1,0]<stderr>:++ __conda_hashr
+[1,0]<stderr>:++ '[' -n '' ']'
+[1,0]<stderr>:++ '[' -n '' ']'
+[1,0]<stderr>:++ hash -r
+[1,0]<stderr>:+ commit_id=None
+[1,0]<stderr>:+ export PATH=/nfs_beijing/kubeflow-user/jinxian_2024/bin/:/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+ PATH=/nfs_beijing/kubeflow-user/jinxian_2024/bin/:/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+ export WANDB_DIR=/nfs_beijing_ai/jinxian/rama-scoring1.3.0/logs
+[1,0]<stderr>:+ WANDB_DIR=/nfs_beijing_ai/jinxian/rama-scoring1.3.0/logs
+[1,0]<stderr>:+ export WANDB_IGNORE_GIT=1
+[1,0]<stderr>:+ WANDB_IGNORE_GIT=1
+[1,0]<stderr>:+ wandb_key=b00f1fee3fce213cd72cfeb42122329d758bf176
+[1,0]<stderr>:+ wandb_name=NB_EquiformerV2_train
+[1,0]<stderr>:+ wandb login --relogin b00f1fee3fce213cd72cfeb42122329d758bf176
+[1,0]<stderr>:wandb: Appending key for api.wandb.ai to your netrc file: /nfs_beijing/kubeflow-user/jinjia2024/.netrc
+[1,0]<stderr>:+++ dirname ./run_train_sin_k8s_trial6.sh
+[1,0]<stderr>:++ cd .
+[1,0]<stderr>:++ pwd
+[1,0]<stderr>:+ PROJECT_DIR=/nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/sin_equiformerV2_train_shs/../../
+[1,0]<stderr>:+ experiment_name=run_train_sin_k8s_trial6
+[1,0]<stderr>:+ yaml_path=/nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/sin_equiformerV2_train_shs/../..//yamls/refine_train_yamls/run_train_sin_k8s_trial12.yaml
+[1,0]<stderr>:+ device_ids=0
+[1,0]<stderr>:+ gpus=1
+[1,0]<stderr>:+ epochs=100
+[1,0]<stderr>:+ max_epochs=100
+[1,0]<stderr>:+ log_interval=200
+[1,0]<stderr>:+ eval_interval=2000
+[1,0]<stderr>:+ test_eval_interval=2000
+[1,0]<stderr>:+ save_interval=2000
+[1,0]<stderr>:+ start_decay_after_n_steps=50000
+[1,0]<stderr>:+ decay_every_n_steps=50000
+[1,0]<stderr>:+ warmup_no_steps=20000
+[1,0]<stderr>:+ base_lr=0
+[1,0]<stderr>:+ gradient_accumulation_steps=2
+[1,0]<stderr>:+ override_some_deepspeed_config=gradient_accumulation_steps
+[1,0]<stderr>:+ max_lr=0.0001
+[1,0]<stderr>:+ output_dir=/nfs_beijing_ai/jinxian/rama-scoring1.3.0/trial6/
+[1,0]<stderr>:+ launch_mode=k8s
+[1,0]<stderr>:+ [[ xk8s == xlocal ]]
+[1,0]<stderr>:++ nvidia-smi --query-gpu=name --format=csv,noheader
+[1,0]<stderr>:++ wc -l
+[1,0]<stderr>:+ gpu_count=4
+[1,0]<stderr>:+ echo 'detect visiable gpus: 4'
+[1,0]<stdout>:detect visiable gpus: 4
+[1,0]<stderr>:+ torchrun --nproc_per_node=4 /nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/sin_equiformerV2_train_shs/../..//run_train_sin.py --deepspeed-init-dist --deepspeed_config /nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/sin_equiformerV2_train_shs/../..//deepspeed_config.json --yaml-path /nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/sin_equiformerV2_train_shs/../..//yamls/refine_train_yamls/run_train_sin_k8s_trial12.yaml --epochs 100 --log_interval 200 --eval_interval 2000 --save_interval 2000 --strict_eval --save /nfs_beijing_ai/jinxian/rama-scoring1.3.0/trial6/ --commit-id None --wandb --wandb-key b00f1fee3fce213cd72cfeb42122329d758bf176 --wandb-name NB_EquiformerV2_train --experiment-name run_train_sin_k8s_trial6 --max_epochs 100 --start_decay_after_n_steps 50000 --decay_every_n_steps 50000 --test_eval_interval 2000 --warmup_no_steps 20000 --base_lr 0 --max_lr 0.0001 --override_some_deepspeed_config gradient_accumulation_steps --gradient_accumulation_steps 2 --version 2
+[1,0]<stderr>:WARNING:torch.distributed.run:
+[1,0]<stderr>:*****************************************
+[1,0]<stderr>:Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+[1,0]<stderr>:*****************************************
+[1,0]<stdout>:[2025-01-14 04:10:46,999] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[1,0]<stdout>:[2025-01-14 04:10:46,999] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[1,0]<stdout>:[2025-01-14 04:10:46,999] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[1,0]<stdout>:[2025-01-14 04:10:47,003] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[1,0]<stdout>:[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[1,0]<stdout>:[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[1,0]<stdout>:[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[1,0]<stdout>:[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[1,0]<stdout>:[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[1,0]<stdout>:[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[1,0]<stdout>:[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[1,0]<stdout>:[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[1,0]<stdout>:[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[1,0]<stdout>:[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[1,0]<stdout>:[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[1,0]<stdout>:[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[1,0]<stderr>:2025-01-14 04:11:24,030 INFO 46 [arguments.py:591] torch.distributed initialized? =False
+[1,0]<stdout>:[2025-01-14 04:11:24,030] [INFO] [comm.py:637:init_distributed] cdb=None
+[1,0]<stderr>:2025-01-14 04:11:24,030 INFO 44 [arguments.py:591] torch.distributed initialized? =False
+[1,0]<stdout>:[2025-01-14 04:11:24,031] [INFO] [comm.py:637:init_distributed] cdb=None
+[1,0]<stderr>:2025-01-14 04:11:24,031 INFO 45 [arguments.py:591] torch.distributed initialized? =False
+[1,0]<stderr>:2025-01-14 04:11:24,031 INFO 43 [arguments.py:586] using world size: 4 and model-parallel size: 1 
+[1,0]<stdout>:[2025-01-14 04:11:24,031] [INFO] [comm.py:637:init_distributed] cdb=None
+[1,0]<stderr>:2025-01-14 04:11:24,031 INFO 43 [arguments.py:591] torch.distributed initialized? =False
+[1,0]<stdout>:[2025-01-14 04:11:24,031] [INFO] [comm.py:637:init_distributed] cdb=None
+[1,0]<stdout>:[2025-01-14 04:11:24,031] [INFO] [comm.py:668:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[1,0]<stderr>:2025-01-14 04:11:24,031 INFO 46 [distributed_c10d.py:319] Added key: store_based_barrier_key:1 to store for rank: 3
+[1,0]<stderr>:2025-01-14 04:11:24,032 INFO 45 [distributed_c10d.py:319] Added key: store_based_barrier_key:1 to store for rank: 2
+[1,0]<stderr>:2025-01-14 04:11:24,032 INFO 44 [distributed_c10d.py:319] Added key: store_based_barrier_key:1 to store for rank: 1
+[1,0]<stderr>:2025-01-14 04:11:24,032 INFO 43 [distributed_c10d.py:319] Added key: store_based_barrier_key:1 to store for rank: 0
+[1,0]<stderr>:2025-01-14 04:11:24,032 INFO 44 [distributed_c10d.py:353] Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,032 INFO 43 [distributed_c10d.py:353] Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,033 INFO 43 [mpu_utils.py:62] > initializing model parallel with size 1
+[1,0]<stderr>:2025-01-14 04:11:24,033 INFO 44 [distributed_c10d.py:319] Added key: store_based_barrier_key:2 to store for rank: 1
+[1,0]<stderr>:2025-01-14 04:11:24,033 INFO 43 [distributed_c10d.py:319] Added key: store_based_barrier_key:2 to store for rank: 0
+[1,0]<stderr>:2025-01-14 04:11:24,042 INFO 46 [distributed_c10d.py:353] Rank 3: Completed store-based barrier for key:store_based_barrier_key:1 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,042 INFO 45 [distributed_c10d.py:353] Rank 2: Completed store-based barrier for key:store_based_barrier_key:1 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,042 INFO 46 [distributed_c10d.py:319] Added key: store_based_barrier_key:2 to store for rank: 3
+[1,0]<stderr>:2025-01-14 04:11:24,042 INFO 45 [distributed_c10d.py:319] Added key: store_based_barrier_key:2 to store for rank: 2
+[1,0]<stderr>:2025-01-14 04:11:24,042 INFO 46 [distributed_c10d.py:353] Rank 3: Completed store-based barrier for key:store_based_barrier_key:2 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,042 INFO 45 [distributed_c10d.py:353] Rank 2: Completed store-based barrier for key:store_based_barrier_key:2 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,042 INFO 45 [distributed_c10d.py:319] Added key: store_based_barrier_key:3 to store for rank: 2
+[1,0]<stderr>:2025-01-14 04:11:24,042 INFO 46 [distributed_c10d.py:319] Added key: store_based_barrier_key:3 to store for rank: 3
+[1,0]<stderr>:2025-01-14 04:11:24,043 INFO 44 [distributed_c10d.py:353] Rank 1: Completed store-based barrier for key:store_based_barrier_key:2 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,043 INFO 43 [distributed_c10d.py:353] Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,043 INFO 44 [distributed_c10d.py:319] Added key: store_based_barrier_key:3 to store for rank: 1
+[1,0]<stderr>:2025-01-14 04:11:24,043 INFO 43 [distributed_c10d.py:319] Added key: store_based_barrier_key:3 to store for rank: 0
+[1,0]<stderr>:2025-01-14 04:11:24,043 INFO 43 [distributed_c10d.py:353] Rank 0: Completed store-based barrier for key:store_based_barrier_key:3 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,043 INFO 43 [distributed_c10d.py:319] Added key: store_based_barrier_key:4 to store for rank: 0
+[1,0]<stderr>:2025-01-14 04:11:24,052 INFO 45 [distributed_c10d.py:353] Rank 2: Completed store-based barrier for key:store_based_barrier_key:3 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,053 INFO 45 [distributed_c10d.py:319] Added key: store_based_barrier_key:4 to store for rank: 2
+[1,0]<stderr>:2025-01-14 04:11:24,053 INFO 46 [distributed_c10d.py:353] Rank 3: Completed store-based barrier for key:store_based_barrier_key:3 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,053 INFO 46 [distributed_c10d.py:319] Added key: store_based_barrier_key:4 to store for rank: 3
+[1,0]<stderr>:2025-01-14 04:11:24,053 INFO 44 [distributed_c10d.py:353] Rank 1: Completed store-based barrier for key:store_based_barrier_key:3 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,053 INFO 44 [distributed_c10d.py:319] Added key: store_based_barrier_key:4 to store for rank: 1
+[1,0]<stderr>:2025-01-14 04:11:24,053 INFO 44 [distributed_c10d.py:353] Rank 1: Completed store-based barrier for key:store_based_barrier_key:4 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,053 INFO 43 [distributed_c10d.py:353] Rank 0: Completed store-based barrier for key:store_based_barrier_key:4 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,053 INFO 44 [distributed_c10d.py:319] Added key: store_based_barrier_key:5 to store for rank: 1
+[1,0]<stderr>:2025-01-14 04:11:24,053 INFO 43 [distributed_c10d.py:319] Added key: store_based_barrier_key:5 to store for rank: 0
+[1,0]<stderr>:2025-01-14 04:11:24,063 INFO 45 [distributed_c10d.py:353] Rank 2: Completed store-based barrier for key:store_based_barrier_key:4 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,063 INFO 46 [distributed_c10d.py:353] Rank 3: Completed store-based barrier for key:store_based_barrier_key:4 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,063 INFO 45 [distributed_c10d.py:319] Added key: store_based_barrier_key:5 to store for rank: 2
+[1,0]<stderr>:2025-01-14 04:11:24,063 INFO 46 [distributed_c10d.py:319] Added key: store_based_barrier_key:5 to store for rank: 3
+[1,0]<stderr>:2025-01-14 04:11:24,063 INFO 45 [distributed_c10d.py:353] Rank 2: Completed store-based barrier for key:store_based_barrier_key:5 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,063 INFO 46 [distributed_c10d.py:353] Rank 3: Completed store-based barrier for key:store_based_barrier_key:5 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,063 INFO 45 [distributed_c10d.py:319] Added key: store_based_barrier_key:6 to store for rank: 2
+[1,0]<stderr>:2025-01-14 04:11:24,063 INFO 46 [distributed_c10d.py:319] Added key: store_based_barrier_key:6 to store for rank: 3
+[1,0]<stderr>:2025-01-14 04:11:24,064 INFO 44 [distributed_c10d.py:353] Rank 1: Completed store-based barrier for key:store_based_barrier_key:5 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,064 INFO 43 [distributed_c10d.py:353] Rank 0: Completed store-based barrier for key:store_based_barrier_key:5 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,064 INFO 44 [distributed_c10d.py:319] Added key: store_based_barrier_key:6 to store for rank: 1
+[1,0]<stderr>:2025-01-14 04:11:24,064 INFO 43 [distributed_c10d.py:319] Added key: store_based_barrier_key:6 to store for rank: 0
+[1,0]<stderr>:2025-01-14 04:11:24,064 INFO 44 [distributed_c10d.py:353] Rank 1: Completed store-based barrier for key:store_based_barrier_key:6 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,064 INFO 43 [distributed_c10d.py:353] Rank 0: Completed store-based barrier for key:store_based_barrier_key:6 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,064 INFO 44 [arguments.py:639] nb-refinement-0-2kwwh-worker-0-DP1/4-MP0/1-{'backend':'nccl','world_size':4,'rank':1,'local_rank':1,'init_method':'deepspeed_init_dist','device':1,'cuda':True,'device_num':4}
+[1,0]<stderr>:2025-01-14 04:11:24,064 INFO 43 [arguments.py:639] nb-refinement-0-2kwwh-worker-0-DP0/4-MP0/1-{'backend':'nccl','world_size':4,'rank':0,'local_rank':0,'init_method':'deepspeed_init_dist','device':0,'cuda':True,'device_num':4}
+[1,0]<stderr>:2025-01-14 04:11:24,073 INFO 45 [distributed_c10d.py:353] Rank 2: Completed store-based barrier for key:store_based_barrier_key:6 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,073 INFO 45 [arguments.py:639] nb-refinement-0-2kwwh-worker-0-DP2/4-MP0/1-{'backend':'nccl','world_size':4,'rank':2,'local_rank':2,'init_method':'deepspeed_init_dist','device':2,'cuda':True,'device_num':4}
+[1,0]<stderr>:2025-01-14 04:11:24,073 INFO 46 [distributed_c10d.py:353] Rank 3: Completed store-based barrier for key:store_based_barrier_key:6 with 4 nodes.
+[1,0]<stderr>:2025-01-14 04:11:24,073 INFO 46 [arguments.py:639] nb-refinement-0-2kwwh-worker-0-DP3/4-MP0/1-{'backend':'nccl','world_size':4,'rank':3,'local_rank':3,'init_method':'deepspeed_init_dist','device':3,'cuda':True,'device_num':4}
+[1,0]<stderr>:2025-01-14 04:11:24,141 INFO 45 [run_train_sin.py:44] config_data:
+[1,0]<stderr>:  ca_only: true
+[1,0]<stderr>:  cdr3_col: CDR3_RMSD_CA
+[1,0]<stderr>:  cdr3_threshold: 0.05
+[1,0]<stderr>:  chain_col: chain
+[1,0]<stderr>:  dataset_type: NB
+[1,0]<stderr>:  debug: false
+[1,0]<stderr>:  fast_warm_up_set:
+[1,0]<stderr>:    size_ratio: 0.05
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  label_col: RMSD_CA
+[1,0]<stderr>:  min_num_workers: 4
+[1,0]<stderr>:  num_workers: 4
+[1,0]<stderr>:  pdb_fpath_col: pred_path
+[1,0]<stderr>:  prefetch_factor: 1
+[1,0]<stderr>:  rmsd_scale:
+[1,0]<stderr>:  - scale_order: 1
+[1,0]<stderr>:    scale_temp: 0.5
+[1,0]<stderr>:    target: RMSD_CA
+[1,0]<stderr>:  - scale_order: 1
+[1,0]<stderr>:    scale_temp: 0.5
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  sample_num: -1
+[1,0]<stderr>:  screener:
+[1,0]<stderr>:  - class: UpperboundScreener
+[1,0]<stderr>:    name: RMSD_CA
+[1,0]<stderr>:    upperbound: 5
+[1,0]<stderr>:  - class: UpperboundScreener
+[1,0]<stderr>:    name: CDR3_RMSD_CA
+[1,0]<stderr>:    upperbound: 10
+[1,0]<stderr>:  self_analyze:
+[1,0]<stderr>:  - bin:
+[1,0]<stderr>:    - 0
+[1,0]<stderr>:    - 0.5
+[1,0]<stderr>:    - 0.8
+[1,0]<stderr>:    - 1.1
+[1,0]<stderr>:    - 1.4
+[1,0]<stderr>:    - 1.7
+[1,0]<stderr>:    - 2.0
+[1,0]<stderr>:    - 2.4
+[1,0]<stderr>:    - 2.8
+[1,0]<stderr>:    - 3.2
+[1,0]<stderr>:    - 3.6
+[1,0]<stderr>:    - 4.0
+[1,0]<stderr>:    - 200000
+[1,0]<stderr>:    target: RMSD_CA
+[1,0]<stderr>:  - bin:
+[1,0]<stderr>:    - 0
+[1,0]<stderr>:    - 0.6
+[1,0]<stderr>:    - 1.0
+[1,0]<stderr>:    - 1.4
+[1,0]<stderr>:    - 1.8
+[1,0]<stderr>:    - 2.2
+[1,0]<stderr>:    - 2.6
+[1,0]<stderr>:    - 3.0
+[1,0]<stderr>:    - 3.5
+[1,0]<stderr>:    - 4.0
+[1,0]<stderr>:    - 4.5
+[1,0]<stderr>:    - 5.0
+[1,0]<stderr>:    - 5.5
+[1,0]<stderr>:    - 6.0
+[1,0]<stderr>:    - 7.0
+[1,0]<stderr>:    - 8.0
+[1,0]<stderr>:    - 100000
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  test_filepath: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/model_zoo_nb_no4_95_testset_0522.csv
+[1,0]<stderr>:  train_filepath:
+[1,0]<stderr>:  - loss_weight: 1
+[1,0]<stderr>:    name: esmflow_modeller_openmm_torchMD
+[1,0]<stderr>:    path: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/NB_train_dataset_train_all_decoys.csv
+[1,0]<stderr>:    weight: 1
+[1,0]<stderr>:  trn_batch_size: 8
+[1,0]<stderr>:  val_batch_size: 1
+[1,0]<stderr>:  valid_filepath: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/NB_train_dataset_validation_one_decoys_each_model.csv
+[1,0]<stderr>:  valid_head: 100
+[1,0]<stderr>:config_model:
+[1,0]<stderr>:  alpha_drop: 0.1
+[1,0]<stderr>:  attn_activation: silu
+[1,0]<stderr>:  attn_alpha_channels: 32
+[1,0]<stderr>:  attn_hidden_channels: 64
+[1,0]<stderr>:  attn_value_channels: 8
+[1,0]<stderr>:  distance_function: gaussian
+[1,0]<stderr>:  drop_path_rate: 0.05
+[1,0]<stderr>:  edge_channels: 32
+[1,0]<stderr>:  ffn_activation: silu
+[1,0]<stderr>:  ffn_hidden_channels: 64
+[1,0]<stderr>:  grid_resolution: 14
+[1,0]<stderr>:  lmax_list:
+[1,0]<stderr>:  - 2
+[1,0]<stderr>:  max_neighbors: 40
+[1,0]<stderr>:  max_num_atom_names: 37
+[1,0]<stderr>:  max_num_elements: 90
+[1,0]<stderr>:  max_num_residues: 21
+[1,0]<stderr>:  max_radius: 12.0
+[1,0]<stderr>:  mmax_list:
+[1,0]<stderr>:  - 2
+[1,0]<stderr>:  model_name: equiformer_v2
+[1,0]<stderr>:  model_reload_path: false
+[1,0]<stderr>:  norm_type: layer_norm_sh
+[1,0]<stderr>:  num_distance_basis: 512
+[1,0]<stderr>:  num_heads: 2
+[1,0]<stderr>:  num_layers: 2
+[1,0]<stderr>:  num_sphere_samples: 32
+[1,0]<stderr>:  otf_graph: true
+[1,0]<stderr>:  proj_drop: 0.0
+[1,0]<stderr>:  regress_forces: true
+[1,0]<stderr>:  share_atom_edge_embedding: false
+[1,0]<stderr>:  sphere_channels: 24
+[1,0]<stderr>:  use_atom_edge_embedding: true
+[1,0]<stderr>:  use_attn_renorm: true
+[1,0]<stderr>:  use_equivariant_block: true
+[1,0]<stderr>:  use_gate_act: false
+[1,0]<stderr>:  use_grid_mlp: true
+[1,0]<stderr>:  use_invariant_block: false
+[1,0]<stderr>:  use_pbc: false
+[1,0]<stderr>:  use_s2_act_attn: false
+[1,0]<stderr>:  use_sep_s2_act: true
+[1,0]<stderr>:  weight_init: uniform
+[1,0]<stderr>:config_runtime:
+[1,0]<stderr>:  acc_grad: 1
+[1,0]<stderr>:  angle_loss_mean_or_sum: mean
+[1,0]<stderr>:  cdr1_loss_weight: 5
+[1,0]<stderr>:  cdr2_loss_weight: 5
+[1,0]<stderr>:  cdr3_loss_weight: 10
+[1,0]<stderr>:  cg_loss_weight: 10
+[1,0]<stderr>:  clip: 0.0
+[1,0]<stderr>:  device: cuda
+[1,0]<stderr>:  distmap_loss_mean_or_sum: mean
+[1,0]<stderr>:  ema_decay: 0.9999
+[1,0]<stderr>:  ema_start_epoch: 10
+[1,0]<stderr>:  epoch: 100
+[1,0]<stderr>:  learning_rate: 0.001
+[1,0]<stderr>:  log_interval: 500
+[1,0]<stderr>:  log_interval_for_test: 4000
+[1,0]<stderr>:  loss_fn:
+[1,0]<stderr>:  - output: 0
+[1,0]<stderr>:    start_iter: 0
+[1,0]<stderr>:    target: CDR3_RMSD_CA_scale
+[1,0]<stderr>:    type: magnitude_loss
+[1,0]<stderr>:    weight: 1
+[1,0]<stderr>:  no_cdr_loss_weight: 1
+[1,0]<stderr>:  num_epochs: 100000000
+[1,0]<stderr>:  optimizer: adam
+[1,0]<stderr>:  resume_from_ckpt: false
+[1,0]<stderr>:  seed: 13
+[1,0]<stderr>:  tran_loss_mean_or_sum: mean
+[1,0]<stderr>:  tran_mse_loss_mean_or_sum: mean
+[1,0]<stderr>:  use_CDR_loss: true
+[1,0]<stderr>:  use_cg_loss: true
+[1,0]<stderr>:  use_fsdp: false
+[1,0]<stderr>:  use_tran_mse_loss: true
+[1,0]<stderr>:  wd: 1.0e-08
+[1,0]<stderr>:  weight_angle: 1
+[1,0]<stderr>:  weight_angle_decay_rate: 0.99
+[1,0]<stderr>:  weight_tran: 1
+[1,0]<stderr>:
+[1,0]<stdout>:ready to training!!!!!!!!
+[1,0]<stderr>:2025-01-14 04:11:24,147 INFO 44 [run_train_sin.py:44] config_data:
+[1,0]<stderr>:  ca_only: true
+[1,0]<stderr>:  cdr3_col: CDR3_RMSD_CA
+[1,0]<stderr>:  cdr3_threshold: 0.05
+[1,0]<stderr>:  chain_col: chain
+[1,0]<stderr>:  dataset_type: NB
+[1,0]<stderr>:  debug: false
+[1,0]<stderr>:  fast_warm_up_set:
+[1,0]<stderr>:    size_ratio: 0.05
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  label_col: RMSD_CA
+[1,0]<stderr>:  min_num_workers: 4
+[1,0]<stderr>:  num_workers: 4
+[1,0]<stderr>:  pdb_fpath_col: pred_path
+[1,0]<stderr>:  prefetch_factor: 1
+[1,0]<stderr>:  rmsd_scale:
+[1,0]<stderr>:  - scale_order: 1
+[1,0]<stderr>:    scale_temp: 0.5
+[1,0]<stderr>:    target: RMSD_CA
+[1,0]<stderr>:  - scale_order: 1
+[1,0]<stderr>:    scale_temp: 0.5
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  sample_num: -1
+[1,0]<stderr>:  screener:
+[1,0]<stderr>:  - class: UpperboundScreener
+[1,0]<stderr>:    name: RMSD_CA
+[1,0]<stderr>:    upperbound: 5
+[1,0]<stderr>:  - class: UpperboundScreener
+[1,0]<stderr>:    name: CDR3_RMSD_CA
+[1,0]<stderr>:    upperbound: 10
+[1,0]<stderr>:  self_analyze:
+[1,0]<stderr>:  - bin:
+[1,0]<stderr>:    - 0
+[1,0]<stderr>:    - 0.5
+[1,0]<stderr>:    - 0.8
+[1,0]<stderr>:    - 1.1
+[1,0]<stderr>:    - 1.4
+[1,0]<stderr>:    - 1.7
+[1,0]<stderr>:    - 2.0
+[1,0]<stderr>:    - 2.4
+[1,0]<stderr>:    - 2.8
+[1,0]<stderr>:    - 3.2
+[1,0]<stderr>:    - 3.6
+[1,0]<stderr>:    - 4.0
+[1,0]<stderr>:    - 200000
+[1,0]<stderr>:    target: RMSD_CA
+[1,0]<stderr>:  - bin:
+[1,0]<stderr>:    - 0
+[1,0]<stderr>:    - 0.6
+[1,0]<stderr>:    - 1.0
+[1,0]<stderr>:    - 1.4
+[1,0]<stderr>:    - 1.8
+[1,0]<stderr>:    - 2.2
+[1,0]<stderr>:    - 2.6
+[1,0]<stderr>:    - 3.0
+[1,0]<stderr>:    - 3.5
+[1,0]<stderr>:    - 4.0
+[1,0]<stderr>:    - 4.5
+[1,0]<stderr>:    - 5.0
+[1,0]<stderr>:    - 5.5
+[1,0]<stderr>:    - 6.0
+[1,0]<stderr>:    - 7.0
+[1,0]<stderr>:    - 8.0
+[1,0]<stderr>:    - 100000
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  test_filepath: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/model_zoo_nb_no4_95_testset_0522.csv
+[1,0]<stderr>:  train_filepath:
+[1,0]<stderr>:  - loss_weight: 1
+[1,0]<stderr>:    name: esmflow_modeller_openmm_torchMD
+[1,0]<stderr>:    path: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/NB_train_dataset_train_all_decoys.csv
+[1,0]<stderr>:    weight: 1
+[1,0]<stderr>:  trn_batch_size: 8
+[1,0]<stderr>:  val_batch_size: 1
+[1,0]<stderr>:  valid_filepath: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/NB_train_dataset_validation_one_decoys_each_model.csv
+[1,0]<stderr>:  valid_head: 100
+[1,0]<stderr>:config_model:
+[1,0]<stderr>:  alpha_drop: 0.1
+[1,0]<stderr>:  attn_activation: silu
+[1,0]<stderr>:  attn_alpha_channels: 32
+[1,0]<stderr>:  attn_hidden_channels: 64
+[1,0]<stderr>:  attn_value_channels: 8
+[1,0]<stderr>:  distance_function: gaussian
+[1,0]<stderr>:  drop_path_rate: 0.05
+[1,0]<stderr>:  edge_channels: 32
+[1,0]<stderr>:  ffn_activation: silu
+[1,0]<stderr>:  ffn_hidden_channels: 64
+[1,0]<stderr>:  grid_resolution: 14
+[1,0]<stderr>:  lmax_list:
+[1,0]<stderr>:  - 2
+[1,0]<stderr>:  max_neighbors: 40
+[1,0]<stderr>:  max_num_atom_names: 37
+[1,0]<stderr>:  max_num_elements: 90
+[1,0]<stderr>:  max_num_residues: 21
+[1,0]<stderr>:  max_radius: 12.0
+[1,0]<stderr>:  mmax_list:
+[1,0]<stderr>:  - 2
+[1,0]<stderr>:  model_name: equiformer_v2
+[1,0]<stderr>:  model_reload_path: false
+[1,0]<stderr>:  norm_type: layer_norm_sh
+[1,0]<stderr>:  num_distance_basis: 512
+[1,0]<stderr>:  num_heads: 2
+[1,0]<stderr>:  num_layers: 2
+[1,0]<stderr>:  num_sphere_samples: 32
+[1,0]<stderr>:  otf_graph: true
+[1,0]<stderr>:  proj_drop: 0.0
+[1,0]<stderr>:  regress_forces: true
+[1,0]<stderr>:  share_atom_edge_embedding: false
+[1,0]<stderr>:  sphere_channels: 24
+[1,0]<stderr>:  use_atom_edge_embedding: true
+[1,0]<stderr>:  use_attn_renorm: true
+[1,0]<stderr>:  use_equivariant_block: true
+[1,0]<stderr>:  use_gate_act: false
+[1,0]<stderr>:  use_grid_mlp: true
+[1,0]<stderr>:  use_invariant_block: false
+[1,0]<stderr>:  use_pbc: false
+[1,0]<stderr>:  use_s2_act_attn: false
+[1,0]<stderr>:  use_sep_s2_act: true
+[1,0]<stderr>:  weight_init: uniform
+[1,0]<stderr>:config_runtime:
+[1,0]<stderr>:  acc_grad: 1
+[1,0]<stderr>:  angle_loss_mean_or_sum: mean
+[1,0]<stderr>:  cdr1_loss_weight: 5
+[1,0]<stderr>:  cdr2_loss_weight: 5
+[1,0]<stderr>:  cdr3_loss_weight: 10
+[1,0]<stderr>:  cg_loss_weight: 10
+[1,0]<stderr>:  clip: 0.0
+[1,0]<stderr>:  device: cuda
+[1,0]<stderr>:  distmap_loss_mean_or_sum: mean
+[1,0]<stderr>:  ema_decay: 0.9999
+[1,0]<stderr>:  ema_start_epoch: 10
+[1,0]<stderr>:  epoch: 100
+[1,0]<stderr>:  learning_rate: 0.001
+[1,0]<stderr>:  log_interval: 500
+[1,0]<stderr>:  log_interval_for_test: 4000
+[1,0]<stderr>:  loss_fn:
+[1,0]<stderr>:  - output: 0
+[1,0]<stderr>:    start_iter: 0
+[1,0]<stderr>:    target: CDR3_RMSD_CA_scale
+[1,0]<stderr>:    type: magnitude_loss
+[1,0]<stderr>:    weight: 1
+[1,0]<stderr>:  no_cdr_loss_weight: 1
+[1,0]<stderr>:  num_epochs: 100000000
+[1,0]<stderr>:  optimizer: adam
+[1,0]<stderr>:  resume_from_ckpt: false
+[1,0]<stderr>:  seed: 13
+[1,0]<stderr>:  tran_loss_mean_or_sum: mean
+[1,0]<stderr>:  tran_mse_loss_mean_or_sum: mean
+[1,0]<stderr>:  use_CDR_loss: true
+[1,0]<stderr>:  use_cg_loss: true
+[1,0]<stderr>:  use_fsdp: false
+[1,0]<stderr>:  use_tran_mse_loss: true
+[1,0]<stderr>:  wd: 1.0e-08
+[1,0]<stderr>:  weight_angle: 1
+[1,0]<stderr>:  weight_angle_decay_rate: 0.99
+[1,0]<stderr>:  weight_tran: 1
+[1,0]<stderr>:
+[1,0]<stdout>:ready to training!!!!!!!!
+[1,0]<stderr>:2025-01-14 04:11:24,157 INFO 43 [run_train_sin.py:44] config_data:
+[1,0]<stderr>:  ca_only: true
+[1,0]<stderr>:  cdr3_col: CDR3_RMSD_CA
+[1,0]<stderr>:  cdr3_threshold: 0.05
+[1,0]<stderr>:  chain_col: chain
+[1,0]<stderr>:  dataset_type: NB
+[1,0]<stderr>:  debug: false
+[1,0]<stderr>:  fast_warm_up_set:
+[1,0]<stderr>:    size_ratio: 0.05
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  label_col: RMSD_CA
+[1,0]<stderr>:  min_num_workers: 4
+[1,0]<stderr>:  num_workers: 4
+[1,0]<stderr>:  pdb_fpath_col: pred_path
+[1,0]<stderr>:  prefetch_factor: 1
+[1,0]<stderr>:  rmsd_scale:
+[1,0]<stderr>:  - scale_order: 1
+[1,0]<stderr>:    scale_temp: 0.5
+[1,0]<stderr>:    target: RMSD_CA
+[1,0]<stderr>:  - scale_order: 1
+[1,0]<stderr>:    scale_temp: 0.5
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  sample_num: -1
+[1,0]<stderr>:  screener:
+[1,0]<stderr>:  - class: UpperboundScreener
+[1,0]<stderr>:    name: RMSD_CA
+[1,0]<stderr>:    upperbound: 5
+[1,0]<stderr>:  - class: UpperboundScreener
+[1,0]<stderr>:    name: CDR3_RMSD_CA
+[1,0]<stderr>:    upperbound: 10
+[1,0]<stderr>:  self_analyze:
+[1,0]<stderr>:  - bin:
+[1,0]<stderr>:    - 0
+[1,0]<stderr>:    - 0.5
+[1,0]<stderr>:    - 0.8
+[1,0]<stderr>:    - 1.1
+[1,0]<stderr>:    - 1.4
+[1,0]<stderr>:    - 1.7
+[1,0]<stderr>:    - 2.0
+[1,0]<stderr>:    - 2.4
+[1,0]<stderr>:    - 2.8
+[1,0]<stderr>:    - 3.2
+[1,0]<stderr>:    - 3.6
+[1,0]<stderr>:    - 4.0
+[1,0]<stderr>:    - 200000
+[1,0]<stderr>:    target: RMSD_CA
+[1,0]<stderr>:  - bin:
+[1,0]<stderr>:    - 0
+[1,0]<stderr>:    - 0.6
+[1,0]<stderr>:    - 1.0
+[1,0]<stderr>:    - 1.4
+[1,0]<stderr>:    - 1.8
+[1,0]<stderr>:    - 2.2
+[1,0]<stderr>:    - 2.6
+[1,0]<stderr>:    - 3.0
+[1,0]<stderr>:    - 3.5
+[1,0]<stderr>:    - 4.0
+[1,0]<stderr>:    - 4.5
+[1,0]<stderr>:    - 5.0
+[1,0]<stderr>:    - 5.5
+[1,0]<stderr>:    - 6.0
+[1,0]<stderr>:    - 7.0
+[1,0]<stderr>:    - 8.0
+[1,0]<stderr>:    - 100000
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  test_filepath: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/model_zoo_nb_no4_95_testset_0522.csv
+[1,0]<stderr>:  train_filepath:
+[1,0]<stderr>:  - loss_weight: 1
+[1,0]<stderr>:    name: esmflow_modeller_openmm_torchMD
+[1,0]<stderr>:    path: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/NB_train_dataset_train_all_decoys.csv
+[1,0]<stderr>:    weight: 1
+[1,0]<stderr>:  trn_batch_size: 8
+[1,0]<stderr>:  val_batch_size: 1
+[1,0]<stderr>:  valid_filepath: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/NB_train_dataset_validation_one_decoys_each_model.csv
+[1,0]<stderr>:  valid_head: 100
+[1,0]<stderr>:config_model:
+[1,0]<stderr>:  alpha_drop: 0.1
+[1,0]<stderr>:  attn_activation: silu
+[1,0]<stderr>:  attn_alpha_channels: 32
+[1,0]<stderr>:  attn_hidden_channels: 64
+[1,0]<stderr>:  attn_value_channels: 8
+[1,0]<stderr>:  distance_function: gaussian
+[1,0]<stderr>:  drop_path_rate: 0.05
+[1,0]<stderr>:  edge_channels: 32
+[1,0]<stderr>:  ffn_activation: silu
+[1,0]<stderr>:  ffn_hidden_channels: 64
+[1,0]<stderr>:  grid_resolution: 14
+[1,0]<stderr>:  lmax_list:
+[1,0]<stderr>:  - 2
+[1,0]<stderr>:  max_neighbors: 40
+[1,0]<stderr>:  max_num_atom_names: 37
+[1,0]<stderr>:  max_num_elements: 90
+[1,0]<stderr>:  max_num_residues: 21
+[1,0]<stderr>:  max_radius: 12.0
+[1,0]<stderr>:  mmax_list:
+[1,0]<stderr>:  - 2
+[1,0]<stderr>:  model_name: equiformer_v2
+[1,0]<stderr>:  model_reload_path: false
+[1,0]<stderr>:  norm_type: layer_norm_sh
+[1,0]<stderr>:  num_distance_basis: 512
+[1,0]<stderr>:  num_heads: 2
+[1,0]<stderr>:  num_layers: 2
+[1,0]<stderr>:  num_sphere_samples: 32
+[1,0]<stderr>:  otf_graph: true
+[1,0]<stderr>:  proj_drop: 0.0
+[1,0]<stderr>:  regress_forces: true
+[1,0]<stderr>:  share_atom_edge_embedding: false
+[1,0]<stderr>:  sphere_channels: 24
+[1,0]<stderr>:  use_atom_edge_embedding: true
+[1,0]<stderr>:  use_attn_renorm: true
+[1,0]<stderr>:  use_equivariant_block: true
+[1,0]<stderr>:  use_gate_act: false
+[1,0]<stderr>:  use_grid_mlp: true
+[1,0]<stderr>:  use_invariant_block: false
+[1,0]<stderr>:  use_pbc: false
+[1,0]<stderr>:  use_s2_act_attn: false
+[1,0]<stderr>:  use_sep_s2_act: true
+[1,0]<stderr>:  weight_init: uniform
+[1,0]<stderr>:config_runtime:
+[1,0]<stderr>:  acc_grad: 1
+[1,0]<stderr>:  angle_loss_mean_or_sum: mean
+[1,0]<stderr>:  cdr1_loss_weight: 5
+[1,0]<stderr>:  cdr2_loss_weight: 5
+[1,0]<stderr>:  cdr3_loss_weight: 10
+[1,0]<stderr>:  cg_loss_weight: 10
+[1,0]<stderr>:  clip: 0.0
+[1,0]<stderr>:  device: cuda
+[1,0]<stderr>:  distmap_loss_mean_or_sum: mean
+[1,0]<stderr>:  ema_decay: 0.9999
+[1,0]<stderr>:  ema_start_epoch: 10
+[1,0]<stderr>:  epoch: 100
+[1,0]<stderr>:  learning_rate: 0.001
+[1,0]<stderr>:  log_interval: 500
+[1,0]<stderr>:  log_interval_for_test: 4000
+[1,0]<stderr>:  loss_fn:
+[1,0]<stderr>:  - output: 0
+[1,0]<stderr>:    start_iter: 0
+[1,0]<stderr>:    target: CDR3_RMSD_CA_scale
+[1,0]<stderr>:    type: magnitude_loss
+[1,0]<stderr>:    weight: 1
+[1,0]<stderr>:  no_cdr_loss_weight: 1
+[1,0]<stderr>:  num_epochs: 100000000
+[1,0]<stderr>:  optimizer: adam
+[1,0]<stderr>:  resume_from_ckpt: false
+[1,0]<stderr>:  seed: 13
+[1,0]<stderr>:  tran_loss_mean_or_sum: mean
+[1,0]<stderr>:  tran_mse_loss_mean_or_sum: mean
+[1,0]<stderr>:  use_CDR_loss: true
+[1,0]<stderr>:  use_cg_loss: true
+[1,0]<stderr>:  use_fsdp: false
+[1,0]<stderr>:  use_tran_mse_loss: true
+[1,0]<stderr>:  wd: 1.0e-08
+[1,0]<stderr>:  weight_angle: 1
+[1,0]<stderr>:  weight_angle_decay_rate: 0.99
+[1,0]<stderr>:  weight_tran: 1
+[1,0]<stderr>:
+[1,0]<stdout>:ready to training!!!!!!!!
+[1,0]<stderr>:2025-01-14 04:11:24,171 INFO 46 [run_train_sin.py:44] config_data:
+[1,0]<stderr>:  ca_only: true
+[1,0]<stderr>:  cdr3_col: CDR3_RMSD_CA
+[1,0]<stderr>:  cdr3_threshold: 0.05
+[1,0]<stderr>:  chain_col: chain
+[1,0]<stderr>:  dataset_type: NB
+[1,0]<stderr>:  debug: false
+[1,0]<stderr>:  fast_warm_up_set:
+[1,0]<stderr>:    size_ratio: 0.05
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  label_col: RMSD_CA
+[1,0]<stderr>:  min_num_workers: 4
+[1,0]<stderr>:  num_workers: 4
+[1,0]<stderr>:  pdb_fpath_col: pred_path
+[1,0]<stderr>:  prefetch_factor: 1
+[1,0]<stderr>:  rmsd_scale:
+[1,0]<stderr>:  - scale_order: 1
+[1,0]<stderr>:    scale_temp: 0.5
+[1,0]<stderr>:    target: RMSD_CA
+[1,0]<stderr>:  - scale_order: 1
+[1,0]<stderr>:    scale_temp: 0.5
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  sample_num: -1
+[1,0]<stderr>:  screener:
+[1,0]<stderr>:  - class: UpperboundScreener
+[1,0]<stderr>:    name: RMSD_CA
+[1,0]<stderr>:    upperbound: 5
+[1,0]<stderr>:  - class: UpperboundScreener
+[1,0]<stderr>:    name: CDR3_RMSD_CA
+[1,0]<stderr>:    upperbound: 10
+[1,0]<stderr>:  self_analyze:
+[1,0]<stderr>:  - bin:
+[1,0]<stderr>:    - 0
+[1,0]<stderr>:    - 0.5
+[1,0]<stderr>:    - 0.8
+[1,0]<stderr>:    - 1.1
+[1,0]<stderr>:    - 1.4
+[1,0]<stderr>:    - 1.7
+[1,0]<stderr>:    - 2.0
+[1,0]<stderr>:    - 2.4
+[1,0]<stderr>:    - 2.8
+[1,0]<stderr>:    - 3.2
+[1,0]<stderr>:    - 3.6
+[1,0]<stderr>:    - 4.0
+[1,0]<stderr>:    - 200000
+[1,0]<stderr>:    target: RMSD_CA
+[1,0]<stderr>:  - bin:
+[1,0]<stderr>:    - 0
+[1,0]<stderr>:    - 0.6
+[1,0]<stderr>:    - 1.0
+[1,0]<stderr>:    - 1.4
+[1,0]<stderr>:    - 1.8
+[1,0]<stderr>:    - 2.2
+[1,0]<stderr>:    - 2.6
+[1,0]<stderr>:    - 3.0
+[1,0]<stderr>:    - 3.5
+[1,0]<stderr>:    - 4.0
+[1,0]<stderr>:    - 4.5
+[1,0]<stderr>:    - 5.0
+[1,0]<stderr>:    - 5.5
+[1,0]<stderr>:    - 6.0
+[1,0]<stderr>:    - 7.0
+[1,0]<stderr>:    - 8.0
+[1,0]<stderr>:    - 100000
+[1,0]<stderr>:    target: CDR3_RMSD_CA
+[1,0]<stderr>:  test_filepath: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/model_zoo_nb_no4_95_testset_0522.csv
+[1,0]<stderr>:  train_filepath:
+[1,0]<stderr>:  - loss_weight: 1
+[1,0]<stderr>:    name: esmflow_modeller_openmm_torchMD
+[1,0]<stderr>:    path: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/NB_train_dataset_train_all_decoys.csv
+[1,0]<stderr>:    weight: 1
+[1,0]<stderr>:  trn_batch_size: 8
+[1,0]<stderr>:  val_batch_size: 1
+[1,0]<stderr>:  valid_filepath: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/NB_train_dataset_validation_one_decoys_each_model.csv
+[1,0]<stderr>:  valid_head: 100
+[1,0]<stderr>:config_model:
+[1,0]<stderr>:  alpha_drop: 0.1
+[1,0]<stderr>:  attn_activation: silu
+[1,0]<stderr>:  attn_alpha_channels: 32
+[1,0]<stderr>:  attn_hidden_channels: 64
+[1,0]<stderr>:  attn_value_channels: 8
+[1,0]<stderr>:  distance_function: gaussian
+[1,0]<stderr>:  drop_path_rate: 0.05
+[1,0]<stderr>:  edge_channels: 32
+[1,0]<stderr>:  ffn_activation: silu
+[1,0]<stderr>:  ffn_hidden_channels: 64
+[1,0]<stderr>:  grid_resolution: 14
+[1,0]<stderr>:  lmax_list:
+[1,0]<stderr>:  - 2
+[1,0]<stderr>:  max_neighbors: 40
+[1,0]<stderr>:  max_num_atom_names: 37
+[1,0]<stderr>:  max_num_elements: 90
+[1,0]<stderr>:  max_num_residues: 21
+[1,0]<stderr>:  max_radius: 12.0
+[1,0]<stderr>:  mmax_list:
+[1,0]<stderr>:  - 2
+[1,0]<stderr>:  model_name: equiformer_v2
+[1,0]<stderr>:  model_reload_path: false
+[1,0]<stderr>:  norm_type: layer_norm_sh
+[1,0]<stderr>:  num_distance_basis: 512
+[1,0]<stderr>:  num_heads: 2
+[1,0]<stderr>:  num_layers: 2
+[1,0]<stderr>:  num_sphere_samples: 32
+[1,0]<stderr>:  otf_graph: true
+[1,0]<stderr>:  proj_drop: 0.0
+[1,0]<stderr>:  regress_forces: true
+[1,0]<stderr>:  share_atom_edge_embedding: false
+[1,0]<stderr>:  sphere_channels: 24
+[1,0]<stderr>:  use_atom_edge_embedding: true
+[1,0]<stderr>:  use_attn_renorm: true
+[1,0]<stderr>:  use_equivariant_block: true
+[1,0]<stderr>:  use_gate_act: false
+[1,0]<stderr>:  use_grid_mlp: true
+[1,0]<stderr>:  use_invariant_block: false
+[1,0]<stderr>:  use_pbc: false
+[1,0]<stderr>:  use_s2_act_attn: false
+[1,0]<stderr>:  use_sep_s2_act: true
+[1,0]<stderr>:  weight_init: uniform
+[1,0]<stderr>:config_runtime:
+[1,0]<stderr>:  acc_grad: 1
+[1,0]<stderr>:  angle_loss_mean_or_sum: mean
+[1,0]<stderr>:  cdr1_loss_weight: 5
+[1,0]<stderr>:  cdr2_loss_weight: 5
+[1,0]<stderr>:  cdr3_loss_weight: 10
+[1,0]<stderr>:  cg_loss_weight: 10
+[1,0]<stderr>:  clip: 0.0
+[1,0]<stderr>:  device: cuda
+[1,0]<stderr>:  distmap_loss_mean_or_sum: mean
+[1,0]<stderr>:  ema_decay: 0.9999
+[1,0]<stderr>:  ema_start_epoch: 10
+[1,0]<stderr>:  epoch: 100
+[1,0]<stderr>:  learning_rate: 0.001
+[1,0]<stderr>:  log_interval: 500
+[1,0]<stderr>:  log_interval_for_test: 4000
+[1,0]<stderr>:  loss_fn:
+[1,0]<stderr>:  - output: 0
+[1,0]<stderr>:    start_iter: 0
+[1,0]<stderr>:    target: CDR3_RMSD_CA_scale
+[1,0]<stderr>:    type: magnitude_loss
+[1,0]<stderr>:    weight: 1
+[1,0]<stderr>:  no_cdr_loss_weight: 1
+[1,0]<stderr>:  num_epochs: 100000000
+[1,0]<stderr>:  optimizer: adam
+[1,0]<stderr>:  resume_from_ckpt: false
+[1,0]<stderr>:  seed: 13
+[1,0]<stderr>:  tran_loss_mean_or_sum: mean
+[1,0]<stderr>:  tran_mse_loss_mean_or_sum: mean
+[1,0]<stderr>:  use_CDR_loss: true
+[1,0]<stderr>:  use_cg_loss: true
+[1,0]<stderr>:  use_fsdp: false
+[1,0]<stderr>:  use_tran_mse_loss: true
+[1,0]<stderr>:  wd: 1.0e-08
+[1,0]<stderr>:  weight_angle: 1
+[1,0]<stderr>:  weight_angle_decay_rate: 0.99
+[1,0]<stderr>:  weight_tran: 1
+[1,0]<stderr>:
+[1,0]<stdout>:ready to training!!!!!!!!
+[1,0]<stdout>:total_train_data: 1103021
+[1,0]<stdout>:total_valid_data: 1023
+[1,0]<stdout>:total_test_data: [1,0]<stdout>:968
+[1,0]<stdout>:We will training on gpu: 3
+[1,0]<stdout>:train_dataloader length: 34469[1,0]<stdout>:
+[1,0]<stdout>:valid_dataloader length: 256
+[1,0]<stdout>:test_dataloader length: 242
+[1,0]<stdout>:total_train_data: 1103021[1,0]<stdout>:
+[1,0]<stdout>:total_valid_data: 1023
+[1,0]<stdout>:total_test_data: 968
+[1,0]<stdout>:We will training on gpu: 1
+[1,0]<stdout>:train_dataloader length: 34469[1,0]<stdout>:
+[1,0]<stdout>:valid_dataloader length: 256
+[1,0]<stdout>:test_dataloader length: 242[1,0]<stdout>:
+[1,0]<stdout>:total_train_data: 1103021[1,0]<stdout>:
+[1,0]<stdout>:total_valid_data: 1023
+[1,0]<stdout>:total_test_data: 968
+[1,0]<stdout>:We will training on gpu: 2
+[1,0]<stdout>:train_dataloader length: 34469
+[1,0]<stdout>:valid_dataloader length: 256
+[1,0]<stdout>:test_dataloader length: 242
+[1,0]<stdout>:total_train_data: 1103021[1,0]<stdout>:
+[1,0]<stdout>:total_valid_data: 1023
+[1,0]<stdout>:total_test_data: 968
+[1,0]<stdout>:We will training on gpu: 0
+[1,0]<stdout>:train_dataloader length: 34469
+[1,0]<stdout>:valid_dataloader length: 256
+[1,0]<stdout>:test_dataloader length: 242
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:43 [0] NCCL INFO Bootstrap : Using eth0:172.22.158.138<0>
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:43 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:43 [0] NCCL INFO cudaDriverVersion 12000
+[1,0]<stdout>:NCCL version 2.14.3+cuda11.6
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:45 [2] NCCL INFO cudaDriverVersion 12000
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:44 [1] NCCL INFO cudaDriverVersion 12000
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:46 [3] NCCL INFO cudaDriverVersion 12000
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:45 [2] NCCL INFO Bootstrap : Using eth0:172.22.158.138<0>
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:46 [3] NCCL INFO Bootstrap : Using eth0:172.22.158.138<0>
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:44 [1] NCCL INFO Bootstrap : Using eth0:172.22.158.138<0>
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO NET/IB : No device found.
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO NET/Socket : Using [0]eth0:172.22.158.138<0> [1]eth1:172.22.158.138<0>
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Using network Socket
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:46 [3] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:44 [1] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO NET/IB : No device found.
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO NET/Socket : Using [0]eth0:172.22.158.138<0> [1]eth1:172.22.158.138<0>
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Using network Socket
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:45 [2] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO NET/IB : No device found.
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO NET/Socket : Using [0]eth0:172.22.158.138<0> [1]eth1:172.22.158.138<0>
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Using network Socket
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO NET/IB : No device found.
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO NET/Socket : Using [0]eth0:172.22.158.138<0> [1]eth1:172.22.158.138<0>
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Using network Socket
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Setting affinity for GPU 1 to ffffffff,00000000,ffffffff,00000000
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Setting affinity for GPU 3 to ffffffff,00000000,ffffffff,00000000
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Setting affinity for GPU 0 to ffffffff,00000000,ffffffff,00000000
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Setting affinity for GPU 2 to ffffffff,00000000,ffffffff,00000000
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 00/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 01/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 02/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->2 [5] -1/-1/-1->3->2 [6] -1/-1/-1->3->2 [7] -1/-1/-1->3->2 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] -1/-1/-1->3->2 [11] -1/-1/-1->3->2 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] -1/-1/-1->3->2 [15] -1/-1/-1->3->2
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 03/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 04/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 05/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 06/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 07/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 08/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 09/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 10/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 11/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 12/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 13/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 14/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 15/16 :    0   1   2   3
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 00/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 00/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 00/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 00/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 01/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 01/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 01/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 01/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 02/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 02/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 02/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 02/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 03/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 03/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 03/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 03/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 04/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 04/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 04/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 04/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 05/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 05/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 05/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 06/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 06/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 06/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 07/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 07/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 07/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 08/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 08/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 08/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 09/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 09/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 09/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 10/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 10/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 10/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 11/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 11/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 11/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 12/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 12/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 12/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 13/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 13/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 13/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 14/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 14/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 14/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 15/0 : 2[d0000] -> 3[d3000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 15/0 : 1[b1000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 15/0 : 3[d3000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 05/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 06/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 07/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 08/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 09/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 10/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 11/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 12/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 13/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 14/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Channel 15/0 : 0[ad000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Connected all rings
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 00/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 01/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 02/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 03/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 04/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 05/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Connected all rings
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 06/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Connected all rings
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Connected all rings
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 07/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 08/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 09/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 10/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 11/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 12/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 13/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 14/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Channel 15/0 : 3[d3000] -> 2[d0000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 00/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 00/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 01/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 01/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 02/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 02/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 03/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 03/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 04/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 04/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 05/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 05/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 06/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 06/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 07/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 07/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 08/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 08/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 09/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 09/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 10/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 10/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 11/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 11/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 12/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 12/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 13/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 13/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 14/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 14/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Channel 15/0 : 1[b1000] -> 0[ad000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Channel 15/0 : 2[d0000] -> 1[b1000] via P2P/IPC/read
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO Connected all trees
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO 16 coll channels, 16 p2p channels, 16 p2p channels per peer
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO Connected all trees
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO 16 coll channels, 16 p2p channels, 16 p2p channels per peer
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO Connected all trees
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO 16 coll channels, 16 p2p channels, 16 p2p channels per peer
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO Connected all trees
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO 16 coll channels, 16 p2p channels, 16 p2p channels per peer
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:45:179 [2] NCCL INFO comm 0x560c77f7a500 rank 2 nranks 4 cudaDev 2 busId d0000 - Init COMPLETE
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:44:178 [1] NCCL INFO comm 0x558ba0a43280 rank 1 nranks 4 cudaDev 1 busId b1000 - Init COMPLETE
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:46:177 [3] NCCL INFO comm 0x55e03eb0db00 rank 3 nranks 4 cudaDev 3 busId d3000 - Init COMPLETE
+[1,0]<stdout>:nb-refinement-0-2kwwh-worker-0:43:176 [0] NCCL INFO comm 0x562d11729c00 rank 0 nranks 4 cudaDev 0 busId ad000 - Init COMPLETE
+[1,0]<stderr>:wandb: Currently logged in as: wangjx22 (jinxianwang). Use `wandb login --relogin` to force relogin
+[1,0]<stderr>:wandb: wandb version 0.19.3 is available!  To upgrade, please run:
+[1,0]<stderr>:wandb:  $ pip install wandb --upgrade
+[1,0]<stderr>:wandb: Tracking run with wandb version 0.12.21
+[1,0]<stderr>:wandb: Run data is saved locally in /nfs_beijing_ai/jinxian/rama-scoring1.3.0/logs/wandb/run-20250114_041221-t3gntx8v
+[1,0]<stderr>:wandb: Run `wandb offline` to turn off syncing.
+[1,0]<stderr>:wandb: Resuming run run_train_sin_k8s_trial6_yaml_run_train_sin_k8s_trial12_2025.01.13-17.55.22refine_0
+[1,0]<stderr>:wandb: ⭐️ View project at https://wandb.ai/jinxianwang/NB_EquiformerV2_train
+[1,0]<stderr>:wandb: 🚀 View run at https://wandb.ai/jinxianwang/NB_EquiformerV2_train/runs/t3gntx8v
+[1,0]<stdout>:Resumed from epoch=0, global_step=4000, wandb_run_id=t3gntx8v[1,0]<stdout>:
+[1,0]<stderr>:  0%|          | 0/242 [00:00<?, ?it/s][1,0]<stderr>:  0%|          | 0/242 [00:00<?, ?it/s][1,0]<stderr>:  0% 0/242 [00:00<?, ?it/s][1,0]<stderr>:  0%|          | 0/242 [00:00<?, ?it/s][1,0]<stderr>:  0%|          | 1/242 [00:02<09:12,  2.29s/it][1,0]<stderr>:  0% 1/242 [00:02<09:19,  2.32s/it][1,0]<stderr>:  0%|          | 1/242 [00:02<09:42,  2.42s/it][1,0]<stderr>:  0%|          | 1/242 [00:02<10:08,  2.52s/it][1,0]<stderr>:  1%|          | 2/242 [00:02<05:10,  1.29s/it][1,0]<stderr>:  1% 2/242 [00:02<05:09,  1.29s/it][1,0]<stderr>:  1%|          | 2/242 [00:02<05:10,  1.30s/it][1,0]<stderr>:  1%|          | 2/242 [00:03<05:34,  1.39s/it][1,0]<stderr>:  1%|          | 3/242 [00:03<03:49,  1.04it/s][1,0]<stderr>:  1%|          | 3/242 [00:03<03:51,  1.03it/s][1,0]<stderr>:  1% 3/242 [00:03<03:56,  1.01it/s][1,0]<stderr>:  1%|          | 3/242 [00:03<04:04,  1.02s/it][1,0]<stderr>:  2%|▏         | 4/242 [00:04<03:09,  1.26it/s][1,0]<stderr>:  2% 4/242 [00:04<03:12,  1.24it/s][1,0]<stderr>:  2%|▏         | 4/242 [00:04<03:14,  1.22it/s][1,0]<stderr>:  2%|▏         | 4/242 [00:04<03:17,  1.21it/s][1,0]<stderr>:  2%|▏         | 5/242 [00:04<02:52,  1.37it/s][1,0]<stderr>:  2%|▏         | 5/242 [00:04<02:55,  1.35it/s][1,0]<stderr>:  2% 5/242 [00:04<02:56,  1.34it/s][1,0]<stderr>:  2%|▏         | 5/242 [00:04<02:55,  1.35it/s][1,0]<stderr>:  2%|▏         | 6/242 [00:05<02:38,  1.49it/s][1,0]<stderr>:  2%|▏         | 6/242 [00:05<02:41,  1.46it/s][1,0]<stderr>:  2% 6/242 [00:05<02:40,  1.47it/s][1,0]<stderr>:  2%|▏         | 6/242 [00:05<02:35,  1.52it/s][1,0]<stderr>:  3%|▎         | 7/242 [00:05<02:33,  1.53it/s][1,0]<stderr>:  3% 7/242 [00:05<02:32,  1.54it/s][1,0]<stderr>:  3%|▎         | 7/242 [00:05<02:34,  1.52it/s][1,0]<stderr>:  3%|▎         | 7/242 [00:05<02:25,  1.61it/s][1,0]<stderr>:  3% 8/242 [00:06<02:26,  1.59it/s][1,0]<stderr>:  3%|▎         | 8/242 [00:06<02:20,  1.67it/s][1,0]<stderr>:  3%|▎         | 8/242 [00:06<02:29,  1.56it/s][1,0]<stderr>:  3%|▎         | 8/242 [00:06<02:29,  1.57it/s][1,0]<stderr>:  4%|▎         | 9/242 [00:06<02:23,  1.62it/s][1,0]<stderr>:  4%|▎         | 9/242 [00:07<02:24,  1.61it/s][1,0]<stderr>:  4%|▎         | 9/242 [00:07<02:19,  1.67it/s][1,0]<stderr>:  4% 9/242 [00:07<02:27,  1.58it/s][1,0]<stderr>:  4%|▍         | 10/242 [00:07<02:15,  1.71it/s][1,0]<stderr>:  4%|▍         | 10/242 [00:07<02:19,  1.66it/s][1,0]<stderr>:  4% 10/242 [00:07<02:19,  1.66it/s][1,0]<stderr>:  4%|▍         | 10/242 [00:07<02:21,  1.64it/s][1,0]<stderr>:  5%|▍         | 11/242 [00:08<02:18,  1.66it/s][1,0]<stderr>:  5%|▍         | 11/242 [00:08<02:22,  1.62it/s][1,0]<stderr>:  5% 11/242 [00:08<02:23,  1.61it/s][1,0]<stderr>:  5%|▍         | 11/242 [00:08<02:24,  1.60it/s][1,0]<stderr>:  5% 12/242 [00:08<02:16,  1.69it/s][1,0]<stderr>:  5%|▍         | 12/242 [00:08<02:16,  1.68it/s][1,0]<stderr>:  5%|▍         | 12/242 [00:08<02:18,  1.66it/s][1,0]<stderr>:  5%|▍         | 12/242 [00:08<02:18,  1.66it/s][1,0]<stderr>:  5%|▌         | 13/242 [00:09<02:17,  1.67it/s][1,0]<stderr>:  5%|▌         | 13/242 [00:09<02:17,  1.66it/s][1,0]<stderr>:  5% 13/242 [00:09<02:18,  1.66it/s][1,0]<stderr>:  5%|▌         | 13/242 [00:09<02:17,  1.67it/s][1,0]<stderr>:  6%|▌         | 14/242 [00:09<02:13,  1.70it/s][1,0]<stderr>:  6%|▌         | 14/242 [00:09<02:15,  1.68it/s][1,0]<stderr>:  6% 14/242 [00:09<02:16,  1.67it/s][1,0]<stderr>:  6%|▌         | 14/242 [00:09<02:16,  1.67it/s][1,0]<stderr>:  6%|▌         | 15/242 [00:10<02:14,  1.69it/s][1,0]<stderr>:  6% 15/242 [00:10<02:13,  1.70it/s][1,0]<stderr>:  6%|▌         | 15/242 [00:10<02:14,  1.68it/s][1,0]<stderr>:  6%|▌         | 15/242 [00:10<02:14,  1.69it/s][1,0]<stderr>:  7%|▋         | 16/242 [00:11<02:12,  1.71it/s][1,0]<stderr>:  7%|▋         | 16/242 [00:11<02:12,  1.70it/s][1,0]<stderr>:  7%|▋         | 16/242 [00:11<02:12,  1.71it/s][1,0]<stderr>:  7% 16/242 [00:11<02:13,  1.69it/s][1,0]<stderr>:  7%|▋         | 17/242 [00:11<02:11,  1.71it/s][1,0]<stderr>:  7%|▋         | 17/242 [00:11<02:11,  1.71it/s][1,0]<stderr>:  7%|▋         | 17/242 [00:11<02:12,  1.70it/s][1,0]<stderr>:  7% 17/242 [00:11<02:13,  1.69it/s][1,0]<stderr>:  7%|▋         | 18/242 [00:12<02:09,  1.73it/s][1,0]<stderr>:  7%|▋         | 18/242 [00:12<02:09,  1.73it/s][1,0]<stderr>:  7% 18/242 [00:12<02:09,  1.73it/s][1,0]<stderr>:  7%|▋         | 18/242 [00:12<02:11,  1.70it/s][1,0]<stderr>:  8%|▊         | 19/242 [00:12<02:09,  1.73it/s][1,0]<stderr>:  8%|▊         | 19/242 [00:12<02:10,  1.71it/s][1,0]<stderr>:  8% 19/242 [00:12<02:10,  1.71it/s][1,0]<stderr>:  8%|▊         | 19/242 [00:12<02:12,  1.68it/s][1,0]<stderr>:  8%|▊         | 20/242 [00:13<02:09,  1.72it/s][1,0]<stderr>:  8%|▊         | 20/242 [00:13<02:09,  1.71it/s][1,0]<stderr>:  8%|▊         | 20/242 [00:13<02:09,  1.71it/s][1,0]<stderr>:  8% 20/242 [00:13<02:09,  1.71it/s][1,0]<stderr>:  9%|▊         | 21/242 [00:14<02:06,  1.74it/s][1,0]<stderr>:  9%|▊         | 21/242 [00:14<02:07,  1.74it/s][1,0]<stderr>:  9%|▊         | 21/242 [00:14<02:08,  1.72it/s][1,0]<stderr>:  9% 21/242 [00:14<02:10,  1.69it/s][1,0]<stderr>:  9%|▉         | 22/242 [00:14<02:05,  1.75it/s][1,0]<stderr>:  9%|▉         | 22/242 [00:14<02:05,  1.75it/s][1,0]<stderr>:  9%|▉         | 22/242 [00:14<02:07,  1.73it/s][1,0]<stderr>:  9% 22/242 [00:14<02:09,  1.70it/s][1,0]<stderr>: 10%|▉         | 23/242 [00:15<02:06,  1.73it/s][1,0]<stderr>: 10% 23/242 [00:15<02:05,  1.75it/s][1,0]<stderr>: 10%|▉         | 23/242 [00:15<02:07,  1.71it/s][1,0]<stderr>: 10%|▉         | 23/242 [00:15<02:08,  1.71it/s][1,0]<stderr>: 10% 24/242 [00:15<02:04,  1.75it/s][1,0]<stderr>: 10%|▉         | 24/242 [00:15<02:07,  1.71it/s][1,0]<stderr>: 10%|▉         | 24/242 [00:15<02:06,  1.72it/s][1,0]<stderr>: 10%|▉         | 24/242 [00:15<02:08,  1.69it/s][1,0]<stderr>: 10%|█         | 25/242 [00:16<02:05,  1.72it/s][1,0]<stderr>: 10%|█         | 25/242 [00:16<02:07,  1.70it/s][1,0]<stderr>: 10%|█         | 25/242 [00:16<02:07,  1.70it/s][1,0]<stderr>: 10% 25/242 [00:16<02:07,  1.70it/s][1,0]<stderr>: 11%|█         | 26/242 [00:16<02:06,  1.71it/s][1,0]<stderr>: 11%|█         | 26/242 [00:16<02:06,  1.70it/s][1,0]<stderr>: 11%|█         | 26/242 [00:16<02:08,  1.69it/s][1,0]<stderr>: 11% 26/242 [00:16<02:07,  1.70it/s][1,0]<stderr>: 11%|█         | 27/242 [00:17<02:05,  1.71it/s][1,0]<stderr>: 11%|█         | 27/242 [00:17<02:06,  1.70it/s][1,0]<stderr>: 11%|█         | 27/242 [00:17<02:07,  1.69it/s][1,0]<stderr>: 11% 27/242 [00:17<02:07,  1.69it/s][1,0]<stderr>: 12%|█▏        | 28/242 [00:18<02:04,  1.72it/s][1,0]<stderr>: 12%|█▏        | 28/242 [00:18<02:05,  1.71it/s][1,0]<stderr>: 12%|█▏        | 28/242 [00:18<02:04,  1.72it/s][1,0]<stderr>: 12% 28/242 [00:18<02:05,  1.71it/s][1,0]<stderr>: 12%|█▏        | 29/242 [00:18<02:03,  1.73it/s][1,0]<stderr>: 12%|█▏        | 29/242 [00:18<02:04,  1.71it/s][1,0]<stderr>: 12% 29/242 [00:18<02:03,  1.72it/s][1,0]<stderr>: 12%|█▏        | 29/242 [00:18<02:06,  1.68it/s][1,0]<stderr>: 12%|█▏        | 30/242 [00:19<02:03,  1.72it/s][1,0]<stderr>: 12% 30/242 [00:19<02:01,  1.74it/s][1,0]<stderr>: 12%|█▏        | 30/242 [00:19<02:02,  1.73it/s][1,0]<stderr>: 12%|█▏        | 30/242 [00:19<02:03,  1.71it/s][1,0]<stderr>: 13%|█▎        | 31/242 [00:19<02:01,  1.74it/s][1,0]<stderr>: 13%|█▎        | 31/242 [00:19<02:02,  1.72it/s][1,0]<stderr>: 13%|█▎        | 31/242 [00:19<02:03,  1.71it/s][1,0]<stderr>: 13% 31/242 [00:19<02:04,  1.69it/s][1,0]<stderr>: 13% 32/242 [00:20<01:59,  1.75it/s][1,0]<stderr>: 13%|█▎        | 32/242 [00:20<02:01,  1.73it/s][1,0]<stderr>: 13%|█▎        | 32/242 [00:20<02:01,  1.73it/s][1,0]<stderr>: 13%|█▎        | 32/242 [00:20<02:03,  1.70it/s][1,0]<stderr>: 14%|█▎        | 33/242 [00:21<02:05,  1.67it/s][1,0]<stderr>: 14%|█▎        | 33/242 [00:21<02:05,  1.67it/s][1,0]<stderr>: 14%|█▎        | 33/242 [00:21<02:07,  1.64it/s][1,0]<stderr>: 14% 33/242 [00:21<02:07,  1.64it/s][1,0]<stderr>: 14%|█▍        | 34/242 [00:21<02:07,  1.63it/s][1,0]<stderr>: 14%|█▍        | 34/242 [00:21<02:08,  1.61it/s][1,0]<stderr>: 14%|█▍        | 34/242 [00:21<02:09,  1.61it/s][1,0]<stderr>: 14% 34/242 [00:21<02:12,  1.57it/s][1,0]<stderr>: 14%|█▍        | 35/242 [00:22<02:12,  1.57it/s][1,0]<stderr>: 14%|█▍        | 35/242 [00:22<02:11,  1.57it/s][1,0]<stderr>: 14%|█▍        | 35/242 [00:22<02:12,  1.56it/s][1,0]<stderr>: 14% 35/242 [00:22<02:13,  1.55it/s][1,0]<stderr>: 15%|█▍        | 36/242 [00:23<02:09,  1.59it/s][1,0]<stderr>: 15%|█▍        | 36/242 [00:23<02:12,  1.56it/s][1,0]<stderr>: 15%|█▍        | 36/242 [00:23<02:12,  1.56it/s][1,0]<stderr>: 15% 36/242 [00:23<02:16,  1.51it/s][1,0]<stderr>: 15%|█▌        | 37/242 [00:23<02:08,  1.59it/s][1,0]<stderr>: 15%|█▌        | 37/242 [00:23<02:09,  1.58it/s][1,0]<stderr>: 15%|█▌        | 37/242 [00:23<02:10,  1.57it/s][1,0]<stderr>: 15% 37/242 [00:23<02:10,  1.57it/s][1,0]<stderr>: 16%|█▌        | 38/242 [00:24<02:05,  1.62it/s][1,0]<stderr>: 16%|█▌        | 38/242 [00:24<02:06,  1.61it/s][1,0]<stderr>: 16%|█▌        | 38/242 [00:24<02:06,  1.61it/s][1,0]<stderr>: 16% 38/242 [00:24<02:06,  1.61it/s][1,0]<stderr>: 16%|█▌        | 39/242 [00:24<02:02,  1.65it/s][1,0]<stderr>: 16%|█▌        | 39/242 [00:24<02:01,  1.67it/s][1,0]<stderr>: 16%|█▌        | 39/242 [00:24<02:03,  1.65it/s][1,0]<stderr>: 16% 39/242 [00:24<02:03,  1.65it/s][1,0]<stderr>: 17%|█▋        | 40/242 [00:25<02:03,  1.64it/s][1,0]<stderr>: 17%|█▋        | 40/242 [00:25<02:03,  1.64it/s][1,0]<stderr>: 17%|█▋        | 40/242 [00:25<02:05,  1.61it/s][1,0]<stderr>: 17% 40/242 [00:25<02:00,  1.67it/s][1,0]<stderr>: 17%|█▋        | 41/242 [00:26<01:59,  1.68it/s][1,0]<stderr>: 17% 41/242 [00:26<01:58,  1.70it/s][1,0]<stderr>: 17%|█▋        | 41/242 [00:26<02:02,  1.65it/s][1,0]<stderr>: 17%|█▋        | 41/242 [00:26<02:03,  1.62it/s][1,0]<stderr>: 17% 42/242 [00:26<01:56,  1.71it/s][1,0]<stderr>: 17%|█▋        | 42/242 [00:26<01:59,  1.67it/s][1,0]<stderr>: 17%|█▋        | 42/242 [00:26<02:01,  1.65it/s][1,0]<stderr>: 17%|█▋        | 42/242 [00:26<01:59,  1.67it/s][1,0]<stderr>: 18%|█▊        | 43/242 [00:27<01:58,  1.69it/s][1,0]<stderr>: 18%|█▊        | 43/242 [00:27<01:58,  1.67it/s][1,0]<stderr>: 18%|█▊        | 43/242 [00:27<01:59,  1.66it/s][1,0]<stderr>: 18% 43/242 [00:27<02:00,  1.66it/s][1,0]<stderr>: 18%|█▊        | 44/242 [00:27<01:58,  1.68it/s][1,0]<stderr>: 18%|█▊        | 44/242 [00:27<01:57,  1.68it/s][1,0]<stderr>: 18%|█▊        | 44/242 [00:27<01:59,  1.66it/s][1,0]<stderr>: 18% 44/242 [00:27<01:57,  1.68it/s][1,0]<stderr>: 19% 45/242 [00:28<01:54,  1.72it/s][1,0]<stderr>: 19%|█▊        | 45/242 [00:28<01:57,  1.68it/s][1,0]<stderr>: 19%|█▊        | 45/242 [00:28<01:57,  1.68it/s][1,0]<stderr>: 19%|█▊        | 45/242 [00:28<01:57,  1.68it/s][1,0]<stderr>: 19% 46/242 [00:29<01:54,  1.72it/s][1,0]<stderr>: 19%|█▉        | 46/242 [00:29<01:55,  1.70it/s][1,0]<stderr>: 19%|█▉        | 46/242 [00:29<01:56,  1.68it/s][1,0]<stderr>: 19%|█▉        | 46/242 [00:29<01:56,  1.68it/s][1,0]<stderr>: 19%|█▉        | 47/242 [00:29<01:53,  1.72it/s][1,0]<stderr>: 19%|█▉        | 47/242 [00:29<01:55,  1.69it/s][1,0]<stderr>: 19%|█▉        | 47/242 [00:29<01:54,  1.70it/s][1,0]<stderr>: 19% 47/242 [00:29<01:55,  1.68it/s][1,0]<stderr>: 20%|█▉        | 48/242 [00:30<01:55,  1.68it/s][1,0]<stderr>: 20% 48/242 [00:30<01:54,  1.69it/s][1,0]<stderr>: 20%|█▉        | 48/242 [00:30<01:56,  1.66it/s][1,0]<stderr>: 20%|█▉        | 48/242 [00:30<01:56,  1.66it/s][1,0]<stderr>: 20%|██        | 49/242 [00:30<01:54,  1.68it/s][1,0]<stderr>: 20%|██        | 49/242 [00:30<01:55,  1.67it/s][1,0]<stderr>: 20%|██        | 49/242 [00:30<01:55,  1.66it/s][1,0]<stderr>: 20% 49/242 [00:30<01:57,  1.64it/s][1,0]<stderr>: 21%|██        | 50/242 [00:31<01:53,  1.70it/s][1,0]<stderr>: 21%|██        | 50/242 [00:31<01:54,  1.67it/s][1,0]<stderr>: 21%|██        | 50/242 [00:31<01:54,  1.68it/s][1,0]<stderr>: 21% 50/242 [00:31<01:55,  1.67it/s][1,0]<stderr>: 21%|██        | 51/242 [00:31<01:52,  1.70it/s][1,0]<stderr>: 21% 51/242 [00:32<01:51,  1.71it/s][1,0]<stderr>: 21%|██        | 51/242 [00:32<01:52,  1.69it/s][1,0]<stderr>: 21%|██        | 51/242 [00:32<01:54,  1.67it/s][1,0]<stderr>: 21%|██▏       | 52/242 [00:32<01:52,  1.68it/s][1,0]<stderr>: 21% 52/242 [00:32<01:51,  1.70it/s][1,0]<stderr>: 21%|██▏       | 52/242 [00:32<01:52,  1.69it/s][1,0]<stderr>: 21%|██▏       | 52/242 [00:32<01:52,  1.68it/s][1,0]<stderr>: 22%|██▏       | 53/242 [00:33<01:50,  1.72it/s][1,0]<stderr>: 22%|██▏       | 53/242 [00:33<01:51,  1.70it/s][1,0]<stderr>: 22%|██▏       | 53/242 [00:33<01:52,  1.68it/s][1,0]<stderr>: 22% 53/242 [00:33<01:52,  1.68it/s][1,0]<stderr>: 22% 54/242 [00:33<01:48,  1.73it/s][1,0]<stderr>: 22%|██▏       | 54/242 [00:33<01:49,  1.71it/s][1,0]<stderr>: 22%|██▏       | 54/242 [00:33<01:52,  1.67it/s][1,0]<stderr>: 22%|██▏       | 54/242 [00:33<01:51,  1.69it/s][1,0]<stderr>: 23%|██▎       | 55/242 [00:34<01:49,  1.71it/s][1,0]<stderr>: 23%|██▎       | 55/242 [00:34<01:49,  1.70it/s][1,0]<stderr>: 23%|██▎       | 55/242 [00:34<01:50,  1.69it/s][1,0]<stderr>: 23% 55/242 [00:34<01:50,  1.69it/s][1,0]<stderr>: 23% 56/242 [00:34<01:48,  1.71it/s][1,0]<stderr>: 23%|██▎       | 56/242 [00:34<01:50,  1.68it/s][1,0]<stderr>: 23%|██▎       | 56/242 [00:34<01:50,  1.69it/s][1,0]<stderr>: 23%|██▎       | 56/242 [00:34<01:50,  1.68it/s][1,0]<stderr>: 24%|██▎       | 57/242 [00:35<01:48,  1.71it/s][1,0]<stderr>: 24%|██▎       | 57/242 [00:35<01:48,  1.70it/s][1,0]<stderr>: 24% 57/242 [00:35<01:49,  1.69it/s][1,0]<stderr>: 24%|██▎       | 57/242 [00:35<01:49,  1.69it/s][1,0]<stderr>: 24%|██▍       | 58/242 [00:36<01:46,  1.73it/s][1,0]<stderr>: 24%|██▍       | 58/242 [00:36<01:48,  1.70it/s][1,0]<stderr>: 24% 58/242 [00:36<01:48,  1.69it/s][1,0]<stderr>: 24%|██▍       | 58/242 [00:36<01:48,  1.69it/s][1,0]<stderr>: 24% 59/242 [00:36<01:47,  1.71it/s][1,0]<stderr>: 24%|██▍       | 59/242 [00:36<01:47,  1.69it/s][1,0]<stderr>: 24%|██▍       | 59/242 [00:36<01:48,  1.69it/s][1,0]<stderr>: 24%|██▍       | 59/242 [00:36<01:47,  1.70it/s][1,0]<stderr>: 25%|██▍       | 60/242 [00:37<01:45,  1.73it/s][1,0]<stderr>: 25%|██▍       | 60/242 [00:37<01:46,  1.71it/s][1,0]<stderr>: 25% 60/242 [00:37<01:46,  1.71it/s][1,0]<stderr>: 25%|██▍       | 60/242 [00:37<01:46,  1.71it/s][1,0]<stderr>: 25%|██▌       | 61/242 [00:37<01:46,  1.70it/s][1,0]<stderr>: 25% 61/242 [00:37<01:46,  1.69it/s][1,0]<stderr>: 25%|██▌       | 61/242 [00:37<01:46,  1.70it/s][1,0]<stderr>: 25%|██▌       | 61/242 [00:37<01:47,  1.69it/s][1,0]<stderr>: 26%|██▌       | 62/242 [00:38<01:48,  1.66it/s][1,0]<stderr>: 26% 62/242 [00:38<01:49,  1.65it/s][1,0]<stderr>: 26%|██▌       | 62/242 [00:38<01:50,  1.63it/s][1,0]<stderr>: 26%|██▌       | 62/242 [00:38<01:49,  1.64it/s][1,0]<stderr>: 26%|██▌       | 63/242 [00:39<01:47,  1.67it/s][1,0]<stderr>: 26%|██▌       | 63/242 [00:39<01:48,  1.65it/s][1,0]<stderr>: 26% 63/242 [00:39<01:49,  1.64it/s][1,0]<stderr>: 26%|██▌       | 63/242 [00:39<01:50,  1.62it/s][1,0]<stderr>: 26% 64/242 [00:39<01:48,  1.64it/s][1,0]<stderr>: 26%|██▋       | 64/242 [00:39<01:49,  1.63it/s][1,0]<stderr>: 26%|██▋       | 64/242 [00:39<01:49,  1.63it/s][1,0]<stderr>: 26%|██▋       | 64/242 [00:39<01:59,  1.50it/s][1,0]<stderr>: 27%|██▋       | 65/242 [00:40<01:45,  1.68it/s][1,0]<stderr>: 27%|██▋       | 65/242 [00:40<01:46,  1.66it/s][1,0]<stderr>: 27% 65/242 [00:40<01:47,  1.65it/s][1,0]<stderr>: 27%|██▋       | 65/242 [00:40<01:54,  1.55it/s][1,0]<stderr>: 27%|██▋       | 66/242 [00:40<01:42,  1.71it/s][1,0]<stderr>: 27% 66/242 [00:40<01:43,  1.70it/s][1,0]<stderr>: 27%|██▋       | 66/242 [00:40<01:44,  1.69it/s][1,0]<stderr>: 27%|██▋       | 66/242 [00:41<01:46,  1.65it/s][1,0]<stderr>: 28% 67/242 [00:41<01:44,  1.68it/s][1,0]<stderr>: 28%|██▊       | 67/242 [00:41<01:45,  1.66it/s][1,0]<stderr>: 28%|██▊       | 67/242 [00:41<01:45,  1.66it/s][1,0]<stderr>: 28%|██▊       | 67/242 [00:41<01:45,  1.65it/s][1,0]<stderr>: 28%|██▊       | 68/242 [00:42<01:42,  1.70it/s][1,0]<stderr>: 28% 68/242 [00:42<01:43,  1.68it/s][1,0]<stderr>: 28%|██▊       | 68/242 [00:42<01:42,  1.70it/s][1,0]<stderr>: 28%|██▊       | 68/242 [00:42<01:54,  1.52it/s][1,0]<stderr>: 29% 69/242 [00:42<01:43,  1.67it/s][1,0]<stderr>: 29%|██▊       | 69/242 [00:42<01:43,  1.67it/s][1,0]<stderr>: 29%|██▊       | 69/242 [00:42<01:39,  1.74it/s][1,0]<stderr>: 29%|██▊       | 69/242 [00:42<01:45,  1.64it/s][1,0]<stderr>: 29% 70/242 [00:43<01:41,  1.69it/s][1,0]<stderr>: 29%|██▉       | 70/242 [00:43<01:38,  1.74it/s][1,0]<stderr>: 29%|██▉       | 70/242 [00:43<01:44,  1.64it/s][1,0]<stderr>: 29%|██▉       | 70/242 [00:43<01:51,  1.55it/s][1,0]<stderr>: 29%|██▉       | 71/242 [00:43<01:37,  1.75it/s][1,0]<stderr>: 29% 71/242 [00:43<01:42,  1.66it/s][1,0]<stderr>: 29%|██▉       | 71/242 [00:44<01:43,  1.66it/s][1,0]<stderr>: 29%|██▉       | 71/242 [00:44<01:45,  1.62it/s][1,0]<stderr>: 30%|██▉       | 72/242 [00:44<01:37,  1.74it/s][1,0]<stderr>: 30% 72/242 [00:44<01:41,  1.68it/s][1,0]<stderr>: 30%|██▉       | 72/242 [00:44<01:38,  1.73it/s][1,0]<stderr>: 30%|██▉       | 72/242 [00:44<01:39,  1.71it/s][1,0]<stderr>: 30%|███       | 73/242 [00:45<01:37,  1.73it/s][1,0]<stderr>: 30%|███       | 73/242 [00:45<01:35,  1.77it/s][1,0]<stderr>: 30% 73/242 [00:45<01:39,  1.70it/s][1,0]<stderr>: 30%|███       | 73/242 [00:45<01:38,  1.72it/s][1,0]<stderr>: 31% 74/242 [00:45<01:38,  1.70it/s][1,0]<stderr>: 31%|███       | 74/242 [00:45<01:39,  1.69it/s][1,0]<stderr>: 31%|███       | 74/242 [00:45<01:36,  1.74it/s][1,0]<stderr>: 31%|███       | 74/242 [00:45<01:37,  1.72it/s][1,0]<stderr>: 31%|███       | 75/242 [00:46<01:37,  1.72it/s][1,0]<stderr>: 31%|███       | 75/242 [00:46<01:36,  1.73it/s][1,0]<stderr>: 31%|███       | 75/242 [00:46<01:37,  1.71it/s][1,0]<stderr>: 31% 75/242 [00:46<01:40,  1.67it/s][1,0]<stderr>: 31% 76/242 [00:46<01:37,  1.70it/s][1,0]<stderr>: 31%|███▏      | 76/242 [00:46<01:37,  1.70it/s][1,0]<stderr>: 31%|███▏      | 76/242 [00:46<01:40,  1.65it/s][1,0]<stderr>: 31%|███▏      | 76/242 [00:46<01:38,  1.68it/s][1,0]<stderr>: 32%|███▏      | 77/242 [00:47<01:36,  1.71it/s][1,0]<stderr>: 32%|███▏      | 77/242 [00:47<01:38,  1.68it/s][1,0]<stderr>: 32%|███▏      | 77/242 [00:47<01:37,  1.69it/s][1,0]<stderr>: 32% 77/242 [00:47<01:38,  1.67it/s][1,0]<stderr>: 32% 78/242 [00:48<01:35,  1.71it/s][1,0]<stderr>: 32%|███▏      | 78/242 [00:48<01:37,  1.68it/s][1,0]<stderr>: 32%|███▏      | 78/242 [00:48<01:37,  1.69it/s][1,0]<stderr>: 32%|███▏      | 78/242 [00:48<01:37,  1.69it/s][1,0]<stderr>: 33%|███▎      | 79/242 [00:48<01:36,  1.69it/s][1,0]<stderr>: 33%|███▎      | 79/242 [00:48<01:36,  1.69it/s][1,0]<stderr>: 33%|███▎      | 79/242 [00:48<01:36,  1.69it/s][1,0]<stderr>: 33% 79/242 [00:48<01:39,  1.65it/s][1,0]<stderr>: 33%|███▎      | 80/242 [00:49<01:35,  1.70it/s][1,0]<stderr>: 33%|███▎      | 80/242 [00:49<01:36,  1.67it/s][1,0]<stderr>: 33% 80/242 [00:49<01:37,  1.67it/s][1,0]<stderr>: 33%|███▎      | 80/242 [00:49<01:37,  1.67it/s][1,0]<stderr>: 33% 81/242 [00:49<01:35,  1.69it/s][1,0]<stderr>: 33%|███▎      | 81/242 [00:49<01:35,  1.68it/s][1,0]<stderr>: 33%|███▎      | 81/242 [00:49<01:36,  1.67it/s][1,0]<stderr>: 33%|███▎      | 81/242 [00:49<01:36,  1.66it/s][1,0]<stderr>: 34%|███▍      | 82/242 [00:50<01:33,  1.71it/s][1,0]<stderr>: 34%|███▍      | 82/242 [00:50<01:34,  1.69it/s][1,0]<stderr>: 34%|███▍      | 82/242 [00:50<01:34,  1.69it/s][1,0]<stderr>: 34% 82/242 [00:50<01:35,  1.68it/s][1,0]<stderr>: 34%|███▍      | 83/242 [00:51<01:33,  1.70it/s][1,0]<stderr>: 34%|███▍      | 83/242 [00:51<01:35,  1.67it/s][1,0]<stderr>: 34%|███▍      | 83/242 [00:51<01:35,  1.67it/s][1,0]<stderr>: 34% 83/242 [00:51<01:36,  1.65it/s][1,0]<stderr>: 35%|███▍      | 84/242 [00:51<01:37,  1.62it/s][1,0]<stderr>: 35%|███▍      | 84/242 [00:51<01:37,  1.62it/s][1,0]<stderr>: 35% 84/242 [00:51<01:37,  1.62it/s][1,0]<stderr>: 35%|███▍      | 84/242 [00:51<01:38,  1.60it/s][1,0]<stderr>: 35%|███▌      | 85/242 [00:52<01:36,  1.63it/s][1,0]<stderr>: 35% 85/242 [00:52<01:37,  1.61it/s][1,0]<stderr>: 35%|███▌      | 85/242 [00:52<01:38,  1.59it/s][1,0]<stderr>: 35%|███▌      | 85/242 [00:52<01:39,  1.57it/s][1,0]<stderr>: 36% 86/242 [00:52<01:37,  1.59it/s][1,0]<stderr>: 36%|███▌      | 86/242 [00:53<01:39,  1.58it/s][1,0]<stderr>: 36%|███▌      | 86/242 [00:53<01:38,  1.58it/s][1,0]<stderr>: 36%|███▌      | 86/242 [00:53<01:40,  1.55it/s][1,0]<stderr>: 36%|███▌      | 87/242 [00:53<01:36,  1.61it/s][1,0]<stderr>: 36%|███▌      | 87/242 [00:53<01:36,  1.60it/s][1,0]<stderr>: 36%|███▌      | 87/242 [00:53<01:36,  1.60it/s][1,0]<stderr>: 36% 87/242 [00:53<01:37,  1.59it/s][1,0]<stderr>: 36%|███▋      | 88/242 [00:54<01:34,  1.62it/s][1,0]<stderr>: 36%|███▋      | 88/242 [00:54<01:34,  1.64it/s][1,0]<stderr>: 36%|███▋      | 88/242 [00:54<01:35,  1.62it/s][1,0]<stderr>: 36% 88/242 [00:54<01:35,  1.61it/s][1,0]<stderr>: 37%|███▋      | 89/242 [00:54<01:32,  1.66it/s][1,0]<stderr>: 37%|███▋      | 89/242 [00:54<01:31,  1.66it/s][1,0]<stderr>: 37% 89/242 [00:54<01:32,  1.66it/s][1,0]<stderr>: 37%|███▋      | 89/242 [00:54<01:32,  1.66it/s][1,0]<stderr>: 37% 90/242 [00:55<01:30,  1.68it/s][1,0]<stderr>: 37%|███▋      | 90/242 [00:55<01:31,  1.67it/s][1,0]<stderr>: 37%|███▋      | 90/242 [00:55<01:31,  1.65it/s][1,0]<stderr>: 37%|███▋      | 90/242 [00:55<01:32,  1.63it/s][1,0]<stderr>: 38%|███▊      | 91/242 [00:55<01:28,  1.71it/s][1,0]<stderr>: 38%|███▊      | 91/242 [00:55<01:30,  1.68it/s][1,0]<stderr>: 38%|███▊      | 91/242 [00:55<01:29,  1.68it/s][1,0]<stderr>: 38% 91/242 [00:55<01:30,  1.67it/s][1,0]<stderr>: 38%|███▊      | 92/242 [00:56<01:27,  1.71it/s][1,0]<stderr>: 38% 92/242 [00:56<01:27,  1.71it/s][1,0]<stderr>: 38%|███▊      | 92/242 [00:56<01:28,  1.70it/s][1,0]<stderr>: 38%|███▊      | 92/242 [00:56<01:29,  1.68it/s][1,0]<stderr>: 38%|███▊      | 93/242 [00:57<01:28,  1.69it/s][1,0]<stderr>: 38%|███▊      | 93/242 [00:57<01:28,  1.69it/s][1,0]<stderr>: 38%|███▊      | 93/242 [00:57<01:29,  1.67it/s][1,0]<stderr>: 38% 93/242 [00:57<01:29,  1.66it/s][1,0]<stderr>: 39%|███▉      | 94/242 [00:57<01:27,  1.70it/s][1,0]<stderr>: 39%|███▉      | 94/242 [00:57<01:28,  1.68it/s][1,0]<stderr>: 39%|███▉      | 94/242 [00:57<01:27,  1.69it/s][1,0]<stderr>: 39% 94/242 [00:57<01:28,  1.68it/s][1,0]<stderr>: 39%|███▉      | 95/242 [00:58<01:26,  1.71it/s][1,0]<stderr>: 39% 95/242 [00:58<01:26,  1.70it/s][1,0]<stderr>: 39%|███▉      | 95/242 [00:58<01:26,  1.69it/s][1,0]<stderr>: 39%|███▉      | 95/242 [00:58<01:27,  1.67it/s][1,0]<stderr>: 40% 96/242 [00:58<01:25,  1.70it/s][1,0]<stderr>: 40%|███▉      | 96/242 [00:58<01:27,  1.67it/s][1,0]<stderr>: 40%|███▉      | 96/242 [00:58<01:26,  1.68it/s][1,0]<stderr>: 40%|███▉      | 96/242 [00:58<01:27,  1.67it/s][1,0]<stderr>: 40%|████      | 97/242 [00:59<01:27,  1.65it/s][1,0]<stderr>: 40%|████      | 97/242 [00:59<01:28,  1.63it/s][1,0]<stderr>: 40%|████      | 97/242 [00:59<01:28,  1.63it/s][1,0]<stderr>: 40% 97/242 [00:59<01:30,  1.61it/s][1,0]<stderr>: 40% 98/242 [01:00<01:26,  1.66it/s][1,0]<stderr>: 40%|████      | 98/242 [01:00<01:28,  1.63it/s][1,0]<stderr>: 40%|████      | 98/242 [01:00<01:28,  1.62it/s][1,0]<stderr>: 40%|████      | 98/242 [01:00<01:29,  1.61it/s][1,0]<stderr>: 41%|████      | 99/242 [01:00<01:24,  1.69it/s][1,0]<stderr>: 41%|████      | 99/242 [01:00<01:25,  1.66it/s][1,0]<stderr>: 41%|████      | 99/242 [01:00<01:26,  1.66it/s][1,0]<stderr>: 41% 99/242 [01:00<01:26,  1.65it/s][1,0]<stderr>: 41% 100/242 [01:01<01:23,  1.70it/s][1,0]<stderr>: 41%|████▏     | 100/242 [01:01<01:24,  1.68it/s][1,0]<stderr>: 41%|████▏     | 100/242 [01:01<01:24,  1.67it/s][1,0]<stderr>: 41%|████▏     | 100/242 [01:01<01:24,  1.67it/s][1,0]<stderr>: 42%|████▏     | 101/242 [01:01<01:24,  1.66it/s][1,0]<stderr>: 42%|████▏     | 101/242 [01:01<01:24,  1.66it/s][1,0]<stderr>: 42%|████▏     | 101/242 [01:01<01:24,  1.66it/s][1,0]<stderr>: 42% 101/242 [01:02<01:34,  1.50it/s][1,0]<stderr>: 42%|████▏     | 102/242 [01:02<01:25,  1.65it/s][1,0]<stderr>: 42%|████▏     | 102/242 [01:02<01:25,  1.63it/s][1,0]<stderr>: 42%|████▏     | 102/242 [01:02<01:26,  1.62it/s][1,0]<stderr>: 42% 102/242 [01:02<01:32,  1.51it/s][1,0]<stderr>: 43%|████▎     | 103/242 [01:03<01:24,  1.65it/s][1,0]<stderr>: 43%|████▎     | 103/242 [01:03<01:24,  1.64it/s][1,0]<stderr>: 43%|████▎     | 103/242 [01:03<01:25,  1.63it/s][1,0]<stderr>: 43% 103/242 [01:03<01:29,  1.55it/s][1,0]<stderr>: 43%|████▎     | 104/242 [01:03<01:21,  1.69it/s][1,0]<stderr>: 43%|████▎     | 104/242 [01:03<01:22,  1.67it/s][1,0]<stderr>: 43%|████▎     | 104/242 [01:03<01:23,  1.65it/s][1,0]<stderr>: 43% 104/242 [01:04<01:26,  1.60it/s][1,0]<stderr>: 43%|████▎     | 105/242 [01:04<01:19,  1.73it/s][1,0]<stderr>: 43%|████▎     | 105/242 [01:04<01:21,  1.69it/s][1,0]<stderr>: 43%|████▎     | 105/242 [01:04<01:21,  1.69it/s][1,0]<stderr>: 43% 105/242 [01:04<01:23,  1.64it/s][1,0]<stderr>: 44%|████▍     | 106/242 [01:04<01:19,  1.70it/s][1,0]<stderr>: 44%|████▍     | 106/242 [01:04<01:19,  1.72it/s][1,0]<stderr>: 44%|████▍     | 106/242 [01:04<01:19,  1.71it/s][1,0]<stderr>: 44% 106/242 [01:05<01:20,  1.68it/s][1,0]<stderr>: 44%|████▍     | 107/242 [01:05<01:17,  1.74it/s][1,0]<stderr>: 44%|████▍     | 107/242 [01:05<01:18,  1.73it/s][1,0]<stderr>: 44%|████▍     | 107/242 [01:05<01:20,  1.69it/s][1,0]<stderr>: 44% 107/242 [01:05<01:17,  1.73it/s][1,0]<stderr>: 45%|████▍     | 108/242 [01:06<01:20,  1.66it/s][1,0]<stderr>: 45%|████▍     | 108/242 [01:06<01:20,  1.66it/s][1,0]<stderr>: 45%|████▍     | 108/242 [01:06<01:20,  1.66it/s][1,0]<stderr>: 45% 108/242 [01:06<01:18,  1.71it/s][1,0]<stderr>: 45%|████▌     | 109/242 [01:06<01:18,  1.70it/s][1,0]<stderr>: 45%|████▌     | 109/242 [01:06<01:18,  1.70it/s][1,0]<stderr>: 45%|████▌     | 109/242 [01:06<01:19,  1.67it/s][1,0]<stderr>: 45% 109/242 [01:06<01:17,  1.72it/s][1,0]<stderr>: 45%|████▌     | 110/242 [01:07<01:18,  1.69it/s][1,0]<stderr>: 45%|████▌     | 110/242 [01:07<01:17,  1.71it/s][1,0]<stderr>: 45%|████▌     | 110/242 [01:07<01:18,  1.68it/s][1,0]<stderr>: 45% 110/242 [01:07<01:16,  1.74it/s][1,0]<stderr>: 46%|████▌     | 111/242 [01:07<01:19,  1.65it/s][1,0]<stderr>: 46%|████▌     | 111/242 [01:07<01:18,  1.66it/s][1,0]<stderr>: 46%|████▌     | 111/242 [01:07<01:19,  1.65it/s][1,0]<stderr>: 46% 111/242 [01:08<01:15,  1.74it/s][1,0]<stderr>: 46%|████▋     | 112/242 [01:08<01:18,  1.65it/s][1,0]<stderr>: 46%|████▋     | 112/242 [01:08<01:18,  1.65it/s][1,0]<stderr>: 46%|████▋     | 112/242 [01:08<01:19,  1.63it/s][1,0]<stderr>: 46% 112/242 [01:08<01:14,  1.74it/s][1,0]<stderr>: 47%|████▋     | 113/242 [01:09<01:16,  1.69it/s][1,0]<stderr>: 47% 113/242 [01:09<01:13,  1.75it/s][1,0]<stderr>: 47%|████▋     | 113/242 [01:09<01:18,  1.65it/s][1,0]<stderr>: 47%|████▋     | 113/242 [01:09<01:17,  1.65it/s][1,0]<stderr>: 47% 114/242 [01:09<01:11,  1.79it/s][1,0]<stderr>: 47%|████▋     | 114/242 [01:09<01:15,  1.70it/s][1,0]<stderr>: 47%|████▋     | 114/242 [01:09<01:15,  1.70it/s][1,0]<stderr>: 47%|████▋     | 114/242 [01:09<01:15,  1.69it/s][1,0]<stderr>: 48%|████▊     | 115/242 [01:10<01:15,  1.68it/s][1,0]<stderr>: 48%|████▊     | 115/242 [01:10<01:15,  1.68it/s][1,0]<stderr>: 48%|████▊     | 115/242 [01:10<01:16,  1.66it/s][1,0]<stderr>: 48% 115/242 [01:10<01:15,  1.68it/s][1,0]<stderr>: 48%|████▊     | 116/242 [01:10<01:12,  1.73it/s][1,0]<stderr>: 48%|████▊     | 116/242 [01:10<01:13,  1.70it/s][1,0]<stderr>: 48%|████▊     | 116/242 [01:10<01:13,  1.71it/s][1,0]<stderr>: 48% 116/242 [01:10<01:16,  1.65it/s][1,0]<stderr>: 48%|████▊     | 117/242 [01:11<01:12,  1.71it/s][1,0]<stderr>: 48%|████▊     | 117/242 [01:11<01:13,  1.71it/s][1,0]<stderr>: 48%|████▊     | 117/242 [01:11<01:14,  1.68it/s][1,0]<stderr>: 48% 117/242 [01:11<01:12,  1.73it/s][1,0]<stderr>: 49%|████▉     | 118/242 [01:12<01:12,  1.70it/s][1,0]<stderr>: 49%|████▉     | 118/242 [01:12<01:12,  1.70it/s][1,0]<stderr>: 49% 118/242 [01:12<01:11,  1.72it/s][1,0]<stderr>: 49%|████▉     | 118/242 [01:12<01:13,  1.68it/s][1,0]<stderr>: 49%|████▉     | 119/242 [01:12<01:12,  1.71it/s][1,0]<stderr>: 49%|████▉     | 119/242 [01:12<01:12,  1.69it/s][1,0]<stderr>: 49%|████▉     | 119/242 [01:12<01:13,  1.67it/s][1,0]<stderr>: 49% 119/242 [01:12<01:12,  1.69it/s][1,0]<stderr>: 50%|████▉     | 120/242 [01:13<01:11,  1.70it/s][1,0]<stderr>: 50% 120/242 [01:13<01:10,  1.74it/s][1,0]<stderr>: 50%|████▉     | 120/242 [01:13<01:11,  1.70it/s][1,0]<stderr>: 50%|████▉     | 120/242 [01:13<01:12,  1.69it/s][1,0]<stderr>: 50%|█████     | 121/242 [01:13<01:10,  1.71it/s][1,0]<stderr>: 50%|█████     | 121/242 [01:13<01:11,  1.69it/s][1,0]<stderr>: 50%|█████     | 121/242 [01:13<01:10,  1.71it/s][1,0]<stderr>: 50% 121/242 [01:13<01:10,  1.71it/s][1,0]<stderr>: 50% 122/242 [01:14<01:09,  1.73it/s][1,0]<stderr>: 50%|█████     | 122/242 [01:14<01:10,  1.69it/s][1,0]<stderr>: 50%|█████     | 122/242 [01:14<01:11,  1.69it/s][1,0]<stderr>: 50%|█████     | 122/242 [01:14<01:12,  1.66it/s][1,0]<stderr>: 51%|█████     | 123/242 [01:15<01:11,  1.67it/s][1,0]<stderr>: 51%|█████     | 123/242 [01:15<01:11,  1.67it/s][1,0]<stderr>: 51% 123/242 [01:15<01:11,  1.67it/s][1,0]<stderr>: 51%|█████     | 123/242 [01:15<01:13,  1.63it/s][1,0]<stderr>: 51%|█████     | 124/242 [01:15<01:08,  1.71it/s][1,0]<stderr>: 51%|█████     | 124/242 [01:15<01:10,  1.68it/s][1,0]<stderr>: 51% 124/242 [01:15<01:10,  1.67it/s][1,0]<stderr>: 51%|█████     | 124/242 [01:15<01:10,  1.67it/s][1,0]<stderr>: 52% 125/242 [01:16<01:09,  1.69it/s][1,0]<stderr>: 52%|█████▏    | 125/242 [01:16<01:10,  1.67it/s][1,0]<stderr>: 52%|█████▏    | 125/242 [01:16<01:09,  1.67it/s][1,0]<stderr>: 52%|█████▏    | 125/242 [01:16<01:08,  1.70it/s][1,0]<stderr>: 52%|█████▏    | 126/242 [01:16<01:06,  1.73it/s][1,0]<stderr>: 52%|█████▏    | 126/242 [01:16<01:06,  1.75it/s][1,0]<stderr>: 52% 126/242 [01:16<01:07,  1.72it/s][1,0]<stderr>: 52%|█████▏    | 126/242 [01:16<01:08,  1.70it/s][1,0]<stderr>: 52%|█████▏    | 127/242 [01:17<01:08,  1.69it/s][1,0]<stderr>: 52%|█████▏    | 127/242 [01:17<01:07,  1.70it/s][1,0]<stderr>: 52%|█████▏    | 127/242 [01:17<01:08,  1.68it/s][1,0]<stderr>: 52% 127/242 [01:17<01:08,  1.67it/s][1,0]<stderr>: 53%|█████▎    | 128/242 [01:17<01:06,  1.72it/s][1,0]<stderr>: 53% 128/242 [01:17<01:06,  1.72it/s][1,0]<stderr>: 53%|█████▎    | 128/242 [01:17<01:06,  1.72it/s][1,0]<stderr>: 53%|█████▎    | 128/242 [01:17<01:07,  1.70it/s][1,0]<stderr>: 53%|█████▎    | 129/242 [01:18<01:06,  1.71it/s][1,0]<stderr>: 53% 129/242 [01:18<01:05,  1.72it/s][1,0]<stderr>: 53%|█████▎    | 129/242 [01:18<01:06,  1.69it/s][1,0]<stderr>: 53%|█████▎    | 129/242 [01:18<01:07,  1.67it/s][1,0]<stderr>: 54%|█████▎    | 130/242 [01:19<01:05,  1.70it/s][1,0]<stderr>: 54% 130/242 [01:19<01:05,  1.70it/s][1,0]<stderr>: 54%|█████▎    | 130/242 [01:19<01:06,  1.70it/s][1,0]<stderr>: 54%|█████▎    | 130/242 [01:19<01:07,  1.66it/s][1,0]<stderr>: 54%|█████▍    | 131/242 [01:19<01:05,  1.70it/s][1,0]<stderr>: 54%|█████▍    | 131/242 [01:19<01:04,  1.72it/s][1,0]<stderr>: 54%|█████▍    | 131/242 [01:19<01:04,  1.71it/s][1,0]<stderr>: 54% 131/242 [01:19<01:06,  1.68it/s][1,0]<stderr>: 55%|█████▍    | 132/242 [01:20<01:03,  1.74it/s][1,0]<stderr>: 55%|█████▍    | 132/242 [01:20<01:03,  1.72it/s][1,0]<stderr>: 55%|█████▍    | 132/242 [01:20<01:03,  1.75it/s][1,0]<stderr>: 55% 132/242 [01:20<01:04,  1.71it/s][1,0]<stderr>: 55%|█████▍    | 133/242 [01:20<01:03,  1.71it/s][1,0]<stderr>: 55%|█████▍    | 133/242 [01:20<01:03,  1.71it/s][1,0]<stderr>: 55% 133/242 [01:20<01:03,  1.72it/s][1,0]<stderr>: 55%|█████▍    | 133/242 [01:20<01:03,  1.71it/s][1,0]<stderr>: 55% 134/242 [01:21<01:02,  1.74it/s][1,0]<stderr>: 55%|█████▌    | 134/242 [01:21<01:02,  1.71it/s][1,0]<stderr>: 55%|█████▌    | 134/242 [01:21<01:02,  1.73it/s][1,0]<stderr>: 55%|█████▌    | 134/242 [01:21<01:02,  1.72it/s][1,0]<stderr>: 56%|█████▌    | 135/242 [01:22<01:01,  1.73it/s][1,0]<stderr>: 56%|█████▌    | 135/242 [01:22<01:02,  1.71it/s][1,0]<stderr>: 56%|█████▌    | 135/242 [01:22<01:02,  1.71it/s][1,0]<stderr>: 56% 135/242 [01:22<01:02,  1.70it/s][1,0]<stderr>: 56% 136/242 [01:22<01:01,  1.73it/s][1,0]<stderr>: 56%|█████▌    | 136/242 [01:22<01:01,  1.71it/s][1,0]<stderr>: 56%|█████▌    | 136/242 [01:22<01:01,  1.73it/s][1,0]<stderr>: 56%|█████▌    | 136/242 [01:22<01:02,  1.69it/s][1,0]<stderr>: 57%|█████▋    | 137/242 [01:23<01:03,  1.67it/s][1,0]<stderr>: 57%|█████▋    | 137/242 [01:23<01:03,  1.66it/s][1,0]<stderr>: 57% 137/242 [01:23<01:04,  1.64it/s][1,0]<stderr>: 57%|█████▋    | 137/242 [01:23<01:04,  1.63it/s][1,0]<stderr>: 57%|█████▋    | 138/242 [01:23<01:01,  1.69it/s][1,0]<stderr>: 57%|█████▋    | 138/242 [01:23<01:02,  1.67it/s][1,0]<stderr>: 57% 138/242 [01:23<01:02,  1.67it/s][1,0]<stderr>: 57%|█████▋    | 138/242 [01:23<01:02,  1.65it/s][1,0]<stderr>: 57%|█████▋    | 139/242 [01:24<01:01,  1.69it/s][1,0]<stderr>: 57% 139/242 [01:24<01:00,  1.69it/s][1,0]<stderr>: 57%|█████▋    | 139/242 [01:24<01:00,  1.69it/s][1,0]<stderr>: 57%|█████▋    | 139/242 [01:24<01:02,  1.66it/s][1,0]<stderr>: 58% 140/242 [01:25<00:59,  1.71it/s][1,0]<stderr>: 58%|█████▊    | 140/242 [01:25<01:00,  1.68it/s][1,0]<stderr>: 58%|█████▊    | 140/242 [01:25<01:00,  1.69it/s][1,0]<stderr>: 58%|█████▊    | 140/242 [01:25<01:01,  1.66it/s][1,0]<stderr>: 58%|█████▊    | 141/242 [01:25<01:00,  1.68it/s][1,0]<stderr>: 58%|█████▊    | 141/242 [01:25<01:00,  1.67it/s][1,0]<stderr>: 58%|█████▊    | 141/242 [01:25<01:00,  1.66it/s][1,0]<stderr>: 58% 141/242 [01:25<01:01,  1.64it/s][1,0]<stderr>: 59% 142/242 [01:26<00:58,  1.71it/s][1,0]<stderr>: 59%|█████▊    | 142/242 [01:26<00:59,  1.68it/s][1,0]<stderr>: 59%|█████▊    | 142/242 [01:26<00:58,  1.70it/s][1,0]<stderr>: 59%|█████▊    | 142/242 [01:26<00:59,  1.69it/s][1,0]<stderr>: 59%|█████▉    | 143/242 [01:26<00:57,  1.71it/s][1,0]<stderr>: 59%|█████▉    | 143/242 [01:26<00:58,  1.68it/s][1,0]<stderr>: 59%|█████▉    | 143/242 [01:26<00:58,  1.69it/s][1,0]<stderr>: 59% 143/242 [01:26<00:58,  1.68it/s][1,0]<stderr>: 60% 144/242 [01:27<00:57,  1.72it/s][1,0]<stderr>: 60%|█████▉    | 144/242 [01:27<00:58,  1.69it/s][1,0]<stderr>: 60%|█████▉    | 144/242 [01:27<00:57,  1.69it/s][1,0]<stderr>: 60%|█████▉    | 144/242 [01:27<00:58,  1.67it/s][1,0]<stderr>: 60%|█████▉    | 145/242 [01:28<00:57,  1.69it/s][1,0]<stderr>: 60%|█████▉    | 145/242 [01:28<00:57,  1.69it/s][1,0]<stderr>: 60%|█████▉    | 145/242 [01:28<00:57,  1.69it/s][1,0]<stderr>: 60% 145/242 [01:28<00:58,  1.67it/s][1,0]<stderr>: 60%|██████    | 146/242 [01:28<00:55,  1.74it/s][1,0]<stderr>: 60%|██████    | 146/242 [01:28<00:55,  1.72it/s][1,0]<stderr>: 60% 146/242 [01:28<00:55,  1.72it/s][1,0]<stderr>: 60%|██████    | 146/242 [01:28<00:55,  1.72it/s][1,0]<stderr>: 61% 147/242 [01:29<00:57,  1.64it/s][1,0]<stderr>: 61%|██████    | 147/242 [01:29<00:58,  1.64it/s][1,0]<stderr>: 61%|██████    | 147/242 [01:29<00:57,  1.64it/s][1,0]<stderr>: 61%|██████    | 147/242 [01:29<00:57,  1.65it/s][1,0]<stderr>: 61%|██████    | 148/242 [01:29<00:56,  1.68it/s][1,0]<stderr>: 61%|██████    | 148/242 [01:29<00:56,  1.68it/s][1,0]<stderr>: 61% 148/242 [01:29<00:56,  1.66it/s][1,0]<stderr>: 61%|██████    | 148/242 [01:29<00:56,  1.66it/s][1,0]<stderr>: 62%|██████▏   | 149/242 [01:30<00:55,  1.68it/s][1,0]<stderr>: 62%|██████▏   | 149/242 [01:30<00:55,  1.67it/s][1,0]<stderr>: 62%|██████▏   | 149/242 [01:30<00:56,  1.66it/s][1,0]<stderr>: 62% 149/242 [01:30<00:56,  1.65it/s][1,0]<stderr>: 62%|██████▏   | 150/242 [01:30<00:54,  1.70it/s][1,0]<stderr>: 62% 150/242 [01:31<00:54,  1.69it/s][1,0]<stderr>: 62%|██████▏   | 150/242 [01:31<00:54,  1.68it/s][1,0]<stderr>: 62%|██████▏   | 150/242 [01:31<00:54,  1.69it/s][1,0]<stderr>: 62%|██████▏   | 151/242 [01:31<00:53,  1.69it/s][1,0]<stderr>: 62% 151/242 [01:31<00:53,  1.69it/s][1,0]<stderr>: 62%|██████▏   | 151/242 [01:31<00:54,  1.67it/s][1,0]<stderr>: 62%|██████▏   | 151/242 [01:31<00:54,  1.66it/s][1,0]<stderr>: 63% 152/242 [01:32<00:52,  1.70it/s][1,0]<stderr>: 63%|██████▎   | 152/242 [01:32<00:52,  1.70it/s][1,0]<stderr>: 63%|██████▎   | 152/242 [01:32<00:52,  1.71it/s][1,0]<stderr>: 63%|██████▎   | 152/242 [01:32<00:53,  1.69it/s][1,0]<stderr>: 63%|██████▎   | 153/242 [01:32<00:51,  1.73it/s][1,0]<stderr>: 63%|██████▎   | 153/242 [01:32<00:51,  1.72it/s][1,0]<stderr>: 63%|██████▎   | 153/242 [01:32<00:52,  1.70it/s][1,0]<stderr>: 63% 153/242 [01:32<00:52,  1.69it/s][1,0]<stderr>: 64%|██████▎   | 154/242 [01:33<00:50,  1.73it/s][1,0]<stderr>: 64%|██████▎   | 154/242 [01:33<00:50,  1.73it/s][1,0]<stderr>: 64%|██████▎   | 154/242 [01:33<00:51,  1.71it/s][1,0]<stderr>: 64% 154/242 [01:33<00:52,  1.69it/s][1,0]<stderr>: 64%|██████▍   | 155/242 [01:33<00:50,  1.72it/s][1,0]<stderr>: 64% 155/242 [01:33<00:50,  1.74it/s][1,0]<stderr>: 64%|██████▍   | 155/242 [01:33<00:50,  1.73it/s][1,0]<stderr>: 64%|██████▍   | 155/242 [01:33<00:51,  1.69it/s][1,0]<stderr>: 64% 156/242 [01:34<00:49,  1.75it/s][1,0]<stderr>: 64%|██████▍   | 156/242 [01:34<00:49,  1.73it/s][1,0]<stderr>: 64%|██████▍   | 156/242 [01:34<00:50,  1.71it/s][1,0]<stderr>: 64%|██████▍   | 156/242 [01:34<00:50,  1.69it/s][1,0]<stderr>: 65%|██████▍   | 157/242 [01:35<00:49,  1.70it/s][1,0]<stderr>: 65%|██████▍   | 157/242 [01:35<00:50,  1.68it/s][1,0]<stderr>: 65% 157/242 [01:35<00:50,  1.67it/s][1,0]<stderr>: 65%|██████▍   | 157/242 [01:35<00:51,  1.66it/s][1,0]<stderr>: 65% 158/242 [01:35<00:48,  1.72it/s][1,0]<stderr>: 65%|██████▌   | 158/242 [01:35<00:49,  1.70it/s][1,0]<stderr>: 65%|██████▌   | 158/242 [01:35<00:49,  1.69it/s][1,0]<stderr>: 65%|██████▌   | 158/242 [01:35<00:49,  1.68it/s][1,0]<stderr>: 66%|██████▌   | 159/242 [01:36<00:49,  1.69it/s][1,0]<stderr>: 66%|██████▌   | 159/242 [01:36<00:49,  1.67it/s][1,0]<stderr>: 66% 159/242 [01:36<00:50,  1.66it/s][1,0]<stderr>: 66%|██████▌   | 159/242 [01:36<00:49,  1.67it/s][1,0]<stderr>: 66%|██████▌   | 160/242 [01:36<00:47,  1.73it/s][1,0]<stderr>: 66%|██████▌   | 160/242 [01:36<00:47,  1.72it/s][1,0]<stderr>: 66%|██████▌   | 160/242 [01:36<00:47,  1.73it/s][1,0]<stderr>: 66% 160/242 [01:36<00:48,  1.70it/s][1,0]<stderr>: 67% 161/242 [01:37<00:46,  1.73it/s][1,0]<stderr>: 67%|██████▋   | 161/242 [01:37<00:47,  1.72it/s][1,0]<stderr>: 67%|██████▋   | 161/242 [01:37<00:47,  1.71it/s][1,0]<stderr>: 67%|██████▋   | 161/242 [01:37<00:47,  1.70it/s][1,0]<stderr>: 67%|██████▋   | 162/242 [01:38<00:47,  1.68it/s][1,0]<stderr>: 67%|██████▋   | 162/242 [01:38<00:47,  1.69it/s][1,0]<stderr>: 67%|██████▋   | 162/242 [01:38<00:47,  1.68it/s][1,0]<stderr>: 67% 162/242 [01:38<00:48,  1.66it/s][1,0]<stderr>: 67%|██████▋   | 163/242 [01:38<00:46,  1.69it/s][1,0]<stderr>: 67%|██████▋   | 163/242 [01:38<00:47,  1.68it/s][1,0]<stderr>: 67% 163/242 [01:38<00:47,  1.67it/s][1,0]<stderr>: 67%|██████▋   | 163/242 [01:38<00:47,  1.66it/s][1,0]<stderr>: 68% 164/242 [01:39<00:45,  1.71it/s][1,0]<stderr>: 68%|██████▊   | 164/242 [01:39<00:46,  1.69it/s][1,0]<stderr>: 68%|██████▊   | 164/242 [01:39<00:46,  1.67it/s][1,0]<stderr>: 68%|██████▊   | 164/242 [01:39<00:46,  1.67it/s][1,0]<stderr>: 68%|██████▊   | 165/242 [01:39<00:45,  1.69it/s][1,0]<stderr>: 68%|██████▊   | 165/242 [01:39<00:46,  1.66it/s][1,0]<stderr>: 68% 165/242 [01:39<00:46,  1.65it/s][1,0]<stderr>: 68%|██████▊   | 165/242 [01:39<00:46,  1.64it/s][1,0]<stderr>: 69% 166/242 [01:40<00:45,  1.69it/s][1,0]<stderr>: 69%|██████▊   | 166/242 [01:40<00:45,  1.68it/s][1,0]<stderr>: 69%|██████▊   | 166/242 [01:40<00:45,  1.67it/s][1,0]<stderr>: 69%|██████▊   | 166/242 [01:40<00:45,  1.67it/s][1,0]<stderr>: 69%|██████▉   | 167/242 [01:41<00:44,  1.68it/s][1,0]<stderr>: 69%|██████▉   | 167/242 [01:41<00:44,  1.68it/s][1,0]<stderr>: 69% 167/242 [01:41<00:44,  1.67it/s][1,0]<stderr>: 69%|██████▉   | 167/242 [01:41<00:44,  1.67it/s][1,0]<stderr>: 69%|██████▉   | 168/242 [01:41<00:43,  1.70it/s][1,0]<stderr>: 69%|██████▉   | 168/242 [01:41<00:44,  1.67it/s][1,0]<stderr>: 69% 168/242 [01:41<00:44,  1.67it/s][1,0]<stderr>: 69%|██████▉   | 168/242 [01:41<00:44,  1.67it/s][1,0]<stderr>: 70% 169/242 [01:42<00:43,  1.67it/s][1,0]<stderr>: 70%|██████▉   | 169/242 [01:42<00:44,  1.65it/s][1,0]<stderr>: 70%|██████▉   | 169/242 [01:42<00:44,  1.65it/s][1,0]<stderr>: 70%|██████▉   | 169/242 [01:42<00:44,  1.66it/s][1,0]<stderr>: 70%|███████   | 170/242 [01:42<00:43,  1.65it/s][1,0]<stderr>: 70% 170/242 [01:42<00:43,  1.64it/s][1,0]<stderr>: 70%|███████   | 170/242 [01:42<00:43,  1.64it/s][1,0]<stderr>: 70%|███████   | 170/242 [01:43<00:48,  1.50it/s][1,0]<stderr>: 71%|███████   | 171/242 [01:43<00:43,  1.64it/s][1,0]<stderr>: 71%|███████   | 171/242 [01:43<00:43,  1.63it/s][1,0]<stderr>: 71% 171/242 [01:43<00:43,  1.61it/s][1,0]<stderr>: 71%|███████   | 171/242 [01:43<00:44,  1.60it/s][1,0]<stderr>: 71%|███████   | 172/242 [01:44<00:43,  1.61it/s][1,0]<stderr>: 71%|███████   | 172/242 [01:44<00:43,  1.63it/s][1,0]<stderr>: 71% 172/242 [01:44<00:43,  1.61it/s][1,0]<stderr>: 71%|███████   | 172/242 [01:44<00:45,  1.55it/s][1,0]<stderr>: 71% 173/242 [01:44<00:42,  1.62it/s][1,0]<stderr>: 71%|███████▏  | 173/242 [01:44<00:42,  1.61it/s][1,0]<stderr>: 71%|███████▏  | 173/242 [01:44<00:43,  1.58it/s][1,0]<stderr>: 71%|███████▏  | 173/242 [01:44<00:42,  1.64it/s][1,0]<stderr>: 72%|███████▏  | 174/242 [01:45<00:42,  1.61it/s][1,0]<stderr>: 72%|███████▏  | 174/242 [01:45<00:42,  1.61it/s][1,0]<stderr>: 72%|███████▏  | 174/242 [01:45<00:40,  1.66it/s][1,0]<stderr>: 72% 174/242 [01:45<00:43,  1.58it/s][1,0]<stderr>: 72%|███████▏  | 175/242 [01:45<00:38,  1.73it/s][1,0]<stderr>: 72%|███████▏  | 175/242 [01:45<00:40,  1.66it/s][1,0]<stderr>: 72%|███████▏  | 175/242 [01:45<00:40,  1.64it/s][1,0]<stderr>: 72% 175/242 [01:46<00:41,  1.62it/s][1,0]<stderr>: 73%|███████▎  | 176/242 [01:46<00:39,  1.68it/s][1,0]<stderr>: 73%|███████▎  | 176/242 [01:46<00:38,  1.71it/s][1,0]<stderr>: 73%|███████▎  | 176/242 [01:46<00:39,  1.67it/s][1,0]<stderr>: 73% 176/242 [01:46<00:39,  1.68it/s][1,0]<stderr>: 73%|███████▎  | 177/242 [01:47<00:38,  1.71it/s][1,0]<stderr>: 73% 177/242 [01:47<00:38,  1.70it/s][1,0]<stderr>: 73%|███████▎  | 177/242 [01:47<00:38,  1.68it/s][1,0]<stderr>: 73%|███████▎  | 177/242 [01:47<00:38,  1.67it/s][1,0]<stderr>: 74% 178/242 [01:47<00:37,  1.70it/s][1,0]<stderr>: 74%|███████▎  | 178/242 [01:47<00:38,  1.68it/s][1,0]<stderr>: 74%|███████▎  | 178/242 [01:47<00:38,  1.68it/s][1,0]<stderr>: 74%|███████▎  | 178/242 [01:47<00:38,  1.66it/s][1,0]<stderr>: 74%|███████▍  | 179/242 [01:48<00:37,  1.69it/s][1,0]<stderr>: 74%|███████▍  | 179/242 [01:48<00:37,  1.68it/s][1,0]<stderr>: 74% 179/242 [01:48<00:37,  1.67it/s][1,0]<stderr>: 74%|███████▍  | 179/242 [01:48<00:37,  1.66it/s][1,0]<stderr>: 74%|███████▍  | 180/242 [01:48<00:36,  1.70it/s][1,0]<stderr>: 74%|███████▍  | 180/242 [01:48<00:36,  1.69it/s][1,0]<stderr>: 74% 180/242 [01:48<00:36,  1.68it/s][1,0]<stderr>: 74%|███████▍  | 180/242 [01:48<00:37,  1.66it/s][1,0]<stderr>: 75%|███████▍  | 181/242 [01:49<00:36,  1.69it/s][1,0]<stderr>: 75%|███████▍  | 181/242 [01:49<00:36,  1.66it/s][1,0]<stderr>: 75% 181/242 [01:49<00:36,  1.66it/s][1,0]<stderr>: 75%|███████▍  | 181/242 [01:49<00:36,  1.65it/s][1,0]<stderr>: 75%|███████▌  | 182/242 [01:50<00:35,  1.70it/s][1,0]<stderr>: 75%|███████▌  | 182/242 [01:50<00:35,  1.69it/s][1,0]<stderr>: 75%|███████▌  | 182/242 [01:50<00:35,  1.68it/s][1,0]<stderr>: 75% 182/242 [01:50<00:35,  1.67it/s][1,0]<stderr>: 76%|███████▌  | 183/242 [01:50<00:34,  1.71it/s][1,0]<stderr>: 76% 183/242 [01:50<00:34,  1.71it/s][1,0]<stderr>: 76%|███████▌  | 183/242 [01:50<00:35,  1.68it/s][1,0]<stderr>: 76%|███████▌  | 183/242 [01:50<00:34,  1.70it/s][1,0]<stderr>: 76% 184/242 [01:51<00:34,  1.67it/s][1,0]<stderr>: 76%|███████▌  | 184/242 [01:51<00:35,  1.66it/s][1,0]<stderr>: 76%|███████▌  | 184/242 [01:51<00:34,  1.66it/s][1,0]<stderr>: 76%|███████▌  | 184/242 [01:51<00:35,  1.65it/s][1,0]<stderr>: 76%|███████▋  | 185/242 [01:51<00:34,  1.63it/s][1,0]<stderr>: 76%|███████▋  | 185/242 [01:52<00:35,  1.61it/s][1,0]<stderr>: 76% 185/242 [01:52<00:35,  1.58it/s][1,0]<stderr>: 76%|███████▋  | 185/242 [01:52<00:36,  1.58it/s][1,0]<stderr>: 77% 186/242 [01:52<00:34,  1.63it/s][1,0]<stderr>: 77%|███████▋  | 186/242 [01:52<00:35,  1.58it/s][1,0]<stderr>: 77%|███████▋  | 186/242 [01:52<00:35,  1.60it/s][1,0]<stderr>: 77%|███████▋  | 186/242 [01:52<00:36,  1.54it/s][1,0]<stderr>: 77%|███████▋  | 187/242 [01:53<00:34,  1.60it/s][1,0]<stderr>: 77%|███████▋  | 187/242 [01:53<00:35,  1.55it/s][1,0]<stderr>: 77% 187/242 [01:53<00:35,  1.55it/s][1,0]<stderr>: 77%|███████▋  | 187/242 [01:53<00:35,  1.54it/s][1,0]<stderr>: 78% 188/242 [01:53<00:34,  1.58it/s][1,0]<stderr>: 78%|███████▊  | 188/242 [01:53<00:34,  1.56it/s][1,0]<stderr>: 78%|███████▊  | 188/242 [01:53<00:34,  1.55it/s][1,0]<stderr>: 78%|███████▊  | 188/242 [01:53<00:34,  1.54it/s][1,0]<stderr>: 78%|███████▊  | 189/242 [01:54<00:32,  1.61it/s][1,0]<stderr>: 78%|███████▊  | 189/242 [01:54<00:32,  1.61it/s][1,0]<stderr>: 78% 189/242 [01:54<00:33,  1.60it/s][1,0]<stderr>: 78%|███████▊  | 189/242 [01:54<00:33,  1.60it/s][1,0]<stderr>: 79%|███████▊  | 190/242 [01:55<00:31,  1.63it/s][1,0]<stderr>: 79%|███████▊  | 190/242 [01:55<00:32,  1.61it/s][1,0]<stderr>: 79%|███████▊  | 190/242 [01:55<00:32,  1.60it/s][1,0]<stderr>: 79% 190/242 [01:55<00:32,  1.60it/s][1,0]<stderr>: 79% 191/242 [01:55<00:31,  1.62it/s][1,0]<stderr>: 79%|███████▉  | 191/242 [01:55<00:31,  1.62it/s][1,0]<stderr>: 79%|███████▉  | 191/242 [01:55<00:31,  1.61it/s][1,0]<stderr>: 79%|███████▉  | 191/242 [01:55<00:31,  1.61it/s][1,0]<stderr>: 79%|███████▉  | 192/242 [01:56<00:30,  1.65it/s][1,0]<stderr>: 79% 192/242 [01:56<00:30,  1.64it/s][1,0]<stderr>: 79%|███████▉  | 192/242 [01:56<00:30,  1.65it/s][1,0]<stderr>: 79%|███████▉  | 192/242 [01:56<00:32,  1.52it/s][1,0]<stderr>: 80%|███████▉  | 193/242 [01:56<00:29,  1.68it/s][1,0]<stderr>: 80% 193/242 [01:56<00:29,  1.66it/s][1,0]<stderr>: 80%|███████▉  | 193/242 [01:57<00:30,  1.63it/s][1,0]<stderr>: 80%|███████▉  | 193/242 [01:57<00:32,  1.50it/s][1,0]<stderr>: 80%|████████  | 194/242 [01:57<00:27,  1.73it/s][1,0]<stderr>: 80% 194/242 [01:57<00:27,  1.73it/s][1,0]<stderr>: 80%|████████  | 194/242 [01:57<00:29,  1.65it/s][1,0]<stderr>: 80%|████████  | 194/242 [01:57<00:30,  1.57it/s][1,0]<stderr>: 81%|████████  | 195/242 [01:57<00:26,  1.80it/s][1,0]<stderr>: 81% 195/242 [01:57<00:26,  1.79it/s][1,0]<stderr>: 81%|████████  | 195/242 [01:58<00:28,  1.65it/s][1,0]<stderr>: 81%|████████  | 195/242 [01:58<00:29,  1.60it/s][1,0]<stderr>: 81% 196/242 [01:58<00:25,  1.78it/s][1,0]<stderr>: 81%|████████  | 196/242 [01:58<00:25,  1.77it/s][1,0]<stderr>: 81%|████████  | 196/242 [01:58<00:27,  1.70it/s][1,0]<stderr>: 81%|████████  | 196/242 [01:58<00:28,  1.63it/s][1,0]<stderr>: 81%|████████▏ | 197/242 [01:59<00:24,  1.85it/s][1,0]<stderr>: 81% 197/242 [01:59<00:24,  1.81it/s][1,0]<stderr>: 81%|████████▏ | 197/242 [01:59<00:26,  1.71it/s][1,0]<stderr>: 81%|████████▏ | 197/242 [01:59<00:26,  1.72it/s][1,0]<stderr>: 82%|████████▏ | 198/242 [01:59<00:24,  1.82it/s][1,0]<stderr>: 82% 198/242 [01:59<00:24,  1.78it/s][1,0]<stderr>: 82%|████████▏ | 198/242 [01:59<00:25,  1.74it/s][1,0]<stderr>: 82%|████████▏ | 198/242 [01:59<00:25,  1.73it/s][1,0]<stderr>: 82%|████████▏ | 199/242 [02:00<00:24,  1.78it/s][1,0]<stderr>: 82% 199/242 [02:00<00:24,  1.75it/s][1,0]<stderr>: 82%|████████▏ | 199/242 [02:00<00:24,  1.77it/s][1,0]<stderr>: 82%|████████▏ | 199/242 [02:00<00:24,  1.77it/s][1,0]<stderr>: 83%|████████▎ | 200/242 [02:00<00:23,  1.76it/s][1,0]<stderr>: 83% 200/242 [02:00<00:23,  1.77it/s][1,0]<stderr>: 83%|████████▎ | 200/242 [02:01<00:23,  1.78it/s][1,0]<stderr>: 83%|████████▎ | 200/242 [02:01<00:23,  1.77it/s][1,0]<stderr>: 83%|████████▎ | 201/242 [02:01<00:23,  1.77it/s][1,0]<stderr>: 83% 201/242 [02:01<00:23,  1.76it/s][1,0]<stderr>: 83%|████████▎ | 201/242 [02:01<00:22,  1.82it/s][1,0]<stderr>: 83%|████████▎ | 201/242 [02:01<00:23,  1.77it/s][1,0]<stderr>: 83%|████████▎ | 202/242 [02:01<00:22,  1.78it/s][1,0]<stderr>: 83% 202/242 [02:01<00:22,  1.80it/s][1,0]<stderr>: 83%|████████▎ | 202/242 [02:02<00:22,  1.81it/s][1,0]<stderr>: 83%|████████▎ | 202/242 [02:02<00:23,  1.70it/s][1,0]<stderr>: 84%|████████▍ | 203/242 [02:02<00:21,  1.82it/s][1,0]<stderr>: 84% 203/242 [02:02<00:21,  1.80it/s][1,0]<stderr>: 84%|████████▍ | 203/242 [02:02<00:21,  1.79it/s][1,0]<stderr>: 84%|████████▍ | 203/242 [02:02<00:22,  1.72it/s][1,0]<stderr>: 84%|████████▍ | 204/242 [02:02<00:20,  1.84it/s][1,0]<stderr>: 84% 204/242 [02:03<00:21,  1.79it/s][1,0]<stderr>: 84%|████████▍ | 204/242 [02:03<00:20,  1.81it/s][1,0]<stderr>: 84%|████████▍ | 204/242 [02:03<00:22,  1.73it/s][1,0]<stderr>: 85%|████████▍ | 205/242 [02:03<00:19,  1.86it/s][1,0]<stderr>: 85% 205/242 [02:03<00:20,  1.83it/s][1,0]<stderr>: 85%|████████▍ | 205/242 [02:03<00:21,  1.75it/s][1,0]<stderr>: 85%|████████▍ | 205/242 [02:03<00:21,  1.75it/s][1,0]<stderr>: 85%|████████▌ | 206/242 [02:04<00:19,  1.83it/s][1,0]<stderr>: 85% 206/242 [02:04<00:19,  1.83it/s][1,0]<stderr>: 85%|████████▌ | 206/242 [02:04<00:20,  1.72it/s][1,0]<stderr>: 86%|████████▌ | 207/242 [02:04<00:18,  1.87it/s][1,0]<stderr>: 85%|████████▌ | 206/242 [02:04<00:20,  1.77it/s][1,0]<stderr>: 86% 207/242 [02:04<00:19,  1.77it/s][1,0]<stderr>: 86%|████████▌ | 207/242 [02:04<00:19,  1.76it/s][1,0]<stderr>: 86%|████████▌ | 208/242 [02:05<00:18,  1.84it/s][1,0]<stderr>: 86%|████████▌ | 207/242 [02:05<00:19,  1.77it/s][1,0]<stderr>: 86% 208/242 [02:05<00:18,  1.79it/s][1,0]<stderr>: 86%|████████▌ | 208/242 [02:05<00:18,  1.80it/s][1,0]<stderr>: 86%|████████▋ | 209/242 [02:05<00:18,  1.82it/s][1,0]<stderr>: 86%|████████▌ | 208/242 [02:05<00:19,  1.75it/s][1,0]<stderr>: 86% 209/242 [02:05<00:18,  1.77it/s][1,0]<stderr>: 86%|████████▋ | 209/242 [02:06<00:18,  1.82it/s][1,0]<stderr>: 86%|████████▋ | 209/242 [02:06<00:18,  1.75it/s][1,0]<stderr>: 87%|████████▋ | 210/242 [02:06<00:18,  1.77it/s][1,0]<stderr>: 87% 210/242 [02:06<00:17,  1.80it/s][1,0]<stderr>: 87%|████████▋ | 210/242 [02:06<00:17,  1.84it/s][1,0]<stderr>: 87%|████████▋ | 211/242 [02:06<00:17,  1.76it/s][1,0]<stderr>: 87%|████████▋ | 210/242 [02:06<00:18,  1.74it/s][1,0]<stderr>: 87% 211/242 [02:06<00:17,  1.81it/s][1,0]<stderr>: 87%|████████▋ | 211/242 [02:07<00:16,  1.85it/s][1,0]<stderr>: 88%|████████▊ | 212/242 [02:07<00:17,  1.74it/s][1,0]<stderr>: 87%|████████▋ | 211/242 [02:07<00:18,  1.72it/s][1,0]<stderr>: 88% 212/242 [02:07<00:16,  1.81it/s][1,0]<stderr>: 88%|████████▊ | 212/242 [02:07<00:16,  1.87it/s][1,0]<stderr>: 88% 213/242 [02:08<00:16,  1.76it/s][1,0]<stderr>: 88%|████████▊ | 212/242 [02:08<00:17,  1.68it/s][1,0]<stderr>: 88%|████████▊ | 213/242 [02:08<00:17,  1.67it/s][1,0]<stderr>: 88%|████████▊ | 213/242 [02:08<00:16,  1.81it/s][1,0]<stderr>: 88%|████████▊ | 214/242 [02:08<00:16,  1.68it/s][1,0]<stderr>: 88% 214/242 [02:08<00:16,  1.71it/s][1,0]<stderr>: 88%|████████▊ | 213/242 [02:08<00:17,  1.66it/s][1,0]<stderr>: 88%|████████▊ | 214/242 [02:08<00:15,  1.82it/s][1,0]<stderr>: 89%|████████▉ | 215/242 [02:09<00:14,  1.82it/s][1,0]<stderr>: 88%|████████▊ | 214/242 [02:09<00:16,  1.66it/s][1,0]<stderr>: 89%|████████▉ | 215/242 [02:09<00:16,  1.66it/s][1,0]<stderr>: 89% 215/242 [02:09<00:16,  1.67it/s][1,0]<stderr>: 89%|████████▉ | 216/242 [02:09<00:15,  1.69it/s][1,0]<stderr>: 89% 216/242 [02:09<00:15,  1.70it/s][1,0]<stderr>: 89%|████████▉ | 216/242 [02:09<00:14,  1.76it/s][1,0]<stderr>: 89%|████████▉ | 215/242 [02:09<00:16,  1.64it/s][1,0]<stderr>: 90%|████████▉ | 217/242 [02:10<00:14,  1.74it/s][1,0]<stderr>: 90% 217/242 [02:10<00:14,  1.72it/s][1,0]<stderr>: 89%|████████▉ | 216/242 [02:10<00:15,  1.69it/s][1,0]<stderr>: 90%|████████▉ | 217/242 [02:10<00:14,  1.75it/s][1,0]<stderr>: 90% 218/242 [02:11<00:14,  1.71it/s][1,0]<stderr>: 90%|████████▉ | 217/242 [02:11<00:14,  1.71it/s][1,0]<stderr>: 90%|█████████ | 218/242 [02:11<00:13,  1.74it/s][1,0]<stderr>: 90%|█████████ | 218/242 [02:11<00:14,  1.68it/s][1,0]<stderr>: 90%|█████████ | 219/242 [02:11<00:13,  1.70it/s][1,0]<stderr>: 90%|█████████ | 219/242 [02:11<00:13,  1.72it/s][1,0]<stderr>: 90%|█████████ | 218/242 [02:11<00:14,  1.67it/s][1,0]<stderr>: 90% 219/242 [02:11<00:13,  1.65it/s][1,0]<stderr>: 91%|█████████ | 220/242 [02:12<00:13,  1.67it/s][1,0]<stderr>: 91%|█████████ | 220/242 [02:12<00:12,  1.70it/s][1,0]<stderr>: 90%|█████████ | 219/242 [02:12<00:13,  1.68it/s][1,0]<stderr>: 91% 220/242 [02:12<00:13,  1.67it/s][1,0]<stderr>: 91% 221/242 [02:12<00:12,  1.69it/s][1,0]<stderr>: 91%|█████████ | 220/242 [02:12<00:13,  1.69it/s][1,0]<stderr>: 91%|█████████▏| 221/242 [02:12<00:12,  1.66it/s][1,0]<stderr>: 91%|█████████▏| 221/242 [02:12<00:12,  1.67it/s][1,0]<stderr>: 92% 222/242 [02:13<00:11,  1.69it/s][1,0]<stderr>: 91%|█████████▏| 221/242 [02:13<00:12,  1.69it/s][1,0]<stderr>: 92%|█████████▏| 222/242 [02:13<00:11,  1.70it/s][1,0]<stderr>: 92%|█████████▏| 222/242 [02:13<00:12,  1.66it/s][1,0]<stderr>: 92%|█████████▏| 223/242 [02:14<00:11,  1.63it/s][1,0]<stderr>: 92% 223/242 [02:14<00:11,  1.64it/s][1,0]<stderr>: 92%|█████████▏| 223/242 [02:14<00:11,  1.64it/s][1,0]<stderr>: 92%|█████████▏| 222/242 [02:14<00:12,  1.63it/s][1,0]<stderr>: 93% 224/242 [02:14<00:10,  1.66it/s][1,0]<stderr>: 92%|█████████▏| 223/242 [02:14<00:11,  1.67it/s][1,0]<stderr>: 93%|█████████▎| 224/242 [02:14<00:10,  1.64it/s][1,0]<stderr>: 93%|█████████▎| 224/242 [02:14<00:10,  1.65it/s][1,0]<stderr>: 93%|█████████▎| 225/242 [02:15<00:10,  1.68it/s][1,0]<stderr>: 93%|█████████▎| 225/242 [02:15<00:10,  1.67it/s][1,0]<stderr>: 93%|█████████▎| 224/242 [02:15<00:10,  1.66it/s][1,0]<stderr>: 93% 225/242 [02:15<00:10,  1.64it/s][1,0]<stderr>: 93%|█████████▎| 226/242 [02:15<00:09,  1.72it/s][1,0]<stderr>: 93%|█████████▎| 226/242 [02:15<00:09,  1.69it/s][1,0]<stderr>: 93%|█████████▎| 225/242 [02:15<00:10,  1.67it/s][1,0]<stderr>: 93% 226/242 [02:15<00:09,  1.66it/s][1,0]<stderr>: 94%|█████████▍| 227/242 [02:16<00:08,  1.72it/s][1,0]<stderr>: 93%|█████████▎| 226/242 [02:16<00:09,  1.71it/s][1,0]<stderr>: 94% 227/242 [02:16<00:08,  1.70it/s][1,0]<stderr>: 94%|█████████▍| 227/242 [02:16<00:08,  1.68it/s][1,0]<stderr>: 94%|█████████▍| 227/242 [02:16<00:08,  1.72it/s][1,0]<stderr>: 94% 228/242 [02:17<00:08,  1.72it/s][1,0]<stderr>: 94%|█████████▍| 228/242 [02:17<00:08,  1.68it/s][1,0]<stderr>: 94%|█████████▍| 228/242 [02:17<00:08,  1.70it/s][1,0]<stderr>: 95%|█████████▍| 229/242 [02:17<00:07,  1.74it/s][1,0]<stderr>: 94%|█████████▍| 228/242 [02:17<00:08,  1.71it/s][1,0]<stderr>: 95%|█████████▍| 229/242 [02:17<00:07,  1.71it/s][1,0]<stderr>: 95% 229/242 [02:17<00:07,  1.69it/s][1,0]<stderr>: 95% 230/242 [02:18<00:06,  1.73it/s][1,0]<stderr>: 95%|█████████▍| 229/242 [02:18<00:07,  1.68it/s][1,0]<stderr>: 95%|█████████▌| 230/242 [02:18<00:07,  1.69it/s][1,0]<stderr>: 95%|█████████▌| 230/242 [02:18<00:07,  1.66it/s][1,0]<stderr>: 95%|█████████▌| 230/242 [02:18<00:07,  1.71it/s][1,0]<stderr>: 95%|█████████▌| 231/242 [02:18<00:06,  1.71it/s][1,0]<stderr>: 95%|█████████▌| 231/242 [02:18<00:06,  1.69it/s][1,0]<stderr>: 95% 231/242 [02:18<00:06,  1.68it/s][1,0]<stderr>: 96% 232/242 [02:19<00:05,  1.74it/s][1,0]<stderr>: 95%|█████████▌| 231/242 [02:19<00:06,  1.72it/s][1,0]<stderr>: 96%|█████████▌| 232/242 [02:19<00:05,  1.71it/s][1,0]<stderr>: 96%|█████████▌| 232/242 [02:19<00:05,  1.70it/s][1,0]<stderr>: 96%|█████████▌| 232/242 [02:19<00:05,  1.67it/s][1,0]<stderr>: 96%|█████████▋| 233/242 [02:19<00:05,  1.67it/s][1,0]<stderr>: 96%|█████████▋| 233/242 [02:19<00:05,  1.68it/s][1,0]<stderr>: 96% 233/242 [02:20<00:05,  1.66it/s][1,0]<stderr>: 97%|█████████▋| 234/242 [02:20<00:04,  1.71it/s][1,0]<stderr>: 97%|█████████▋| 234/242 [02:20<00:04,  1.69it/s][1,0]<stderr>: 97% 234/242 [02:20<00:04,  1.68it/s][1,0]<stderr>: 96%|█████████▋| 233/242 [02:20<00:05,  1.67it/s][1,0]<stderr>: 97% 235/242 [02:21<00:04,  1.73it/s][1,0]<stderr>: 97%|█████████▋| 235/242 [02:21<00:04,  1.72it/s][1,0]<stderr>: 97%|█████████▋| 235/242 [02:21<00:04,  1.72it/s][1,0]<stderr>: 97%|█████████▋| 234/242 [02:21<00:04,  1.71it/s][1,0]<stderr>: 98%|█████████▊| 236/242 [02:21<00:03,  1.79it/s][1,0]<stderr>: 98%|█████████▊| 236/242 [02:21<00:03,  1.77it/s][1,0]<stderr>: 98% 236/242 [02:21<00:03,  1.77it/s][1,0]<stderr>: 97%|█████████▋| 235/242 [02:21<00:04,  1.75it/s][1,0]<stderr>: 98%|█████████▊| 237/242 [02:22<00:02,  1.82it/s][1,0]<stderr>: 98%|█████████▊| 236/242 [02:22<00:03,  1.82it/s][1,0]<stderr>: 98%|█████████▊| 237/242 [02:22<00:02,  1.81it/s][1,0]<stderr>: 98% 237/242 [02:22<00:03,  1.64it/s][1,0]<stderr>: 98%|█████████▊| 238/242 [02:22<00:02,  1.84it/s][1,0]<stderr>: 98%|█████████▊| 237/242 [02:22<00:02,  1.83it/s][1,0]<stderr>: 98%|█████████▊| 238/242 [02:22<00:02,  1.80it/s][1,0]<stderr>: 98% 238/242 [02:22<00:02,  1.76it/s][1,0]<stderr>: 99%|█████████▉| 239/242 [02:23<00:01,  1.87it/s][1,0]<stderr>: 98%|█████████▊| 238/242 [02:23<00:02,  1.84it/s][1,0]<stderr>: 99%|█████████▉| 239/242 [02:23<00:01,  1.82it/s][1,0]<stderr>: 99% 239/242 [02:23<00:01,  1.85it/s][1,0]<stderr>: 99%|█████████▉| 240/242 [02:23<00:01,  1.84it/s][1,0]<stderr>: 99%|█████████▉| 240/242 [02:23<00:01,  1.86it/s][1,0]<stderr>: 99%|█████████▉| 239/242 [02:23<00:01,  1.85it/s][1,0]<stderr>: 99% 240/242 [02:23<00:01,  1.91it/s][1,0]<stderr>:100%|█████████▉| 241/242 [02:24<00:00,  1.88it/s][1,0]<stderr>:100%|█████████▉| 241/242 [02:24<00:00,  1.85it/s][1,0]<stderr>: 99%|█████████▉| 240/242 [02:24<00:01,  1.84it/s][1,0]<stderr>:100% 241/242 [02:24<00:00,  1.89it/s][1,0]<stderr>:100%|█████████▉| 241/242 [02:24<00:00,  1.90it/s][1,0]<stderr>:100%|██████████| 242/242 [02:24<00:00,  1.86it/s][1,0]<stderr>:100%|██████████| 242/242 [02:24<00:00,  1.87it/s][1,0]<stderr>:100% 242/242 [02:24<00:00,  1.91it/s][1,0]<stderr>:100%|██████████| 242/242 [02:24<00:00,  1.67it/s]
+[1,0]<stderr>:100%|██████████| 242/242 [02:24<00:00,  1.67it/s][1,0]<stderr>:
+[1,0]<stderr>:100% 242/242 [02:25<00:00,  1.67it/s]
+[1,0]<stderr>:100%|██████████| 242/242 [02:25<00:00,  1.52it/s][1,0]<stderr>:100%|██████████| 242/242 [02:25<00:00,  1.66it/s]
+[1,0]<stdout>:------------
+[1,0]<stdout>:test_CA_improvement_mean_improvement
+[1,0]<stdout>:------------
+[1,0]<stdout>:valid_all_pdb_CA_improvement_mean_RMSD
+[1,0]<stdout>:------------
+[1,0]<stdout>:test_all_pdb_CA_RMSD_improve_[1,0]<stdout>:
+[1,0]<stdout>:------------
+[1,0]<stdout>:test_all_pdb_CDR_CA_RMSD_improve_
+[1,0]<stdout>:------------
+[1,0]<stdout>:CDR1_impove_rmsd_all_test
+[1,0]<stdout>:------------
+[1,0]<stdout>:CDR2_impove_rmsd_all_test
+[1,0]<stdout>:------------
+[1,0]<stdout>:CDR3_impove_rmsd_all_test
+[1,0]<stdout>:------------[1,0]<stdout>:
+[1,0]<stdout>:test_tran_mean_loss
+[1,0]<stdout>:------------[1,0]<stdout>:
+[1,0]<stdout>:test_tran_mse_loss
+[1,0]<stdout>:------------[1,0]<stdout>:
+[1,0]<stdout>:test_angle_mean_loss
+[1,0]<stdout>:------------
+[1,0]<stdout>:test_cg_mean_loss
+[1,0]<stdout>:------------[1,0]<stdout>:
+[1,0]<stdout>:test_distmap_loss
+[1,0]<stdout>:------------
+[1,0]<stdout>:test_tri_loss[1,0]<stdout>:
+[1,0]<stdout>:------------[1,0]<stdout>:
+[1,0]<stdout>:valid_tran_mean_loss
+[1,0]<stdout>:------------
+[1,0]<stdout>:valid_tran_mse_loss
+[1,0]<stdout>:------------
+[1,0]<stdout>:valid_angle_mean_loss[1,0]<stdout>:
+[1,0]<stdout>:------------
+[1,0]<stdout>:valid_cg_loss
+[1,0]<stdout>:------------
+[1,0]<stdout>:valid_distmap_loss[1,0]<stdout>:
+[1,0]<stdout>:------------[1,0]<stdout>:
+[1,0]<stdout>:valid_tri_loss[1,0]<stdout>:
+[1,0]<stdout>:------------[1,0]<stdout>:
+[1,0]<stdout>:avg_tran_loss_log_interval
+[1,0]<stdout>:------------
+[1,0]<stdout>:avg_angle_loss_log_interval[1,0]<stdout>:
+[1,0]<stdout>:------------
+[1,0]<stdout>:avg_backbone_cg_loss
+[1,0]<stdout>:------------
+[1,0]<stdout>:avg_tran_mse_loss[1,0]<stdout>:
+[1,0]<stdout>:------------
+[1,0]<stdout>:avg_train_distmap_loss[1,0]<stdout>:
+[1,0]<stdout>:------------
+[1,0]<stdout>:avg_train_tri_loss

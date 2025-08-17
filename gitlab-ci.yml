@@ -1,0 +1,21 @@
+stages:
+  - pre-commit
+code-quality-check:
+  dependencies: []
+  stage: pre-commit
+  image: harbor.biomap-int.com/inference/docker-pre-commit
+  script: |
+    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+    # pip install pytest-cov pep257
+    python -m pip install --upgrade pip
+    pip install pytest-cov pep257 pydocstyle
+    git config --global user.email "pre-commit-bot@biomap.com"
+    git config --global user.name "pre-commit-bot"
+    # code check
+    python3 -m pydocstyle -s -e --count|  tee pep257.text
+  artifacts:
+    when: always
+    reports:
+      cobertura: pep257.text
+  tags:
+    - infer-runner

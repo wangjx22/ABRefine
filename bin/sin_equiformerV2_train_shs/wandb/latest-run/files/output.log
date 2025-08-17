@@ -1,0 +1,89 @@
+100% 484/484 [01:50<00:00,  4.39it/s]
+100% 484/484 [01:52<00:00,  4.32it/s]
+100% 484/484 [01:51<00:00,  4.34it/s]
+100% 484/484 [01:50<00:00,  4.38it/s]
+100% 484/484 [01:50<00:00,  4.37it/s]
+100% 484/484 [01:51<00:00,  4.32it/s]
+100% 484/484 [01:51<00:00,  4.34it/s]
+100% 484/484 [01:52<00:00,  4.30it/s]
+100% 484/484 [01:53<00:00,  4.27it/s]
+100% 484/484 [01:52<00:00,  4.29it/s]
+100% 484/484 [01:51<00:00,  4.33it/s]
+100% 484/484 [01:53<00:00,  4.28it/s]
+100% 484/484 [01:51<00:00,  4.36it/s]
+100% 484/484 [01:52<00:00,  4.29it/s]
+100% 484/484 [01:54<00:00,  4.22it/s]
+100% 484/484 [01:53<00:00,  4.25it/s]
+100% 484/484 [01:53<00:00,  4.28it/s]
+100% 484/484 [01:53<00:00,  4.25it/s]
+100% 484/484 [01:51<00:00,  4.36it/s]
+100% 484/484 [01:53<00:00,  4.27it/s]
+100% 484/484 [01:53<00:00,  4.25it/s]
+100% 484/484 [01:51<00:00,  4.35it/s]
+100% 484/484 [01:52<00:00,  4.31it/s]
+100% 484/484 [01:54<00:00,  4.22it/s]
+100% 484/484 [01:53<00:00,  4.27it/s]
+100% 484/484 [01:54<00:00,  4.21it/s]
+100% 484/484 [01:54<00:00,  4.24it/s]
+100% 484/484 [01:51<00:00,  4.34it/s]
+100% 484/484 [01:54<00:00,  4.24it/s]
+100% 484/484 [01:53<00:00,  4.28it/s]
+100% 484/484 [01:52<00:00,  4.32it/s]
+100% 484/484 [01:51<00:00,  4.34it/s]
+100% 484/484 [01:49<00:00,  4.40it/s]
+Exception in thread NetStatThr:
+Traceback (most recent call last):
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 152, in check_network_status
+    status_response = self._interface.communicate_network_status()
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 138, in communicate_network_status
+    resp = self._communicate_network_status(status)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/interface/interface_shared.py", line 405, in _communicate_network_status
+    resp = self._communicate(req, local=True)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/interface/interface_shared.py", line 226, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/interface/interface_shared.py", line 231, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+Exception in thread ChkStopThr:
+Traceback (most recent call last):
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 170, in check_status
+    status_response = self._interface.communicate_stop_status()
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 127, in communicate_stop_status
+    resp = self._communicate_stop_status(status)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/interface/interface_shared.py", line 395, in _communicate_stop_status
+    resp = self._communicate(req, local=True)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/interface/interface_shared.py", line 226, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/interface/interface_shared.py", line 231, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+2024-11-15 14:34:36,028 INFO 44 [run_train_sin.py:61] Rank=0, caught unexpected error: Traceback (most recent call last):
+  File "/nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/sin_equiformerV2_train_shs/../..//run_train_sin.py", line 55, in main
+    test_run_train(args, yaml_args["config_runtime"], yaml_args["config_model"], yaml_args["config_data"])
+  File "/nfs_beijing_ai/jinxian/rama-scoring1.3.0/utils/../dataset/sin_equiformerv2_dataset.py", line 1467, in test_run_train
+    gt_model=data.gt_atom_positions.to(local_rank),
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 256, in wrapper
+    return func(self, *args, **kwargs)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 222, in wrapper
+    return func(self, *args, **kwargs)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1543, in log
+    self._log(data=data, step=step, commit=commit)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1334, in _log
+    self._partial_history_callback(data, step, commit)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1223, in _partial_history_callback
+    self._backend.interface.publish_partial_history(
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 553, in publish_partial_history
+    self._publish_partial_history(partial_history)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/interface/interface_shared.py", line 62, in _publish_partial_history
+    self._publish(rec)
+  File "/nfs_beijing/kubeflow-user/jinxian_2024/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 49, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown

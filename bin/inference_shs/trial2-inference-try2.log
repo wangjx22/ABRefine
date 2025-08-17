@@ -1,0 +1,148 @@
++ POD_NAME=nb-refinement-0-rw9k9-worker-0
++ shift
++ /opt/kube/kubectl exec nb-refinement-0-rw9k9-worker-0 -- /bin/sh -c        PATH=/usr/local/bin:$PATH ; export PATH ; LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH ; export LD_LIBRARY_PATH ; DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH ; export DYLD_LIBRARY_PATH ;   /usr/local/bin/orted -mca ess "env" -mca ess_base_jobid "2903048192" -mca ess_base_vpid 1 -mca ess_base_num_procs "2" -mca orte_node_regex "nb-refinement-[1:0]-rw9k9-launcher,nb-refinement-[1:0]-rw9k9-worker-0@0(2)" -mca orte_hnp_uri "2903048192.0;tcp://172.22.76.100:59972" -mca pml "ob1" -mca btl "^openib" -mca plm "rsh" --tree-spawn -mca routed "radix" -mca orte_parent_uri "2903048192.0;tcp://172.22.76.100:59972" -mca orte_default_hostfile "/etc/mpi/hostfile" -mca plm_rsh_agent "/etc/mpi/kubexec.sh" -mca orte_tag_output "1" -mca hwloc_base_binding_policy "none" -mca rmaps_base_mapping_policy "slot" -mca pmix "^s1,s2,cray,isolated"
+[1,0]<stderr>:+++ dirname ./inference_k8s_sin_trial2.sh
+[1,0]<stderr>:++ cd .
+[1,0]<stderr>:++ pwd
+[1,0]<stderr>:+ PROJECT_DIR=/nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/inference_shs/../../
+[1,0]<stderr>:+ source activate /nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:++ _CONDA_ROOT=/opt/conda
+[1,0]<stderr>:++ . /opt/conda/etc/profile.d/conda.sh
+[1,0]<stderr>:+++ export CONDA_EXE=/opt/conda/bin/conda
+[1,0]<stderr>:+++ CONDA_EXE=/opt/conda/bin/conda
+[1,0]<stderr>:+++ export _CE_M=
+[1,0]<stderr>:+++ _CE_M=
+[1,0]<stderr>:+++ export _CE_CONDA=
+[1,0]<stderr>:+++ _CE_CONDA=
+[1,0]<stderr>:+++ export CONDA_PYTHON_EXE=/opt/conda/bin/python
+[1,0]<stderr>:+++ CONDA_PYTHON_EXE=/opt/conda/bin/python
+[1,0]<stderr>:+++ '[' -z '' ']'
+[1,0]<stderr>:+++ export CONDA_SHLVL=0
+[1,0]<stderr>:+++ CONDA_SHLVL=0
+[1,0]<stderr>:+++ '[' -n '' ']'
+[1,0]<stderr>:+++++ dirname /opt/conda/bin/conda
+[1,0]<stderr>:++++ dirname /opt/conda/bin
+[1,0]<stderr>:+++ PATH=/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+++ export PATH
+[1,0]<stderr>:+++ '[' -z '' ']'
+[1,0]<stderr>:+++ PS1=
+[1,0]<stderr>:++ conda activate /nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:++ local cmd=activate
+[1,0]<stderr>:++ case "$cmd" in
+[1,0]<stderr>:++ __conda_activate activate /nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:++ '[' -n '' ']'
+[1,0]<stderr>:++ local ask_conda
+[1,0]<stderr>:+++ PS1=
+[1,0]<stderr>:+++ __conda_exe shell.posix activate /nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:+++ __add_sys_prefix_to_path
+[1,0]<stderr>:+++ '[' -n '' ']'
+[1,0]<stderr>:++++ dirname /opt/conda/bin/conda
+[1,0]<stderr>:+++ SYSP=/opt/conda/bin
+[1,0]<stderr>:++++ dirname /opt/conda/bin
+[1,0]<stderr>:+++ SYSP=/opt/conda
+[1,0]<stderr>:+++ '[' -n '' ']'
+[1,0]<stderr>:+++ PATH=/opt/conda/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+++ export PATH
+[1,0]<stderr>:+++ /opt/conda/bin/conda shell.posix activate /nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:++ ask_conda='PS1='\''(/nfs_beijing/kubeflow-user/jinxian_2024) '\''
+[1,0]<stderr>:export PATH='\''/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+[1,0]<stderr>:export CONDA_PREFIX='\''/nfs_beijing/kubeflow-user/jinxian_2024'\''
+[1,0]<stderr>:export CONDA_SHLVL='\''1'\''
+[1,0]<stderr>:export CONDA_DEFAULT_ENV='\''/nfs_beijing/kubeflow-user/jinxian_2024'\''
+[1,0]<stderr>:export CONDA_PROMPT_MODIFIER='\''(/nfs_beijing/kubeflow-user/jinxian_2024) '\''
+[1,0]<stderr>:export CONDA_EXE='\''/opt/conda/bin/conda'\''
+[1,0]<stderr>:export _CE_M='\'''\''
+[1,0]<stderr>:export _CE_CONDA='\'''\''
+[1,0]<stderr>:export CONDA_PYTHON_EXE='\''/opt/conda/bin/python'\''
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libblas_mkl_activate.sh"
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libglib_activate.sh"
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/proj4-activate.sh"'
+[1,0]<stderr>:++ eval 'PS1='\''(/nfs_beijing/kubeflow-user/jinxian_2024) '\''
+[1,0]<stderr>:export PATH='\''/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+[1,0]<stderr>:export CONDA_PREFIX='\''/nfs_beijing/kubeflow-user/jinxian_2024'\''
+[1,0]<stderr>:export CONDA_SHLVL='\''1'\''
+[1,0]<stderr>:export CONDA_DEFAULT_ENV='\''/nfs_beijing/kubeflow-user/jinxian_2024'\''
+[1,0]<stderr>:export CONDA_PROMPT_MODIFIER='\''(/nfs_beijing/kubeflow-user/jinxian_2024) '\''
+[1,0]<stderr>:export CONDA_EXE='\''/opt/conda/bin/conda'\''
+[1,0]<stderr>:export _CE_M='\'''\''
+[1,0]<stderr>:export _CE_CONDA='\'''\''
+[1,0]<stderr>:export CONDA_PYTHON_EXE='\''/opt/conda/bin/python'\''
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libblas_mkl_activate.sh"
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libglib_activate.sh"
+[1,0]<stderr>:. "/nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/proj4-activate.sh"'
+[1,0]<stderr>:+++ PS1='(/nfs_beijing/kubeflow-user/jinxian_2024) '
+[1,0]<stderr>:+++ export PATH=/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+++ PATH=/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+++ export CONDA_PREFIX=/nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:+++ CONDA_PREFIX=/nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:+++ export CONDA_SHLVL=1
+[1,0]<stderr>:+++ CONDA_SHLVL=1
+[1,0]<stderr>:+++ export CONDA_DEFAULT_ENV=/nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:+++ CONDA_DEFAULT_ENV=/nfs_beijing/kubeflow-user/jinxian_2024
+[1,0]<stderr>:+++ export 'CONDA_PROMPT_MODIFIER=(/nfs_beijing/kubeflow-user/jinxian_2024) '
+[1,0]<stderr>:+++ CONDA_PROMPT_MODIFIER='(/nfs_beijing/kubeflow-user/jinxian_2024) '
+[1,0]<stderr>:+++ export CONDA_EXE=/opt/conda/bin/conda
+[1,0]<stderr>:+++ CONDA_EXE=/opt/conda/bin/conda
+[1,0]<stderr>:+++ export _CE_M=
+[1,0]<stderr>:+++ _CE_M=
+[1,0]<stderr>:+++ export _CE_CONDA=
+[1,0]<stderr>:+++ _CE_CONDA=
+[1,0]<stderr>:+++ export CONDA_PYTHON_EXE=/opt/conda/bin/python
+[1,0]<stderr>:+++ CONDA_PYTHON_EXE=/opt/conda/bin/python
+[1,0]<stderr>:+++ . /nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libblas_mkl_activate.sh
+[1,0]<stderr>:++++ export CONDA_MKL_INTERFACE_LAYER_BACKUP=
+[1,0]<stderr>:++++ CONDA_MKL_INTERFACE_LAYER_BACKUP=
+[1,0]<stderr>:++++ export MKL_INTERFACE_LAYER=LP64,GNU
+[1,0]<stderr>:++++ MKL_INTERFACE_LAYER=LP64,GNU
+[1,0]<stderr>:+++ . /nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/libglib_activate.sh
+[1,0]<stderr>:++++ export GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
+[1,0]<stderr>:++++ GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
+[1,0]<stderr>:++++ export GSETTINGS_SCHEMA_DIR=/nfs_beijing/kubeflow-user/jinxian_2024/share/glib-2.0/schemas
+[1,0]<stderr>:++++ GSETTINGS_SCHEMA_DIR=/nfs_beijing/kubeflow-user/jinxian_2024/share/glib-2.0/schemas
+[1,0]<stderr>:+++ . /nfs_beijing/kubeflow-user/jinxian_2024/etc/conda/activate.d/proj4-activate.sh
+[1,0]<stderr>:++++ '[' -n '' ']'
+[1,0]<stderr>:++++ '[' -d /nfs_beijing/kubeflow-user/jinxian_2024/share/proj ']'
+[1,0]<stderr>:++++ export PROJ_LIB=/nfs_beijing/kubeflow-user/jinxian_2024/share/proj
+[1,0]<stderr>:++++ PROJ_LIB=/nfs_beijing/kubeflow-user/jinxian_2024/share/proj
+[1,0]<stderr>:++++ '[' -f /nfs_beijing/kubeflow-user/jinxian_2024/share/proj/copyright_and_licenses.csv ']'
+[1,0]<stderr>:++++ export PROJ_NETWORK=ON
+[1,0]<stderr>:++++ PROJ_NETWORK=ON
+[1,0]<stderr>:++ __conda_hashr
+[1,0]<stderr>:++ '[' -n '' ']'
+[1,0]<stderr>:++ '[' -n '' ']'
+[1,0]<stderr>:++ hash -r
+[1,0]<stderr>:+ commit_id=None
+[1,0]<stderr>:+ export PATH=/nfs_beijing/kubeflow-user/jinxian_2024/bin/:/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+ PATH=/nfs_beijing/kubeflow-user/jinxian_2024/bin/:/nfs_beijing/kubeflow-user/jinxian_2024/bin:/opt/conda/condabin:/usr/local/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[1,0]<stderr>:+ device_id=0
+[1,0]<stderr>:+ refine_pdb_path=/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/inference/pdb_file_trial2/
+[1,0]<stderr>:+ input_path=/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/model_zoo_nb_no4_95_testset_0522.csv
+[1,0]<stderr>:+ ckpt_path=/nfs_beijing_ai/jinxian/rama-scoring1.3.0/model/ckpt/run_train_sin_k8s_trial3_2024.11.18-12.13.00_Step_100000_improve_rat_0.0831341980535005_imporve_num_168.ckpt
+[1,0]<stderr>:+ output_path=/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/inference_trial2/
+[1,0]<stderr>:+ yaml_path=/nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/inference_shs/../..//yamls/refine_train_yamls/run_train_sin_k8s_trial3.yaml
+[1,0]<stderr>:+ CUDA_VISIBLE_DEVICES=0
+[1,0]<stderr>:+ python /nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/inference_shs/../..//run_inference_sin.py --input_path /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/model_zoo_nb_no4_95_testset_0522.csv --ckpt_path /nfs_beijing_ai/jinxian/rama-scoring1.3.0/model/ckpt/run_train_sin_k8s_trial3_2024.11.18-12.13.00_Step_100000_improve_rat_0.0831341980535005_imporve_num_168.ckpt --output_path /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/inference_trial2/ --yaml-path /nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/inference_shs/../..//yamls/refine_train_yamls/run_train_sin_k8s_trial3.yaml --refine_pdb_path /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/inference/pdb_file_trial2/
+[1,0]<stdout>:[2024-11-21 11:04:11,330] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[1,0]<stdout>:[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[1,0]<stdout>:[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[1,0]<stdout>:[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[1,0]<stdout>:Namespace(batch_size=1, ckpt_path='/nfs_beijing_ai/jinxian/rama-scoring1.3.0/model/ckpt/run_train_sin_k8s_trial3_2024.11.18-12.13.00_Step_100000_improve_rat_0.0831341980535005_imporve_num_168.ckpt', input_path='/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/model_zoo_nb_no4_95_testset_0522.csv', interface_cut=225, output_path='/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/inference_trial2/', refine_pdb_path='/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/inference/pdb_file_trial2/', yaml_path='/nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/inference_shs/../..//yamls/refine_train_yamls/run_train_sin_k8s_trial3.yaml')
+[1,0]<stdout>:total_inference_dataset: 968
+[1,0]<stdout>:/pfs_beijing/luoyujie/new_trainer/openmultimer/0315_mr_pipeline32/af_v1m1/7b2m_D/ranked_unrelax_0.pdb
+[1,0]<stderr>:Traceback (most recent call last):
+[1,0]<stderr>:  File "/nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/inference_shs/../..//run_inference_sin.py", line 285, in <module>
+[1,0]<stderr>:    main(inference_file_path, model_path, output_path, refine_pdb_path, yaml_args["config_runtime"], yaml_args["config_model"], yaml_args["config_data"])
+[1,0]<stderr>:  File "/nfs_beijing_ai/jinxian/rama-scoring1.3.0/bin/inference_shs/../..//run_inference_sin.py", line 231, in main
+[1,0]<stderr>:    tem = predicted_atom_trans_valid.item()
+[1,0]<stderr>:ValueError: only one element tensors can be converted to Python scalars
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[44297,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------

@@ -3,11 +3,20 @@ sys.path.append('/nfs_beijing_ai/jinxian/rama-scoring1.3.0')
 import argparse
 import os
 import random
-from dataset.sin_equiformerv2_dataset import *
+from dataset.sin_equiformerv2_dataset_split_tran_and_angle import *
 from utils.general import read_yaml_to_dict
 from utils import dist_utils
 from utils.logger import Logger
 from np.protein import from_pdb_string, update_pdb_with_new_coords
+import os
+import io
+from Bio.PDB import PDBParser, PDBIO
+from Bio.PDB.mmcifio import MMCIFIO
+# import residue_constants
+from utils.constants.residue_constants import *
+from utils.constants.cg_constants import *
+from utils.bin_design import *
+import np.residue_constants as rc
 
 def get_refine_pdb_by_inference(pdb_fpath, output_path, align_tran, predicted_tran, start_model_backbone_mask, init_model, start_atom_mask, gt_model, gt_res_mask, gt_atom_mask, start2gt_model_tran, start2gt_model_rot):
     """
@@ -48,7 +57,7 @@ def get_refine_pdb_by_inference(pdb_fpath, output_path, align_tran, predicted_tr
 
     
     # 计算gt_backbone_atom_positions，并且筛选predicted_tran, init_model_backbone与其对应
-    restore_predicted_tran2start_model_shape = torch.zeros(init_model.shape).to(predicted_tran.device).view(-1,3)
+    restore_predicted_tran2start_model_shape = torch.zeros(init_model.shape).view(-1,3).to(predicted_tran.device)
     #根据backbone list去按照位置填入
     
     # 获取start_model_backbone_mask中为 1 的位置
@@ -65,6 +74,76 @@ def get_refine_pdb_by_inference(pdb_fpath, output_path, align_tran, predicted_tr
     
     return refine_pdb_fpath
 
+def computer_rmsd4test_only_trans(pdb_fpath, output_path, align_tran, predicted_tran, pred_tran, start_model_backbone_mask, init_model, start_atom_mask, gt_model, gt_res_mask, gt_atom_mask, res_names_list, start2gt_model_tran, start2gt_model_rot, cdr_mask_by_res_mask=None, cdr1_mask=None, cdr2_mask=None, cdr3_mask=None, config_runtime=None, config_model=None):
+    """
+    iter add the r and t to each atom temp. update through add R and T to all atom one step. 
+    Args:
+        
+        align_tran:
+            [gt res, 37, 3], tensor
+        predicted_tran:
+            [start backbone, 3],  tensor
+        pred_tran:
+            [start backbone, 1],  tensor
+        all_atom_positions:
+            [start res, 37, 3],  tensor
+        start_model_backbone_mask:
+            [gt model res * 37], tensor
+        init_model:
+            [start_residue, 37, 3], tensor
+        start_atom_mask:
+            [start residue, 37], tensor
+        gt_model:
+            [gt_residue, 37, 3], tensor
+        gt_res_mask:
+            [full residue], tensor
+        atom_mask:
+            [gt_residue, 37],  tensor
+        gt_atom_mask:
+            [gt_residue, 37], tensor
+        start2gt_model_rot:
+            [3,3] ,tensor
+        start2gt_model_tran:
+            [3], tensor
+
+    Return:
+        rmsd   
+    """
+
+    if config_runtime['use_soft_con_for_tran']:#是否采用soft 模长loss，是的话，优化向量应该等于等变头预测向量*不变头预测模长
+        predicted_tran *= pred_tran
+    # # 1. 归一化A
+    # # 添加微小值避免除以零
+    # eps = 1e-8
+    # norm = torch.norm(predicted_tran, dim=1, keepdim=True) + eps
+    # predicted_tran = predicted_tran / norm
+
+    # # 2. 缩放单位向量
+    # predicted_tran = predicted_tran * pred_tran  # 广播机制会自动扩展B的维度
+
+    # try:
+    #     # 计算gt_backbone_atom_positions，并且筛选predicted_tran, init_model_backbone与其对应
+    #     restore_predicted_tran2start_model_shape = torch.zeros(init_model.shape).to(predicted_tran.device).view(-1,3)
+    # except Exception as e:
+    #     print('restore_predicted_tran2start_model_shape has error:', e)
+    restore_predicted_tran2start_model_shape = torch.zeros(init_model.shape).to(predicted_tran.device).view(-1,3)
+
+   
+    # 获取start_model_backbone_mask中为 1 的位置
+    indices = start_model_backbone_mask.nonzero(as_tuple=True)[0]  # shape [n], n 是 A 中 1 的数量
+
+
+    # 将 predicted_tran 的值赋给 restore_predicted_tran2start_model_shape 的相应位置
+    restore_predicted_tran2start_model_shape[indices] = predicted_tran
+
+
+    # 计算 refine model的backone rmsd
+    refine_backbone_atom = init_model+restore_predicted_tran2start_model_shape.reshape(init_model.shape)
+    #接下来去更新pdb
+    refine_pdb_fpath = update_pdb_with_new_coords(pdb_fpath, refine_backbone_atom, output_path)
+    
+    return refine_pdb_fpath
+
 
 def get_args():
     """Run get_args method."""
@@ -73,19 +152,19 @@ def get_args():
     parser.add_argument(
         "--input_path",
         type=str,
-        default="/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/model_zoo_nb_no4_95_testset_0522_copy.csv",
+        default="/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/AF3_gen/AF3_gen_for_validation.csv",
         help="path of coarse graining",
     )
     parser.add_argument(
         "--ckpt_path",
         type=str,
-        default="/nfs_beijing_ai/jinxian/rama-scoring1.3.0/model/ckpt/run_train_sin_k8s_trial3_2024.11.18-12.13.00_Step_100000_improve_rat_0.0831341980535005_imporve_num_168.ckpt",
+        default="/nfs_beijing_ai/jinxian/rama-scoring1.3.0/model/ckpt/run_train_sin_k8s_trial38_yaml_run_train_sin_k8s_trial38_2025.03.13-12.51.51_Step_152000_validation_data_improve_rmsd_0.02651596850156784_imporve_num_458.0.ckpt",
         help="path of coarse graining",
     )
     parser.add_argument(
         "--output_path",
         type=str,
-        default="/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/inference/",
+        default="/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/inference/AF3_gen_for_validation",
         help="path of coarse graining",
     )
     parser.add_argument(
@@ -103,7 +182,7 @@ def get_args():
     parser.add_argument(
         "--yaml-path",
         type=str,
-        default="/nfs_beijing_ai/jinxian/rama-scoring1.3.0/yamls/refine_train_yamls/run_train_sin_k8s_trial3.yaml",
+        default="/nfs_beijing_ai/jinxian/rama-scoring1.3.0/yamls/refine_train_yamls/run_train_sin_k8s_trial38.yaml",
         help="path of yaml file",
     )
     parser.add_argument(
@@ -118,18 +197,17 @@ def get_args():
     return args
 
 def main(inference_file_path, model_path, output_path, yaml_path, config_runtime, config_model, config_data):
-    dataset_type = config_data['dataset_type']
+    dataset_type = 'AB'
 
     set_random_seed(config_runtime['seed'])
 
     inference_file_name = inference_file_path.split('/')[-1].split('.')[0]
-    model_name = model_path.split('/')[-1].split('.ck')[0]
+    model_name = model_path.split('/')[-1].split('_Step')[0]
     yaml_name = yaml_path.split('/')[-1].split('.')[0]
     # 输出的pdb综合数据csv存储路径
-    # output_path = '/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/inference/'
     
     # 创建用于存储refine pdb fpath的csv文件
-    output_pdb_save_fpath = output_path +'refinefile_'+ inference_file_name +'_refinemodel_'+ model_name+ '_yaml_name_'+yaml_name+ '.csv'
+    output_pdb_save_fpath = output_path +'refinefile_'+ inference_file_name +'_refinemodel_'+ model_name+ '.txt'
     # 获取output目录路径
     output_dir = os.path.dirname(output_pdb_save_fpath)
     # 如果目录不存在，创建它
@@ -137,7 +215,7 @@ def main(inference_file_path, model_path, output_path, yaml_path, config_runtime
         os.makedirs(output_dir)
 
     # refine pdb的保存路径
-    refine_pdb_path = output_path +'refinefile_'+ inference_file_name +'_refinemodel_'+ model_name+ '_yaml_name_'+yaml_name+'/'
+    refine_pdb_path = output_path +'refinefile_'+ inference_file_name +'_refinemodel_'+ model_name+'/'
     
     # 创建用于存储refine pdb的路径
     output_dir = os.path.dirname(refine_pdb_path)
@@ -147,9 +225,9 @@ def main(inference_file_path, model_path, output_path, yaml_path, config_runtime
 
 
     # 创建inference dataset
-    # inference_dataset = PDBDataset(csv_file=inference_file_path, data_type='inference', dataset_type=dataset_type, sample_num=-1, valid_head=-1)
-    valid_dataset = PDBDataset(csv_file=inference_file_path, data_type='test', dataset_type=dataset_type, sample_num=-1, valid_head=-1)
-    print('total_valid_dataset:' , len(valid_dataset))
+    inference_dataset = PDBDataset(csv_file=inference_file_path, data_type='inference', dataset_type=dataset_type, sample_num=-1, valid_head=-1)
+    # valid_dataset = PDBDataset(csv_file=inference_file_path, data_type='test', dataset_type=dataset_type, sample_num=-1, valid_head=-1)
+    print('total_valid_dataset:' , len(inference_dataset))
 
     def custom_collate_fn(data_list):
         # 过滤掉 None 值
@@ -159,18 +237,8 @@ def main(inference_file_path, model_path, output_path, yaml_path, config_runtime
             return None
         return data_list  # 将数据进一步处理成批量形式
 
-    # inference_dataloader = DataLoader(
-    #         inference_dataset,
-    #         batch_size=1,
-    #         num_workers=4,
-    #         shuffle= False,
-    #         collate_fn=custom_collate_fn,
-    #         pin_memory=True,
-    #         # prefetch_factor=args.prefetch_factor,
-    #     )
-
-    valid_dataloader = DataLoader(
-            valid_dataset,
+    inference_dataloader = DataLoader(
+            inference_dataset,
             batch_size=1,
             num_workers=4,
             shuffle= False,
@@ -179,50 +247,91 @@ def main(inference_file_path, model_path, output_path, yaml_path, config_runtime
             # prefetch_factor=args.prefetch_factor,
         )
 
+
     device = torch.device('cuda')
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
     
     model = EquiformerV2(**config_model)
     model.load_state_dict(torch.load(model_path))
 
     model.to(device)
 
-    loss_file = "/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/test_data_results/inference_rmsd_values_"+model_name+"_"+inference_file_name+"_trial_k8s.txt"
+    loss_file = "/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/test_data_results/inference_rmsd_values_"+model_name+"_"+inference_file_name+".txt"
     with open(loss_file, "w") as file:
         file.write("start pdb name, rmsd_start_CA, rmsd_refine_CA, rmsd_CA_improve_rat, start rmsd, refine rmsd, improve rat \n")  
     
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
+    
     model.eval()
     refine_pdb_fpath_list = []
     impover_list = []
     with torch.no_grad():
-        for data in valid_dataloader:
-            predicted_atom_trans_valid  = model(data.to(device))
-            pdb_name = data.pdb_name[0]
-            print(pdb_name)
-
-            rmsd, rmsd_start, rmsd_refine_CA, rmsd_start_CA, rot_pred_tran_mse, rot_pred_angle, rmsd_refine_CA_CDR_before, rmsd_refine_CA_CDR_after = computer_rmsd4test_only_trans(
-                align_tran=data.align_atom_trans.to(device),
-                predicted_tran=predicted_atom_trans_valid, 
-                start_model_backbone_mask= data.start_model_backbone_mask.to(device),
-                init_model=data.all_atom_positions.to(device), 
-                start_atom_mask=data.start_atom_mask.to(device), 
-                gt_model=data.gt_atom_positions.to(device), 
-                gt_res_mask=data.gt_res_mask.to(device), 
-                gt_atom_mask=data.gt_atom_mask.to(device),
-                resid = data.resid.to(device),
-                start2gt_model_tran = data.start2gt_model_tran.to(device),
-                start2gt_model_rot = data.start2gt_model_rot.to(device),
-                cdr1_mask=data.cdr1_mask_backbone_atom.to(device), 
-                cdr2_mask=data.cdr2_mask_backbone_atom.to(device), 
-                cdr3_mask=data.cdr3_mask_backbone_atom.to(device), 
-                config_runtime=config_runtime
-                )
-            print(rmsd_start_CA)
+        
             
-       
+        for data in tqdm(inference_dataloader):
+            # pred_distmap, predicted_atom_trans_inference, atom_mu, atom_log_var, atom_log_weight   = model(data.to(device))
+            pred_distmap, predicted_atom_trans, atom_mu, atom_log_var, atom_log_weight, pred_tran, equ_CDR3_atom_embedding, inv_CDR3_atom_embedding  = model(data.to(device))
+
+            # print(predicted_atom_trans_inference.shape)
+            pdb_name = data.pdb_name[0]
+            
+            # refine_pdb_fpath = get_refine_pdb_by_inference(
+            #     pdb_fpath=pdb_name, 
+            #     output_path=refine_pdb_path, # 输出路径应该根据指定的来存，名称中最好包括模型名和输入文件的名字
+            #     align_tran=None,
+            #     predicted_tran=predicted_atom_trans_inference.to(device), 
+            #     start_model_backbone_mask= data.start_model_backbone_mask.to(device),
+            #     init_model=data.all_atom_positions.to(device), 
+            #     start_atom_mask=None, 
+            #     gt_model=None, 
+            #     gt_res_mask=None, 
+            #     gt_atom_mask=None,
+            #     start2gt_model_tran = None,
+            #     start2gt_model_rot = None
+            #     )
+           
+            refine_pdb_fpath = computer_rmsd4test_only_trans(
+                    pdb_fpath=pdb_name, 
+                    output_path=refine_pdb_path, # 输出路径应该根据指定的来存，名称中最好包括模型名和输入文件的名字
+                    align_tran=None,
+                    predicted_tran=predicted_atom_trans, 
+                    pred_tran=pred_tran,
+                    start_model_backbone_mask= data.start_model_backbone_mask.to(device),
+                    init_model=data.all_atom_positions.to(device), 
+                    start_atom_mask=data.start_atom_mask.to(device), 
+                    gt_model=None, 
+                    gt_res_mask=None, 
+                    gt_atom_mask=None,
+                    res_names_list = None,
+                    start2gt_model_tran = None,
+                    start2gt_model_rot =None,
+                    cdr_mask_by_res_mask=None,
+                    cdr1_mask=None, 
+                    cdr2_mask=None, 
+                    cdr3_mask=None, 
+                    config_runtime=config_runtime,
+                    config_model=config_model
+                    )
+            refine_pdb_fpath_list.append(refine_pdb_fpath)
+
+        # 创建 DataFrame，并指定第一行为列名
+        df = pd.DataFrame(refine_pdb_fpath_list)
+
+        # 将 DataFrame 保存为 CSV 文件
+        df.to_csv(output_pdb_save_fpath, header=False, index=False)
+    
 
 if __name__ == '__main__':
+    # yaml_path='/yamls/refine_train_yamls/run_train_sin_k8s_trial3.yaml'
+    # yaml_args = read_yaml_to_dict(yaml_path)
+    # # set_random_seed(yaml_args['config_runtime'].seed)
+    # logger.info(yaml_args)
+    # inference_file_path = '/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/model_zoo_nb_no4_95_testset_0522.csv'
+    # model_path = '/nfs_beijing_ai/jinxian/rama-scoring1.3.0/model/ckpt/2024.10.31-10.19.03_Step_46000_improve_rat_0.04649861819781495_imporve_num_420.ckpt'
+    # # 输出的pdb综合数据csv存储路径
+    # output_path = '/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/inference/'
+    # # refine pdb的保存路径
+    # refine_pdb_path = '/nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/inference/pdb_file/'
     args = get_args()
     print(args)
     yaml_path = args.yaml_path

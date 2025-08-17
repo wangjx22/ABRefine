@@ -1,14 +1,10 @@
-# ABRefine
-Data:
+# Rama Scoring
 
-Requirements:
+docker image:
+```commandline
+```
+training:
+    bash ./bin/sin_equiformerV2_train_shs/train.sh
 
-Run
-
-    Training:
-        bash run_train_sin_k8s_trial6.sh
-
-    inference:
-        bash inference_k8s_sin_trial4.sh
-
-
+inference:
+        bash ./bin/inference/inference.sh

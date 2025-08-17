@@ -102,6 +102,8 @@ config_model:
     regress_forces: True
     use_equivariant_block: True # 是否使用等变网络
     use_invariant_block: True # 是否使用不变网络
+    use_KL_loss: False
+    KL_loss_weight: 1
     otf_graph: True
     max_neighbors: 40
     max_radius: 12.0
@@ -165,6 +167,8 @@ config_runtime:
     use_fsdp: False
     use_CDR_loss: True
     use_cg_loss: False
+    use_rmsd: False
+    rmsd_loss_weight: 1
     use_tran_mse_loss: True
     tran_mse_loss_mean_or_sum: mean
     angle_loss_mean_or_sum: mean

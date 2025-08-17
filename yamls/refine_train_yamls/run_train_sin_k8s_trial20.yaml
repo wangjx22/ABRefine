@@ -39,11 +39,11 @@ config_data:
       #        weight: 1
       #        loss_weight: 1
       #    valid_filepath: /pfs_beijing/sunyiwu/structure_pretraining/xtrimo_eigenfold/rama-scoring/notebooks/csvs/model_zoo_nb_no4_95_testset.csv,/pfs_beijing/sunyiwu/structure_pretraining/xtrimo_eigenfold/rama-scoring/notebooks/csvs/model_zoo_nb_no8_95_testset.csv
-    valid_filepath: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/NB88_scoring_model.csv
+    valid_filepath: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/NB88_scoring_model.csv 
     test_filepath: /nfs_beijing_ai/jinxian/rama-scoring1.3.0/dataset/datasets/NB25.csv
     sample_num: -1 # if you need all data, set sample_num = -1
     valid_head: 100 # get the valid data num from the train data
-    trn_batch_size: 8
+    trn_batch_size: 6
     val_batch_size: 1
     min_num_workers: 4
     num_workers: 4
@@ -102,6 +102,8 @@ config_model:
     regress_forces: True
     use_equivariant_block: True # 是否使用等变网络
     use_invariant_block: True # 是否使用不变网络
+    use_KL_loss: False
+    KL_loss_weight: 1
     otf_graph: True
     max_neighbors: 20
     max_radius: 9.0
@@ -163,6 +165,8 @@ config_runtime:
     ema_start_epoch: 10
     ema_decay: 0.9999
     use_fsdp: False
+    use_rmsd: False
+    rmsd_loss_weight: 1
     use_CDR_loss: True
     use_cg_loss: False
     use_tran_mse_loss: True

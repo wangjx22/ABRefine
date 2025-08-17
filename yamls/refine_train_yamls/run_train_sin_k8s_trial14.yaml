@@ -164,6 +164,8 @@ config_runtime:
     ema_decay: 0.9999
     use_fsdp: False
     use_CDR_loss: True
+    use_rmsd: False
+    rmsd_loss_weight: 1
     use_cg_loss: False
     use_tran_mse_loss: True
     tran_mse_loss_mean_or_sum: mean

@@ -1,0 +1,18 @@
+[{
+ "name": "4w70_A",
+ "modelSeeds": [
+  "155325149"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "MAEVQLVESGGGLVQAGDSLRLSATASGRTFSRAVMGWFRQAPGKEREFVAAISAAPGTAYYAFYADSVRGRFSISADSAKNTVYLQMNSLKPEDTAVYYVAADLKMQVAAYMNQRSVDYWGQGTQVTVSSAAALEHHHHHH",
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]

@@ -1,0 +1,18 @@
+[{
+ "name": "3stb_B",
+ "modelSeeds": [
+  "883218061"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "QVQLQESGGGLVQAGGSLRLSCAASGRTLSSYAMGWFRQAPGKEREFVAAINRSGSTFYADAVKGRFTISRDNAKNTVYLQMNSLKPEDTAAYYCAADRFSPVVPGPIPVNTVDSWGQGTQVTVSSHHHHHH",
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]

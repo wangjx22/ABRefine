@@ -1,0 +1,18 @@
+[{
+ "name": "4w2q_G",
+ "modelSeeds": [
+  "1964853943"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "KVQLQESGGGLVQVGGSLRLSCKASGFTFRSSAMGWYRRAPGKQRELVASLTTTGTADYGDFVKGRFTISRDNAENTVDLHMNSLKPEDTAVYYCHEDPYGMESLRYWGQGTQVTVSS",
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]

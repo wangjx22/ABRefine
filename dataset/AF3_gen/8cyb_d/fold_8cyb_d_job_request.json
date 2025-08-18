@@ -1,0 +1,18 @@
+[{
+ "name": "8cyb_D",
+ "modelSeeds": [
+  "874328437"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "NSQVQLVESGGGLVQTGGSLRLSCAASGRTFSNYVMGWFRQAPGKEREFVSSIEWNSENTFYANSVKGRFTISRDNAKNTVYLQMNSLKAEDTAVYYCAADRGSSYYYTRASEYTYWGQGTQVTVSS",
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]

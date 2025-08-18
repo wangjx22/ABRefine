@@ -10,9 +10,7 @@ commit_id=None
 export PATH=./bin/:$PATH
 
 device_id=0
-# set_random_seed(yaml_args['config_runtime'].seed)
-# 输出的pdb综合数据csv存储路径
-# refine pdb的保存路径
+
 refine_pdb_path='./dataset/datasets/inference/trial59/'
 
 input_path='./dataset/datasets/AF3_gen_pdb_files.csv'

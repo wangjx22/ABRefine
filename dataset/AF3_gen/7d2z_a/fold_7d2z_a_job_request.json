@@ -1,0 +1,18 @@
+[{
+ "name": "7d2z_A",
+ "modelSeeds": [
+  "1800681331"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "GSSSQVQLVESGGGLVQAGGSLRLSCAASGFPVWQGEMAWYRQAPGKEREWVAAISSMGYKTYYADSVKGRFTISRDNAKNTVYLQMNSLKPEDTAVYYCAVMVGFWYAGQGTQVTVSAGRAGEQKLISEEDLNSAVDHHHHHH",
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]

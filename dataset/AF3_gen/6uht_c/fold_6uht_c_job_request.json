@@ -1,0 +1,18 @@
+[{
+ "name": "6uht_C",
+ "modelSeeds": [
+  "766546642"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "GPLGSQVQLVESGGGLVQAGGSLRLSCAASILTYDLDYYYIGWVRQAPGKEREGVSCISSTDGATYYADSVKGRFTISRNNAKNTVYLQMNNLKPEDTAIYYCAAAPLAGRYCPASHEYGYWGQGTQVTVSSAHHSEDPS",
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]

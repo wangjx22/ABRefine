@@ -1,0 +1,18 @@
+[{
+ "name": "7jvb_D",
+ "modelSeeds": [
+  "112877385"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "QVQLVESGGGLVQAGGSLRLSCAVSGAGAHRVGWFRRAPGKEREFVAAIGASGGMTNYLDSVKGRFTISRDNAKNTIYLQMNSLKPQDTAVYYCAARDIETAEYIYWGQGTQVTVSS",
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]

@@ -1,0 +1,18 @@
+[{
+ "name": "4w68_B",
+ "modelSeeds": [
+  "860269808"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "GSHMEVQLVESGGGLVQAGDSLRLSATASGRTFSRAVMGWFRQAPGKEREFVAAISAAPGTAYYAFYADSVRGRFSISADSAKNTVYLQMNSLKPEDTAVYYVAADLKMQVAAYMNQRSVDYWGQGTQVTVSS",
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]

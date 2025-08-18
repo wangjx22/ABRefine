@@ -1,0 +1,18 @@
+[{
+ "name": "6ui1_D",
+ "modelSeeds": [
+  "1299349470"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "GPLGSQVQLVESGGGLVHPGGSLRLSCAPSASLPSTPFNPFNNMVGWYRQAPGKQREMVASIGLRINYADSVKGRFTISRDNAKNTVDLQMDSLRPEDSATYYCHIEYTHYWGKGTLVTVSSEPKTPKPQ",
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]

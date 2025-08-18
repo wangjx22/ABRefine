@@ -1,0 +1,18 @@
+[{
+ "name": "6gci_B",
+ "modelSeeds": [
+  "1428445814"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "QVQLVESGGGLVQAGDSLRLACAASGITFSSYTMGWFRQAPGKEREYIARITGSGSNTYYADSVKGRYTISRDNAKNTAYLQMNSLKPEDTANYYCAARDDGRMYQGFYDFEYWGQGTQVTVSSDRAIEGR",
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]
